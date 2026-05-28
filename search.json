@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "pages/resources.html",
+    "href": "pages/resources.html",
+    "title": "Data Science in Geography: resource page",
+    "section": "",
+    "text": "General resources for R\nThere are multiple free resources online to help grow your ability to learn R for geographic analysis. Here’s a few:\n\nR for Data Science: The main text by the authors of the tidyverse on how to use R for exploratory data analysis, data wrangling, and visualization."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "geog4300",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  }
+]
