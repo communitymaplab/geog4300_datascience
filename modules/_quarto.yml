@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Data Science in Geography (Geog4/6300)"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: modules/index.qmd
+        text: Course modules
+      - href: pages/resources.qmd
+        text: Resources
+
+    right:
+      - icon: github
+        href: https://github.com/communitymaplab/geog4300_datascience
+        aria-label: GitHub
+
+sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - href: m1_introduction.qmd
+        text: "Module 1: Introduction to R"
+      - href: m2_datastructure.qmd
+        text: "Module 2: Data Structure and Formats"
+
+      
+format:
+  html:
+    theme:
+      - spacelab
+    css: styles.css
+    toc: true

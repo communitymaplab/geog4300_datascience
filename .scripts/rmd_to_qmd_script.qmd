@@ -1,0 +1,12 @@
+---
+title: "Convert Rmd to quarto"
+editor: source
+---
+
+```{r}
+source("rmd_to_qmd.R")
+
+# Convert all .Rmd files in a directory
+convert_dir("D:/Dropbox/Jschool/Teaching/Courses/Geog4300_Fa25/geog4300_github/scripts")
+```
+

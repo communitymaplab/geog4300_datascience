@@ -1,0 +1,159 @@
+---
+title: "Geog6300: Correlation"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+#install.packages(c("Hmisc","broom","ggcorrplot","corrgram"))
+library(Hmisc)
+library(corrplot)
+library(corrgram)
+library(broom)
+```
+
+
+Correlation
+
+Here's the fictitious dataset used in the video lecture.
+```{r}
+MHI<-c(40000, 59000, 61000, 66000, 68000, 71000, 78000, 82000, 89000, 103000, 104000,113000, 129000, 141000,156000)
+VCR<-c(45.2, 44.6, 39.2, 42.4, 37.4, 29.4, 38.1, 28.5, 21.4, 19.4, 25.1, 28.5, 22.5, 17.3, 13.5)
+
+crimedata<-as_tibble(cbind(MHI,VCR))
+crimedata
+```
+
+A simple scatterpot shows possible correlation.
+
+```{r}
+ggplot(crimedata,aes(x=MHI,y=VCR))+geom_point()
+```
+
+Use the cor function to see the correlation.
+
+```{r}
+cor(crimedata$MHI,crimedata$VCR)
+```
+
+Correlations are often shown as a matrix. Here, we can use the pollen data for the Midwest. The rcorr function in the Hmisc package does this well.
+
+```{r}
+Midwest_Pollen_Data<-read_csv("data/Midwest_Pollen_Data.csv")
+pollen<-Midwest_Pollen_Data %>%
+  select(precpyr,Picea:Betula)#Take just the first 5 species
+
+rcorr(as.matrix(pollen))#The data must be formatted as a matrix
+```
+
+Note that this shows both the correlation coefficient and its p value.
+
+We can also extract these correlations using tidy from the broom package. You can sort and filter to see which associations have the highest magnitude.
+
+```{r}
+cor_values<-tidy(pollen_cor)
+```
+
+You can visualize associations using the pairs function, which is part of "base R". This creates scatterplots for every variable pair.
+
+```{r}
+cor_all<-Midwest_Pollen_Data %>% 
+        select(-Region,-Region_fac,-seqnum:-tmeanjul)
+
+pairs(cor_all)
+```
+
+That's a lot! Let's just visualize a subset of these variables--precipitation plus the first five.
+
+```{r}
+pollen_list<-c("Abies","Picea","Carya","Alnus","Quercus")
+
+#Select only the precipitation column and the species we just identified
+pollen_filter<-Midwest_Pollen_Data %>%
+  select(c(precpyr,tmeanyr,pollen_list))
+
+pairs(pollen_filter)
+
+pairs(as.matrix(pollen_filter),lower.panel=panel.smooth,upper.panel=panel.ellipse)
+```
+
+If you want to visualize the association between a specific pair of variables, you can do so using `geom_smooth` in ggplot, which plots a trend line. The default is a locally estimated scatterplot smoothing (LOESS) curve, but you can also use lm, glm, or gam, which are all types of regression models.
+
+```{r}
+ggplot(pollen_filter,aes(x=tmeanyr,y=Abies))+
+  geom_point()+
+  geom_smooth()
+
+ggplot(pollen_filter,aes(x=tmeanyr,y=Abies))+
+  geom_point()+
+  geom_smooth(method="lm")
+```
+
+There's lots of ways to visualize correlation matrices, and we often want to look at lots of variable combinations at once. Here's corrplot. (More info: https://cran.r-project.org/web/packages/corrplot/vignettes/corrplot-intro.html)
+
+```{r}
+#First, create a correlation matrix
+correlation_matrix <- cor(pollen_filter)
+
+#Simple plots
+corrplot(correlation_matrix)
+corrplot(correlation_matrix,diag=FALSE)
+
+#Reorder based on clustering algorithms
+corrplot(correlation_matrix,order="AOE")
+corrplot(correlation_matrix,order="hclust")
+corrplot(correlation_matrix,order="FPC")
+
+#Play with the visualization type and scale
+corrplot(correlation_matrix,order="AOE",type="lower",diag=FALSE)
+corrplot(correlation_matrix,order="AOE",method="ellipse",
+         type="lower",diag=FALSE)
+
+#Combine multiple viz types
+corrplot.mixed(correlation_matrix,order="AOE")
+corrplot(correlation_matrix, 
+         order = 'AOE', 
+         addCoef.col = 'black', 
+         tl.pos = 'd',
+         cl.pos = 'n')
+
+#Change the color scheme
+corrplot(correlation_matrix,order = 'AOE', col = COL2('PuOr', 10))
+
+corrplot(correlation_matrix, order = 'AOE', cl.pos = 'n', tl.pos = 'n',
+         col = c('white', 'black'), bg = 'gold2')
+```
+
+## You try it! 
+Look at the other visualization options for `corrplot`, especially the ones available with the `corrplot.mixed` style. Try a few out based on the code above.
+
+```{r}
+
+```
+
+For non-parametric data, specify spearman's rho in the rcorr package.
+
+```{r}
+rcorr(as.matrix(pollen), type="spearman")
+```
+
+You can also specify the test (spearman/non-parametric vs. pearson/parametric) for the cor command.
+```{r}
+M<-cor(pollen,method="spearman")
+corrplot(M)
+```
+
+
+## You try it!
+Load the 2022 census data from our class repository. Assess how poverty rate (pov_pop_pct) is correlated with the population rates of the educational variables (LessHS_pct, HSGrad_pct, SomeCol_pct, BADeg_pct, GradDeg_pct).
+
+```{r}
+census22<-read_csv("data/ACSCtyData_2022ACS.csv")
+```
+
+```{r}
+#Code here
+```

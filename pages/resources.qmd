@@ -1,0 +1,70 @@
+---
+title: "Data Science in Geography: resource page"
+format: html
+editor: source
+project:
+  type: website
+  output-dir: docs
+---
+
+There are multiple free resources online to help grow your ability to learn R for geographic analysis. Here's a few.
+
+## Learning R
+
+* [Hands-On Programming with R](https://rstudio-education.github.io/hopr/): This online book by Garrett Grolemund starts from the very basics and is a good primer on how to get started in R and understand things like the difference between a vector and a list or what `c(3, 5)` means.
+
+* [R for the Rest of Us](https://rfortherestofus.com/courses/getting-started) Only the introductory video lessons at this website are free, but you may find it useful as a place to start.
+
+* [Teacup Giraffes and Statistics](https://tinystats.github.io/teacups-giraffes-and-statistics/index.html): Whimsically themed website with lots of interactive exercises to get you started in R, both loading data and doing statistical analysis.
+
+* [Swirl](https://swirlstats.com/students.html): An R package that is designed to teach you R while using R.
+
+## R for research
+
+* [The Big Book of R](https://www.bigbookofr.com/): It's a book of books! This text gives you links to a bunch of online resources for using R in a variety of academic and computational contexts.
+
+* [R for Data Science](https://r4ds.hadley.nz/): The main text by the authors of the tidyverse on how to use R for exploratory data analysis, data wrangling, and visualization. It assumes you know your basic way around R.
+
+* [Advanced R](https://adv-r.hadley.nz/): Hadley Wickham (the main author of the tidyverse) wrote this book to cover more advanced programming tasks in R.
+
+* [Geocomputation with R](https://r.geocompx.org/): Online, open source book by Lovelace et al. that provides detailed examples of how R can be used for geospatial analysis.
+
+* [Rspatial.org](https://rspatial.org/): Another site providing both an overview of spatial functions in R and examples of applications. It has the most detail on analysis of raster data. Created by Robert Hijmans, who helped author the `terra` and `raster` packages.
+
+* [Spatial Data Science](https://r-spatial.org/book/): This book by Pebesma and Bivand, hosted on the Rspatial site, is another more technical guide to doing spatial analysis using R. Pebesma is the main author for the `sf` package.
+
+* [Introduction to Econometrics with R](https://www.econometrics-with-r.org): This book provides a somewhat technical but useful walkthrough of everything from basic descriptive analysis through time series models and measuring causal effects.
+
+* [Tidy Modeling with R](https://www.tmwr.org/): Max Kuhn and Julia Silghe walk through the `tidymodels` package, which provides tools for machine learning and other AI assisted modeling.
+
+## Connecting R with other tools and data
+
+* [ESRI's R-ArcGIS Bridge](https://www.esri.com/en-us/arcgis/products/r-arcgis-bridge/overview): This tool allows you to access, analyze, and edit feature datasets hosted on ArcGIS Online. It also allows you to use ArcGIS functions in R or to bring R functions into the ArcGIS toolbox.
+
+* [qgisprocess](https://r-spatial.github.io/qgisprocess/): This package allows you to access the functions in the QGIS Processing Toolbox for data stored in R. Several functions in QGIS are more efficient than the equivalent version in `sf`, so this can be useful.
+
+* [reticulate](https://rstudio.github.io/reticulate/): Developed by Posit, the reticulate package allows you to create a virtual Python environment in R and transfer objects such as data frames between R and Python. This is useful if Python offers tools that are better suited to your analysis. The [Positron](https://positron.posit.co/) application created by Posit offers a true Python environment, but lacks the ability to move objects back and forth. You instead save data in one environment and then load it in another.
+
+## Data visualization
+
+* [R Graphics Cookbook](https://r-graphics.org/): This book by Winston Chang walks through a variety of examples of how to specify plots using `ggplot`.
+
+* [Data Visualization: A Practical Introduction](https://socviz.co/): Kieran Healy has lots of great material out there both on the practicals of data science but also the social science behind it. This is his book walking through data visualization in R.
+
+## YouTube R/stats people
+
+* [Julia Silge](https://www.youtube.com/@JuliaSilge/videos): Julia works for Posit and has been providing materials on how to use R effectively for awhile. There's a lot here on doing modeling and machine learning in R.
+
+* [Equitable Equations on YouTube](https://www.youtube.com/playlist?list=PLKBUk9FL4nBYpUKszG4edyAiM9aeTT1yv): This account has some helpful looking videos with slow and thorough walkthroughs of working in R with the tidyverse. This link goes to his "All about R" playlist.
+
+* [R Programming 101](https://www.youtube.com/@RProgramming101): Quick videos on getting started in R and doing statistical analysis. Plus he's British!
+
+* [StatQuest with Josh Starmer](https://www.youtube.com/c/joshstarmer): A platform neutral page that focuses more on the concepts of various statistical approaches. Good graphics!
+
+## Social media/communities
+
+* [R-Bloggers](https://www.r-bloggers.com/): Feed of R related articles that may be of interest.
+
+* [RLadies](https://rladies.org/): What it sounds like. Online community of (primarily) women with local chapters around the world.
+
+* [TidyTuesday](https://github.com/rfordatascience/tidytuesday): Cross platform community that has a new data challenge every week.

@@ -1,0 +1,19 @@
+---
+title: "Module 1: Introduction to R"
+format: html
+---
+
+This module will provide an introduction to the R software and environment. You'll learn how to navigate the RStudio interface, how to import datasets, and the various types of R "objects," such as vectors, lists, and data frames.
+
+# Relevant learning standards
+
+# Scripts
+Right-click/Command-click on the links below to save these links to your local folder for the course.
+
+* S01: Introduction to R
+* S02: Reading data and filtering
+* S03: APIs and online data
+
+# Videos
+
+# Links
