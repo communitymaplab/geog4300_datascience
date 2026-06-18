@@ -53,7 +53,11 @@
     "href": "modules/m1_introduction.html",
     "title": "Module 1: Introduction to R",
     "section": "",
-    "text": "This module will provide an introduction to the R software and environment. You’ll learn how to navigate the RStudio interface, how to import datasets, and the various types of R “objects,” such as vectors, lists, and data frames.\n\nRelevant learning standards\n\n\nScripts\nRight-click/Command-click on the links below to save these links to your local folder for the course.\n\nS01: Introduction to R\nS02: Reading data and filtering\nS03: APIs and online data\n\n\n\nVideos\n\n\nLinks"
+    "text": "This module will provide an introduction to the R software and environment. You’ll learn how to navigate the RStudio interface, how to import datasets, and the various types of R “objects,” such as vectors, lists, and data frames.\n\nRelevant learning standards\n\n\nScripts\nRight-click/Command-click on the links below to save these links to your local folder for the course.\n\nS01: Introduction to R\nS02: Reading data and filtering\nS03: APIs and online data\n\n\n\nVideos\n\n\nLinks",
+    "crumbs": [
+      "Home",
+      "Module 1-Introduction to R"
+    ]
   },
   {
     "objectID": "index.html",
@@ -67,13 +71,21 @@
     "href": "modules/index.html",
     "title": "Geog4/6300: Course Modules",
     "section": "",
-    "text": "This course is organized around a number of learning modules. Click on the links to the left to access them."
+    "text": "This course is organized around a number of learning modules. Click on the links to the left to access them.",
+    "crumbs": [
+      "Home",
+      "Module overview"
+    ]
   },
   {
     "objectID": "modules/m2_datastructure.html",
     "href": "modules/m2_datastructure.html",
     "title": "m2_datastructure",
     "section": "",
-    "text": "Relevant learning standards\n\n\nScripts\n\n\nVideos\n\n\nLinks"
+    "text": "Relevant learning standards\n\n\nScripts\n\n\nVideos\n\n\nLinks",
+    "crumbs": [
+      "Home",
+      "Module 2-Data Structure and Formats"
+    ]
   }
 ]
