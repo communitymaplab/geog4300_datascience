@@ -15,3 +15,9 @@
 .navbar .nav-link:focus {
   color: #f39c12 !important;
 }
+
+
+/* Sidebar background */
+.sidebar-navigation {
+  background-color: #ECF0F1 !important;
+}
