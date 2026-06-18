@@ -1,49 +1,49 @@
 [
   {
-    "objectID": "pages/resources.html",
-    "href": "pages/resources.html",
+    "objectID": "resources.html",
+    "href": "resources.html",
     "title": "Data Science in Geography: resource page",
     "section": "",
     "text": "There are multiple free resources online to help grow your ability to learn R for geographic analysis. Here’s a few."
   },
   {
-    "objectID": "pages/resources.html#learning-r",
-    "href": "pages/resources.html#learning-r",
+    "objectID": "resources.html#learning-r",
+    "href": "resources.html#learning-r",
     "title": "Data Science in Geography: resource page",
     "section": "Learning R",
     "text": "Learning R\n\nHands-On Programming with R: This online book by Garrett Grolemund starts from the very basics and is a good primer on how to get started in R and understand things like the difference between a vector and a list or what c(3, 5) means.\nR for the Rest of Us Only the introductory video lessons at this website are free, but you may find it useful as a place to start.\nTeacup Giraffes and Statistics: Whimsically themed website with lots of interactive exercises to get you started in R, both loading data and doing statistical analysis.\nSwirl: An R package that is designed to teach you R while using R."
   },
   {
-    "objectID": "pages/resources.html#r-for-research",
-    "href": "pages/resources.html#r-for-research",
+    "objectID": "resources.html#r-for-research",
+    "href": "resources.html#r-for-research",
     "title": "Data Science in Geography: resource page",
     "section": "R for research",
     "text": "R for research\n\nThe Big Book of R: It’s a book of books! This text gives you links to a bunch of online resources for using R in a variety of academic and computational contexts.\nR for Data Science: The main text by the authors of the tidyverse on how to use R for exploratory data analysis, data wrangling, and visualization. It assumes you know your basic way around R.\nAdvanced R: Hadley Wickham (the main author of the tidyverse) wrote this book to cover more advanced programming tasks in R.\nGeocomputation with R: Online, open source book by Lovelace et al. that provides detailed examples of how R can be used for geospatial analysis.\nRspatial.org: Another site providing both an overview of spatial functions in R and examples of applications. It has the most detail on analysis of raster data. Created by Robert Hijmans, who helped author the terra and raster packages.\nSpatial Data Science: This book by Pebesma and Bivand, hosted on the Rspatial site, is another more technical guide to doing spatial analysis using R. Pebesma is the main author for the sf package.\nIntroduction to Econometrics with R: This book provides a somewhat technical but useful walkthrough of everything from basic descriptive analysis through time series models and measuring causal effects.\nTidy Modeling with R: Max Kuhn and Julia Silghe walk through the tidymodels package, which provides tools for machine learning and other AI assisted modeling."
   },
   {
-    "objectID": "pages/resources.html#connecting-r-with-other-tools-and-data",
-    "href": "pages/resources.html#connecting-r-with-other-tools-and-data",
+    "objectID": "resources.html#connecting-r-with-other-tools-and-data",
+    "href": "resources.html#connecting-r-with-other-tools-and-data",
     "title": "Data Science in Geography: resource page",
     "section": "Connecting R with other tools and data",
     "text": "Connecting R with other tools and data\n\nESRI’s R-ArcGIS Bridge: This tool allows you to access, analyze, and edit feature datasets hosted on ArcGIS Online. It also allows you to use ArcGIS functions in R or to bring R functions into the ArcGIS toolbox.\nqgisprocess: This package allows you to access the functions in the QGIS Processing Toolbox for data stored in R. Several functions in QGIS are more efficient than the equivalent version in sf, so this can be useful.\nreticulate: Developed by Posit, the reticulate package allows you to create a virtual Python environment in R and transfer objects such as data frames between R and Python. This is useful if Python offers tools that are better suited to your analysis. The Positron application created by Posit offers a true Python environment, but lacks the ability to move objects back and forth. You instead save data in one environment and then load it in another."
   },
   {
-    "objectID": "pages/resources.html#data-visualization",
-    "href": "pages/resources.html#data-visualization",
+    "objectID": "resources.html#data-visualization",
+    "href": "resources.html#data-visualization",
     "title": "Data Science in Geography: resource page",
     "section": "Data visualization",
     "text": "Data visualization\n\nR Graphics Cookbook: This book by Winston Chang walks through a variety of examples of how to specify plots using ggplot.\nData Visualization: A Practical Introduction: Kieran Healy has lots of great material out there both on the practicals of data science but also the social science behind it. This is his book walking through data visualization in R."
   },
   {
-    "objectID": "pages/resources.html#youtube-rstats-people",
-    "href": "pages/resources.html#youtube-rstats-people",
+    "objectID": "resources.html#youtube-rstats-people",
+    "href": "resources.html#youtube-rstats-people",
     "title": "Data Science in Geography: resource page",
     "section": "YouTube R/stats people",
     "text": "YouTube R/stats people\n\nJulia Silge: Julia works for Posit and has been providing materials on how to use R effectively for awhile. There’s a lot here on doing modeling and machine learning in R.\nEquitable Equations on YouTube: This account has some helpful looking videos with slow and thorough walkthroughs of working in R with the tidyverse. This link goes to his “All about R” playlist.\nR Programming 101: Quick videos on getting started in R and doing statistical analysis. Plus he’s British!\nStatQuest with Josh Starmer: A platform neutral page that focuses more on the concepts of various statistical approaches. Good graphics!"
   },
   {
-    "objectID": "pages/resources.html#social-mediacommunities",
-    "href": "pages/resources.html#social-mediacommunities",
+    "objectID": "resources.html#social-mediacommunities",
+    "href": "resources.html#social-mediacommunities",
     "title": "Data Science in Geography: resource page",
     "section": "Social media/communities",
     "text": "Social media/communities\n\nR-Bloggers: Feed of R related articles that may be of interest.\nRLadies: What it sounds like. Online community of (primarily) women with local chapters around the world.\nTidyTuesday: Cross platform community that has a new data challenge every week."
