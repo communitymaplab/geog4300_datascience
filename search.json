@@ -53,7 +53,7 @@
     "href": "modules/m1_introduction.html",
     "title": "Module 1: Introduction to R",
     "section": "",
-    "text": "This module will provide an introduction to the R software and environment. You’ll learn how to navigate the RStudio interface, how to import datasets, and the various types of R “objects,” such as vectors, lists, and data frames.\n\nRelevant learning standards\n\n\nScripts\nRight-click/Command-click on the links below to save these links to your local folder for the course.\n\nS01: Introduction to R\nS02: Reading data and filtering\nS03: APIs and online data\n\n\n\nVideos\n\n\nLinks",
+    "text": "This module will provide an introduction to the R software and environment. You’ll learn how to navigate the RStudio interface, how to import datasets, and the various types of R “objects,” such as vectors, lists, and data frames.\n\nRelevant learning standards\n\n\nScripts\nRight-click/Command-click on the links below to save these links to your local folder for the course.\n\nS01: Introduction to R\nS02: Reading data and filtering\nS03: APIs and online data\n\n\n\nSlides for class\n\nScript 01: Data Science in Geography\n\n\n\nVideos\n\nR Programming for ABSOLUTE beginners (R Programming 101)\nRStudio Tutorial for Beginners (Maxime Rivest)\nIntroduction to R: Interace and Data Structures (MIT OpenCOurseWare/Helena Vallicrosa)\nGetting oriented in RStudio (Ben Stenhaug)–part of a playlist. A little dated but still relevant.\nSaving and reading data (Ben Stenhaug)\nThe 5 verbs of dplyr (Ben Stenhaug)\nUsing RStudio Projects (Equitable Equations)\nRStudio Projects (Susan B.)\nAPIOs Explained (CertBros)\nHow to GET data from an API using R in RStudio (Dean Chereden)",
     "crumbs": [
       "Home",
       "Module 1-Introduction to R"
