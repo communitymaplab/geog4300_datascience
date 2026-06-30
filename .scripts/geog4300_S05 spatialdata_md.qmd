@@ -5,6 +5,9 @@ output:
 editor_options: 
   chunk_output_type: console
 ---
+
+# May need to shorten...
+
 ### Loading and manipulating spatial data
 
 There are several packages available to create and edit spatial data in R. This includes both raster and vector data. This script focuses on the latter. The sf (stands for "simple features") package is one efficient way to load vector data. Other popular packages for spatial data are raster, terra, and stars.

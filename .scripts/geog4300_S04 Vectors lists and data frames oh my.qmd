@@ -1,0 +1,8 @@
+---
+title: "Geog4/6300: Vectors, Lists, and Data frames, oh my!"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+TBD: Script that wwalks through different types of R objects
