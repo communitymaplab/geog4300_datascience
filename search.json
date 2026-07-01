@@ -11,7 +11,7 @@
     "href": "resources.html#learning-r",
     "title": "Data Science in Geography: resource page",
     "section": "Learning R",
-    "text": "Learning R\n\nHands-On Programming with R: This online book by Garrett Grolemund starts from the very basics and is a good primer on how to get started in R and understand things like the difference between a vector and a list or what c(3, 5) means.\nR for the Rest of Us Only the introductory video lessons at this website are free, but you may find it useful as a place to start.\nTeacup Giraffes and Statistics: Whimsically themed website with lots of interactive exercises to get you started in R, both loading data and doing statistical analysis.\nSwirl: An R package that is designed to teach you R while using R."
+    "text": "Learning R\n\nHands-On Programming with R: This online book by Garrett Grolemund starts from the very basics and is a good primer on how to get started in R and understand things like the difference between a vector and a list or what c(3, 5) means.\nR for the Rest of Us Only the introductory video lessons at this website are free, but you may find it useful as a place to start.\nLearning Statistics with R Good overview of getting started in R and doing statistical analysis.\nTeacup Giraffes and Statistics: Whimsically themed website with lots of interactive exercises to get you started in R, both loading data and doing statistical analysis.\nSwirl: An R package that is designed to teach you R while using R.\nTidyverse Workflow: From its creators. It walks through the different packages/functions within the tidyverse."
   },
   {
     "objectID": "resources.html#r-for-research",
@@ -53,7 +53,7 @@
     "href": "modules/m1_introduction.html",
     "title": "Module 1: Introduction to R",
     "section": "",
-    "text": "This module will provide an introduction to the R software and environment. You’ll learn how to navigate the RStudio interface, how to import datasets, and the various types of R “objects,” such as vectors, lists, and data frames.\n\nRelevant learning standards\n\n\nScripts\nRight-click/Command-click on the links below to save these links to your local folder for the course.\n\nS01: Introduction to R\nS02: Reading data and filtering\nS03: APIs and online data\n\n\n\nSlides for class\n\nScript 01: Data Science in Geography\n\n\n\nVideos\n\nR Programming for ABSOLUTE beginners (R Programming 101)\nRStudio Tutorial for Beginners (Maxime Rivest)\nIntroduction to R: Interace and Data Structures (MIT OpenCOurseWare/Helena Vallicrosa)\nGetting oriented in RStudio (Ben Stenhaug)–part of a playlist. A little dated but still relevant.\nSaving and reading data (Ben Stenhaug)\nThe 5 verbs of dplyr (Ben Stenhaug)\nUsing RStudio Projects (Equitable Equations)\nRStudio Projects (Susan B.)\nAPIOs Explained (CertBros)\nHow to GET data from an API using R in RStudio (Dean Chereden)",
+    "text": "This module will provide an introduction to the R software and environment. You’ll learn how to navigate the RStudio interface, how to import datasets, and the various types of R “objects,” such as vectors, lists, and data frames.\n\nRelevant learning standards\n\nLoad tabular and spatial data into a code-based environment from multiple sources, including local files, remote APIs, and spatial file formats.\nRecognize and be able to manipulate multiple data object types (vectors, data frames, or lists).\nDevelop abilities to appropriately load a variety of spatial and non-spatial data formats.\nEffectively navigate the R and RStudio interface.\n\n\n\nScripts\nRight-click/Command-click on the links below to save these links to your local folder for the course.\n\nS01: Introduction to R\nS02: Reading data and filtering\nS03: APIs and online data\n\n\n\nSlides for class\n\nLecture 1: Data Science in Geography\n\n\n\nReadings\n\nHands-On Programming with R: Chaps 2 & 3\nTidyverse Workflow: Chaps 3 and 5\n\n\n\nVideos\n\nR Programming for ABSOLUTE beginners (R Programming 101)\nRStudio Tutorial for Beginners (Maxime Rivest)\nIntroduction to R: Interace and Data Structures (MIT OpenCOurseWare/Helena Vallicrosa)\nGetting oriented in RStudio (Ben Stenhaug)–part of a playlist. A little dated but still relevant.\nSaving and reading data (Ben Stenhaug)\nThe 5 verbs of dplyr (Ben Stenhaug)\nUsing RStudio Projects (Equitable Equations)\nRStudio Projects (Susan B.)\nAPIOs Explained (CertBros)\nHow to GET data from an API using R in RStudio (Dean Chereden)",
     "crumbs": [
       "Home",
       "Module 1-Introduction to R"
@@ -80,9 +80,9 @@
   {
     "objectID": "modules/m2_datastructure.html",
     "href": "modules/m2_datastructure.html",
-    "title": "m2_datastructure",
+    "title": "Data structure and formats",
     "section": "",
-    "text": "Relevant learning standards\n\n\nScripts\n\n\nVideos\n\n\nLinks",
+    "text": "Relevant learning standards\n\nClassify variables by measurement type (nominal, ordinal, interval, ratio) and justify those classifications with reference to the characteristics of the data. (Lab 1)\nDistinguish between vector and raster formats with spatial data.\n\n\n\nScripts\n\nS04: Vectors, lists, and data frames, oh my!\nS05: Loading and using spatial data\n\n\n\nReadings\n\nLevels of Measurement (LibreTexts)\nR for Psychological Science: Chapter 13, R data types\nGeospatial Data Types (Geoapify)\nGeocomputation with R, Chap. 2: Geographic Data in R\n\n\n\nSlides for class\nNone yet!\n\n\nVideos\n\nNominal, Ordinal, Interval, and Ratio Data (Grad Coach)\nVectors, data frames, and lists (Ben Stenhaug)\nVector vs Raster Data in GIS (Felt)\nVector vs Raster Data - GIS Explained (Mr Cognito)\nTBD on Simple features",
     "crumbs": [
       "Home",
       "Module 2-Data Structure and Formats"
