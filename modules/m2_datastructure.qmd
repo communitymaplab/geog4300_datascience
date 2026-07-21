@@ -18,7 +18,10 @@ format: html
 * [Geocomputation with R](https://r.geocompx.org/spatial-class), Chap. 2: Geographic Data in R
 
 # Slides for class
-*None yet!*
+* [L02-Working with data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L02-Working-with-data.pptx)
+* [L03-Gitting started](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L03-Gitting-started.pptx)
+* [L04-Reading data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L04-readingdata.pptx)
+* [L05-Vectors and rasters](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L05_vector-raster.pptx)
 
 # Videos
 * [Nominal, Ordinal, Interval, and Ratio Data (Grad Coach)](https://www.youtube.com/watch?v=5Yh-9xdJzAs)
