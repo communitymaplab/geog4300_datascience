@@ -13,10 +13,10 @@ This course is NOT a GIS class, but we will cover how to load and work with spat
 # Where to find things
 
 * The [course syllabus](https://docs.google.com/document/d/1C1GHXTsvwvRl92LuJcXnIIgqvD3WQ9tmZ1REM0LTE_I/edit?usp=drive_link){target="_blank"} and [schedule](https://docs.google.com/spreadsheets/d/1kkK6xVx-wwIya_0yzGHPzkEqEGFJWAxO41vaOcfqs4Y/edit?usp=drive_link){target="_blank"} are both hosted on Google Drive. Click the links to find those. 
-* The main content of the course is broken into modules, and this site will provide a page with resources relevant to each of them. This includes links to relevant scripts and datasets used in class. These are also available on the Github repository linked to this site. Click the Github link in the top menu bar for another way to find those.
+* The main content of the course is broken into [modules](modules/index.qmd), and this site will provide a page with resources relevant to each of them. This includes links to relevant scripts and datasets used in class. These are also available on the Github repository linked to this site. Click the Github link in the top menu bar for another way to find those.
 * For lab assignments, we are using [Github Classroom](https://classroom.github.com/){target="_blank"}. This systems allows you to easily "fork" the lab--creating your own copy--and then submit once you are finished. Click on the Labs link in the top menu bar to see links to each assignment. 
 * [ELC](https://elc.uga.edu){target="_blank"} will be the place to go for recordings of our class sessions as well as things related to assessment.
-* The [Resources](pages/resources.qmd) page of this site has multiple online guides to help support your work and learning.
+* The [Resources](resources.qmd) page of this site has multiple online guides to help support your work and learning.
 
 # Preparing for the course
 As we get started in the class, you should have done the following:

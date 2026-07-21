@@ -6,14 +6,37 @@ format: html
 This module will provide an introduction to the R software and environment. You'll learn how to navigate the RStudio interface, how to import datasets, and the various types of R "objects," such as vectors, lists, and data frames.
 
 # Relevant learning standards
+3. Load tabular and spatial data into a code-based environment from multiple sources, including local files, remote APIs, and spatial file formats. 
+27. Recognize and be able to manipulate multiple data object types (vectors, data frames, or lists).
+28. Develop abilities to appropriately load a variety of spatial and non-spatial data formats. 
+29. Effectively navigate the R and RStudio interface.
 
 # Scripts
 Right-click/Command-click on the links below to save these links to your local folder for the course.
 
-* S01: Introduction to R
-* S02: Reading data and filtering
-* S03: APIs and online data
+* [S01: Introduction to R](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S01%20Into%20to%20R.R){target="_blank"}
+* [S02: Reading data and filtering](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S02%20Reading%20data%20filter.R){target="_blank"}
+* [S03: APIs and online data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S03%20APIs%20and%20online%20data.qmd){target="_blank"}
+
+# Slides for class
+
+* [Lecture 1: Data Science in Geography](https://www.dropbox.com/scl/fi/hx6wlm80hhlqjizsorf5i/geog4300_W00-1-Data-Science-in-Geography.pptx?rlkey=agenvjcaepbvq3khuprtopzhc&dl=0){target="_blank"}
+
+# Readings
+
+* [Hands-On Programming with R](https://rstudio-education.github.io/hopr/basics.html): Chaps 2 & 3
+* [Tidyverse Workflow](https://rguides.dev/tutorials/tidyverse-workflow/): Chaps 3 and 5
 
 # Videos
 
-# Links
+* [R Programming for ABSOLUTE beginners (R Programming 101)](https://www.youtube.com/watch?v=FY8BISK5DpM){target="_blank"}
+* [RStudio Tutorial for Beginners (Maxime Rivest)](https://www.youtube.com/watch?v=BvKETZ6kr9Q){target="_blank"}
+* [Introduction to R: Interace and Data Structures (MIT OpenCOurseWare/Helena Vallicrosa)](https://www.youtube.com/watch?v=7fYgr1qUdnU){target="_blank"}
+* [Getting oriented in RStudio (Ben Stenhaug)](https://www.youtube.com/watch?v=lTTJPRwnONE&list=PLLxj8fULvXwGOf8uHlL4Tr62oXSB5k_in){target="_blank"}--part of a playlist. A little dated but still relevant.
+* [Saving and reading data (Ben Stenhaug)](https://www.youtube.com/watch?v=Y3Nzz6WEl_E&list=PLLxj8fULvXwGOf8uHlL4Tr62oXSB5k_in&index=6){target="_blank"}
+* [The 5 verbs of dplyr (Ben Stenhaug)](https://www.youtube.com/watch?v=sVISY_27znA){target="_blank"}
+* [Using RStudio Projects (Equitable Equations)](https://www.youtube.com/watch?v=MdTtTN8PUqU){target="_blank"}
+* [RStudio Projects (Susan B.)](https://www.youtube.com/watch?v=1kzsAvsLQCE){target="_blank"}
+* [APIs Explained (CertBros)](https://www.youtube.com/watch?v=ZveW4_ZJtVY){target="_blank"}
+* [How to GET data from an API using R in RStudio (Dean Chereden)](https://www.youtube.com/watch?v=AhZ42vSmDmE){target="_blank"}
+

@@ -1,12 +1,28 @@
 ---
-title: "m2_datastructure"
+title: "Data structure and formats"
 format: html
 ---
 
 # Relevant learning standards
+1. Classify variables by measurement type (nominal, ordinal, interval, ratio) and justify those classifications with reference to the characteristics of the data. (Lab 1)
+2. Distinguish between vector and raster formats with spatial data.
 
 # Scripts
+* [S04: Vectors, lists, and data frames, oh my!](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S04%20Vectors%20lists%20and%20data%20frames%20oh%20my.qmd)
+* [S05: Loading and using spatial data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S05%20spatialdata_md.qmd)
+
+# Readings
+* [Levels of Measurement (LibreTexts)](https://stats.libretexts.org/Workbench/Statistics_for_Behavioral_Science_Majors/01%3A_Naming_Collecting_Data_and_Research_Design/1.04%3A_Levels_of_Measurement)
+* [R for Psychological Science](https://rstudio-education.github.io/hopr/r-objects.html): Chapter 13, R data types
+* [Geospatial Data Types (Geoapify)](https://www.geoapify.com/different-geospatial-data-types/)
+* [Geocomputation with R](https://r.geocompx.org/spatial-class), Chap. 2: Geographic Data in R
+
+# Slides for class
+*None yet!*
 
 # Videos
-
-# Links
+* [Nominal, Ordinal, Interval, and Ratio Data (Grad Coach)](https://www.youtube.com/watch?v=5Yh-9xdJzAs)
+* [Vectors, data frames, and lists (Ben Stenhaug)](https://www.youtube.com/watch?v=XHAm_V-KZE8)
+* [Vector vs Raster Data in GIS (Felt)](https://www.youtube.com/watch?v=N-3zF10LbHg)
+* [Vector vs Raster Data - GIS Explained (Mr Cognito)](https://www.youtube.com/watch?v=3DVgQFALxCo)
+* TBD on Simple features

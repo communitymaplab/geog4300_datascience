@@ -10,14 +10,27 @@ website:
         text: Home
       - href: modules/index.qmd
         text: Course modules
-      - href: pages/resources.qmd
+      - href: resources.qmd
         text: Resources
 
     right:
       - icon: github
         href: https://github.com/communitymaplab/geog4300_datascience
         aria-label: GitHub
-      
+
+  sidebar:
+    - id: modules-sidebar
+      title: "Course Modules"
+      style: docked
+      search: true
+      contents:
+        - href: modules/index.qmd
+          text: Module overview
+        - href: modules/m1_introduction.qmd
+          text: Module 1-Introduction to R
+        - href: modules/m2_datastructure.qmd
+          text: Module 2-Data Structure and Formats
+
 format:
   html:
     theme:
