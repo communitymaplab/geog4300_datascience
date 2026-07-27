@@ -1,0 +1,33 @@
+---
+title: "Module 4: Data visualization and descriptive stats"
+format: html
+---
+
+::: {.callout-note}
+## Relevant Learning Standards
+
+10. Create effective data visualizations across multiple chart types (line, scatter, histogram, Q-Q plot), applying appropriate aesthetic choices such as color, grouping, and labeling. (Labs 1, 3, 4, 5)
+11. Produce and interpret confidence interval plots that enable visual comparison of means and uncertainty across groups or time periods. (Lab 3)
+12. Visualize spatial data using appropriate mapping tools, selecting suitable classification schemes and cartographic elements to support clear communication. (Labs 2, 3, 4, 6)
+13. Arrange and present tabular results in a readable format appropriate for a technical document or report. (Labs 1, 2, 3, 4, 5)
+:::
+
+# Scripts
+* [S09: Visualizing census data using ggplot]()
+* [S10: Visualizing distribution]()
+* [S11: Visualizing spatial data]()
+
+# Readings
+* [Chapter 3 of Data visualization: A Practical Introduction](https://socviz.co/03-ggplot-basics.html) by Kieran Healy
+* [R Graphics Cookbook](https://r-graphics.org/){target="_blank"}: Really this whole book is relevant--find what interests you!
+* [Chapter 9 of Geocomputation with R](https://r.geocompx.org/adv-map). Be aware that tmap v.4 has significant changes over v.3, so you may need to adapt some things from this text.
+
+# Slides for class
+*None yet!*
+
+# Videos
+* [Exploratory Data Analysis](https://www.youtube.com/watch?v=QiqZliDXCCg) by IBM Technology
+* [Describe and Summarise your data](https://www.youtube.com/watch?v=M5LDAE8mGKo) by R Programming 101
+* [ggplot2 explained in 5 minutes!](https://www.youtube.com/watch?v=FdVy57oGJuc) by R for Ecology
+* [Data visualization with R in 36 minutes](https://www.youtube.com/watch?v=McL9MMwmIZY) by Equitable Equations
+* [Introduction to TMap](https://www.youtube.com/watch?v=4L9jlPUYdxY) by GeoProgramming (again, this uses v3 syntax, so some adaptation may be needed)

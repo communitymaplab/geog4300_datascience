@@ -1,0 +1,31 @@
+---
+title: "Module 3: Data wrangling"
+format: html
+---
+
+::: {.callout-note}
+## Relevant Learning Standards
+
+6. Filter, aggregate, and transform datasets using grouping and summary operations to answer specific analytical questions. (Labs 0, 1, 2, 3)
+7. Join multiple datasets using appropriate join strategies and explain how different join types affect the resulting output. (Labs 0, 2, 3)
+8. Reshape data between wide and long formats to meet the requirements of different analytical or visualization tasks. (Labs 1, 3)
+9. Derive new variables from existing ones through calculated transformations, including unit conversions, differences across time periods, and categorical dummy variables. (Labs 2, 3)
+:::
+
+# Scripts
+* [S06: Pivoting wide and long]()
+* [S07: Separate, United, and Paste]()
+* [S08: Functional programming]()
+
+# Readings
+* [Chapter 3: Data transformation](https://r4ds.hadley.nz/data-transform.html) from R for Data Science
+* [Managing Data frames with the `dplyr` package](https://bookdown.org/rdpeng/exdata/managing-data-frames-with-the-dplyr-package.html) from Exploratory Data Analysis with R by Roger Peng
+* [Chapters 9 through 12](https://mgimond.github.io/ES218/dplyr.html) of Exploratory Data Analysis in R by Manny Gimond
+
+# Slides for class
+* [L06: Descriptive statistics and Exploratory Data Analysis]()
+
+# Videos
+* [Data wranglign with R in 27 minutes](https://www.youtube.com/watch?v=oXImkptBpqc) by Equitable Equations
+* [Manipulate your data. Data wrangling. R programmning for beginners.](https://www.youtube.com/watch?v=kg9Kgvv9-0g) by R Programming 101
+* [Dplyr Essentials (easy data manipulation in R)](https://www.youtube.com/watch?v=Gvhkp-Yw65U) by Dataslice
