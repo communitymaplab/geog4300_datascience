@@ -1,5 +1,5 @@
 ---
-title: "Module 3: Exploratory data analysis with spatial data"
+title: "Module 5: Exploratory data analysis with spatial data"
 format: html
 ---
 

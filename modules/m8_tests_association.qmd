@@ -1,0 +1,59 @@
+---
+title: "Module 8: Tests of association"
+format: html
+---
+
+::: {.callout-note}
+## Relevant Learning Standards
+
+23. Conduct correlation analysis across multiple variable pairs and evaluate results with respect to direction, magnitude, and significance, including changes in correlation structure across time periods or subgroups. 
+24. Build and interpret univariate and multivariate OLS regression models, explaining the role of each coefficient and evaluating overall model fit. 
+25. Diagnose regression model assumptions by assessing residuals for normality, spatial autocorrelation, heteroskedasticity, and multicollinearity, and explain the implications of any violations for model interpretation. 
+
+:::
+
+## Course materials { .module-section }
+
+### Scripts
+* [S20: Correlation]()
+* [S21: Univariate regression]()
+* [S22: Multivariate regression]()
+
+### Slides for class
+* [L13: Correlation and writing about numbers]()
+* [L14: Univariate regression]()
+* [L15: Multivariate regression and test review]()
+
+## Additional Resources {.module-section}
+
+### Readings
+* [Chapter 12, Correlations](https://lmu.pressbooks.pub/critresearchmethodspsych/chapter/t-tests/){target="_blank"} by Makenzie O'Neil in *Critical Research Methods in Psychology*
+* [Chapter 15 Linear Regression](https://learningstatisticswithr.com/15-regression.html){target="_blank"} in *Learning Statistics with R*.
+* [Chapters 6.2 and 6.3 on correlation and linear modeling](https://intro2r.com/correlation.html){target="_blank"} in *An Introduction to R*
+* [Random Forests in R — Build, Tune, and Interpret](https://rguides.dev/tutorials/r-machine-learning/r-random-forest/) in *rguides*
+
+### Videos
+- **By Numiqo:**
+    - [Learn Correlation Analysis Fast](https://www.youtube.com/watch?v=WM0Rz7JB8Jw&list=PL-p9JpwN5NNGRf0nnrjvG0NtoHpOCTEp1){target="_blank"}-Part of a playlist
+    - [Regression Analysis: An Easy and Clear Beginner's Guide](https://www.youtube.com/watch?v=-JTKf-a1JpU&list=PL-p9JpwN5NNF88u_1TyXjdPZl8GxLog-M){target="_blank"}-includes linear and logistric regression. Highlighted videos below
+        - [Simple Linear Regression](https://www.youtube.com/watch?v=gPfgB4ew3RY&list=PL-p9JpwN5NNF88u_1TyXjdPZl8GxLog-M&index=3){target="_blank"}
+        - [Multiple Linear Regression](https://www.youtube.com/watch?v=i3IadpjctWg&list=PL-p9JpwN5NNF88u_1TyXjdPZl8GxLog-M&index=4){target="_blank"}
+
+- **By R Programming 101**
+    - [Simple Linear Regression](https://www.youtube.com/watch?v=FDIR60avpaY&list=PLtL57Fdbwb_BUj8Z4mW3Ag1O5kWQoy-4j){target="_blank"} (part of a playlist)
+    - [Adding variables to your multiple regression model](https://www.youtube.com/watch?v=EqP_DupX3-c){target="_blank"}
+    - [Multiple regression. How to deal with outliers and colliniarity](https://www.youtube.com/watch?v=6rNSR6flFcg){target="_blank"}
+    - [Multiple regression - making sure that your assumptions are met](https://www.youtube.com/watch?v=1lwvNLDSu0s){target="_blank"}
+
+- **By Equitable Equations**
+    - [Correlation testing in R](https://www.youtube.com/watch?v=NQYtY9ckKWw){target="_blank"}
+    - [Simple linear regression in R](https://www.youtube.com/watch?v=xcZib3qAc30){target="_blank"}
+    - [Not-so-simple linear regression with R](https://www.youtube.com/watch?v=4wS3n54Kon0){target="_blank"}-uses the `tidymodels` package to do a little predictive modeling. Also a deeper walkthrough on diagnostic plots and model diagnostic from the `broom` package.
+    - [Multiple linear regression in R](https://www.youtube.com/watch?v=2Pp6Bd5kb08){target="_blank"}
+
+- **Others**
+    - [Visualization of correlation matrix in R using ggcorrplot](https://www.youtube.com/watch?v=E3De2A73ako){target="_blank"} by Abhinav Agrawal
+    - [How to create correlation plots in R](https://www.youtube.com/watch?v=X12BoYpIjyw){target="_blank"} by The Data Digest
+    - [Random Forests Part 1 - Building, Using and Evaluating](https://www.youtube.com/watch?v=J4Wdy0Wc_xQ){target="_blank"} by StatQuest
+    - [Visual Guide to Random Forests](https://www.youtube.com/watch?v=cIbj0WuK41w){target="_blank"} by Econoscent
+    - [Random Forest in R](https://www.youtube.com/watch?v=HeTT73WxKIc){target="_blank"} by Simplilearn

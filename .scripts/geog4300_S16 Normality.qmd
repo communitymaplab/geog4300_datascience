@@ -1,0 +1,68 @@
+---
+title: "Geog6300: Three tests of normality"
+output: html_notebook
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+```
+
+This script covers three ways to assess the normality of a dataset. First, let's create two sample distributions. The first two are "beta" distribution, where the first is negatively skewed and the second is positively skewed. The third is a normal distribution.
+
+```{r}
+test1<-data.frame(var1=rbeta(5000,7,2))
+test2<-data.frame(var2=rbeta(5000,1,5))
+test3<-data.frame(var3=rnorm(5000,0,1))
+```
+
+Histograms show this difference pretty clearly.
+
+```{r}
+ggplot(test1,aes(x=var1)) + 
+  geom_histogram()
+
+ggplot(test2,aes(x=var2)) + 
+  geom_histogram()
+
+ggplot(test3,aes(x=var3)) + 
+  geom_histogram()
+
+```
+
+We can also use a qqplot to assess normality. The "qq line" shows what this plot would look like if the distribution is normal.
+
+```{r}
+ggplot(test1,aes(sample=var1)) +
+  stat_qq()+
+  stat_qq_line()
+
+ggplot(test2,aes(sample=var2)) +
+  stat_qq()+
+  stat_qq_line()
+
+ggplot(test3,aes(sample=var3)) +
+  stat_qq()+
+  stat_qq_line()
+
+```
+
+The Shapiro-Wilk test is a more rigorous way to assess the normality of your data. The null hypothesis is that the data ARE normal, so a low p value indicates that the dataset is skewed/not normal.
+
+```{r}
+shapiro.test(test1$var1) 
+shapiro.test(test2$var2) 
+shapiro.test(test3$var3) 
+```
+
+### You try it!
+Go back to our census data (ACSCtyData_2022_ACS). What's the most normal variable you can find?
+
+```{r}
+acsdata<-read_csv("data/ACSCtyData_2022ACS.csv")
+
+
+```
+

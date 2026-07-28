@@ -1,0 +1,44 @@
+---
+title: "Module 8: Tests of association"
+format: html
+---
+
+::: {.callout-note}
+## Relevant Learning Standards
+
+21. Apply two-sample tests of difference and accurately interpret results in terms of hypothesis testing, statistical significance, and the direction and magnitude of any differences. 
+22. Construct contingency tables and apply chi-square tests to assess association between categorical variables, interpreting results in terms of significance and practical meaning. 
+:::
+
+# Scripts
+* [S17: Two sample tests]()
+* [S18: Chi square tests]()
+* [S19: ANOVA and post hoc tests]()
+
+# Slides for class
+* [L11: Two sample tests and chi square]()
+* [L12: Chi-square tests and ANOVA]()
+
+# Readings
+* [Chapter 35, T-Tests](https://lmu.pressbooks.pub/critresearchmethodspsych/chapter/t-tests/){target="_blank"} by Stephanie D'Costa in *Critical Research Methods in Psychology*
+* [Chapter 13 and 14 on t-tests and ANOVA](https://learningstatisticswithr.com/13-ttest.html){target="_blank"} in *Learning Statistics with R*.
+* [Chapter 6.1 One and Two Sample Tests](https://intro2r.com/one-and-two-sample-tests.html){target="_blank"} in *An Introduction to R*
+* [Chi-Square Test in R](https://www.geeksforgeeks.org/r-language/chi-square-test-in-r/){target="_blank"} in *Geeks for Geeks*
+* [Chapter 5 The Chi-Square Test](https://sarahkaspar.github.io/categorical-data/05-chisquare-test.html){target="_blank"} in *Analyzing Categorical Data in R* by Sarah Kaspar
+* [ANOVA](https://statisticsfundamentals.com/hypothesis-testing/anova/){target="_blank"} in *Statistics Fundamentals*
+
+# Videos
+**By Numiqo:**
+* [t-Test Explained Simply](https://www.youtube.com/watch?v=a9liXroJyPg){target="_blank"}
+* [Chi2 test - easily explained with an example](https://www.youtube.com/watch?v=EjtXk-yEK6w){target="_blank"}
+* [One-Way ANOVA easily explained](https://www.youtube.com/watch?v=mOdYddj5IG8){target="_blank"}
+
+**By R Programming 101**
+* [Doing a t-test using R programming (in 4 minutes)](https://www.youtube.com/watch?v=x1RFWHV2VUU){target="_blank"}
+* [Chi Squared Test with R](https://www.youtube.com/watch?v=ymvEMHSr0WE){target="_blank"}
+* [ANOVA Explained: Master Dtaa Analysis with R](https://www.youtube.com/watch?v=QBF_Us1Liq8){target="_blank"}--includes section on post-hoc testing with `TukeyHSD`
+
+**By Equitable Equations**
+* [Two sample t-tests in R](https://www.youtube.com/watch?v=5f7S1Jx6WyE){target="_blank"}
+* [Chi-Squared Goodness-of-Fit Testing in R](https://www.youtube.com/watch?v=n5c11B5FJ24){target="_blank"}
+* [ANOVA in R](https://www.youtube.com/watch?v=GokvYQiGdm0){target="_blank"}

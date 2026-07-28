@@ -1,0 +1,33 @@
+---
+title: "Module 6: Statistical inference and generalization"
+format: html
+---
+
+::: {.callout-note}
+## Relevant Learning Standards
+
+18. Explaining how evidence from a sample supports conclusions about a population while acknowledging sampling variability and uncertainty.
+19. Assess the normality of a variable using multiple diagnostic approaches and use those results to select between parametric and non-parametric statistical tests. 
+20. Construct and interpret confidence intervals, explaining how factors such as sample size and spatial scale affect the precision of an estimate.
+
+:::
+
+# Scripts
+* [S15: Confidence intervals]()
+* [S16: Normality]()
+
+# Readings
+* [Chap. 10, Estimating unknown quantities from a sample from *Learning Statistics with R*](https://learningstatisticswithr.com/10-estimation.html){target="_blank"} 
+* [Chapter 7, Hypotheses and p-values from *Introductory Biostatistics with R](https://tuos-bio-data-skills.github.io/intro-stats-book/hypotheses-and-p-values.html){target="_blank"} 
+* [Chap 29, 31, and 43 from *The Statistics Handbook*](https://r-statistics.co/How-Statistical-Inference-Works.html){target="_blank"} 
+
+# Slides for class
+* [L09: Central limit theorem and confidence intervals]()
+* [L10: Hypotheses and one sapmle tests]()
+
+# Videos
+* [The Central Limit Theorem, Clearly Explained!!!](https://www.youtube.com/watch?v=YAlJCEDH2uY){target="_blank"}  by StatQuest
+* [The Central Limit Theorem](https://www.youtube.com/watch?v=ivd8wEHnMCg){target="_blank"}  by Simple Learning Pro
+* [P-Values, Null Hypothesis, and Alternative Hypothesis in 3 Minutes](https://www.youtube.com/watch?v=tdj-hoivzHQ){target="_blank"}  by 3-Minute Data Science
+* [Confidence Interval [Simply explained]](https://www.youtube.com/watch?v=ENnlSlvQHO0){target="_blank"}  by numiqo
+* [Confidence Intervals in R](https://www.youtube.com/watch?v=Djxj0NXNmzg){target="_blank"}  by Equitable Equations

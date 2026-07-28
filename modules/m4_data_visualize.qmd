@@ -18,9 +18,10 @@ format: html
 * [S11: Visualizing spatial data]()
 
 # Readings
-* [Chapter 3 of Data visualization: A Practical Introduction](https://socviz.co/03-ggplot-basics.html) by Kieran Healy
+* [Chap 13, EDA in R in *The Statistics Handbook*](https://r-statistics.co/Exploratory-Data-Analysis-in-R.html){target="_blank"}
+* [Chapter 3 of Data visualization: A Practical Introduction](https://socviz.co/03-ggplot-basics.html){target="_blank"} by Kieran Healy
 * [R Graphics Cookbook](https://r-graphics.org/){target="_blank"}: Really this whole book is relevant--find what interests you!
-* [Chapter 9 of Geocomputation with R](https://r.geocompx.org/adv-map). Be aware that tmap v.4 has significant changes over v.3, so you may need to adapt some things from this text.
+* [Chapter 9 of Geocomputation with R](https://r.geocompx.org/adv-map){target="_blank"}. Be aware that tmap v.4 has significant changes over v.3, so you may need to adapt some things from this text.
 
 # Slides for class
 *None yet!*
