@@ -15,14 +15,14 @@ format: html
 ## Course materials { .module-section }
 
 ### Scripts
-* [S20: Correlation]()
-* [S21: Univariate regression]()
-* [S22: Multivariate regression]()
+* [S20: Correlation](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S20%20Correlation.qmd){target="_blank"}
+* [S21: Univariate regression](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S21%20Univariate%20regression.qmd){target="_blank"}
+* [S22: Multivariate regression](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S22%20Multivariate%20regression.qmd){target="_blank"}
 
 ### Slides for class
-* [L13: Correlation and writing about numbers]()
-* [L14: Univariate regression]()
-* [L15: Multivariate regression and test review]()
+* [L13: Correlation and writing about numbers](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L13%20Writing%20about%20numbers%20Correlation.pptx){target="_blank"}
+* [L14: Univariate regression](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L14%20Univariate%20regression.pptx){target="_blank"}
+* [L15: Multivariate regression and test review](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L15%20Test%20review;%20Multivariate%20regression.pptx){target="_blank"}
 
 ## Additional Resources {.module-section}
 

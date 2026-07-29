@@ -10,8 +10,11 @@ website:
         text: Home
       - href: modules/index.qmd
         text: Course modules
+      - href: course_data.qmd
+        text: Course data
       - href: resources.qmd
         text: Resources
+
 
     right:
       - icon: github
@@ -28,7 +31,7 @@ website:
           text: Module overview
         - href: modules/m1_introduction.qmd
           text: Module 1-Introduction to R
-        - href: modules/m2_datawrangling
+        - href: modules/m2_datastructure.qmd
           text: Module 2-Data Structure and Formats
         - href: modules/m3_datawrangling.qmd
           text: Module 3-Data wrangling

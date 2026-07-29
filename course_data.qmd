@@ -1,0 +1,44 @@
+---
+title: "Data Science in Geography: Data files"
+format: html
+page-layout: full
+editor: source
+project:
+  type: website
+  output-dir: docs
+---
+
+Below is a table showing the main datasets in the course. All of them are [available on Github](https://github.com/communitymaplab/geog4300_datascience){target="_blank"}, but you should also be able to right-click the link to download them locally.
+
+It's _**HIGHLY**_ recommended that you save these to a single folder for all your course materials in a folder called "data." Most course scripts reference the Github repository to load these datasets, but this makes them easy to find should you not have access to that repo.
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(readr)
+library(DT)
+
+library(dplyr)
+
+data <- read_csv(
+  "data/course_data_full.csv",
+  show_col_types = FALSE
+) %>%
+    select(-`File name`)
+
+datatable(
+  data,
+  rownames = FALSE,
+  class = "compact stripe hover",
+  escape=FALSE,
+  filter = "top",
+  options = list(
+    pageLength = 25,
+    autoWidth = TRUE,
+    scrollX = TRUE
+  )
+)
+```

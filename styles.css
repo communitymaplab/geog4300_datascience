@@ -24,12 +24,12 @@
 
 /* Module headings */
 h2.module-section {
-  color: #2C3E50;
-  font-size: 1.25em;      /* about 25% larger than the default */
-  font-weight: 700;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  padding-bottom: 0.2rem;
+  background: #2C3E50;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 /* Subheadings */

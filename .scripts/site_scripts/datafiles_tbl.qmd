@@ -3,65 +3,14 @@ title: "Course Datasets"
 format: html
 ---
 
-This page lists datasets available in the course repository.
-
-```{r}
-#| echo: false
-#| message: false
-
-library(tidyverse)
-library(fs)
-library(knitr)
-
-files <- dir_ls(
-  "data",
-  recurse = TRUE,
-  type = "file"
-)
-
-datasets <- tibble(
-  File = path_file(files),
-  Path = files
-) %>%
-  mutate(
-    Type = str_extract(File, "\\.[^.]+$") %>%
-      str_remove("\\.") %>%
-      str_to_upper()
-  )
-
-kable(
-  datasets,
-  col.names = c("Dataset", "Location", "Format")
-)
-```
-
-Create Github links:
+This page lists datasets available in the course repository. It also links them to scripts and labs
 
 
 ```{r}
-```r
-datasets <- tibble(
-  File = path_file(files),
-  Path = files
-) %>%
-  mutate(
-    URL = paste0(
-      "https://github.com/communitymaplab/geog4300_datascience/blob/main/",
-      Path
-    ),
-    Link = paste0("[", File, "](", URL, ")")
-  ) 
-```
-
-
-```{r}
-library(tidyverse)
-library(fs)
-library(stringr)
-
 #--------------------------------------------------
 # Find datasets
 #--------------------------------------------------
+ext_cut<-c("cpg","dbf","prj","shx","tfw","xml","html")
 
 data_files <- dir_ls(
   "data",
@@ -72,14 +21,37 @@ data_files <- dir_ls(
   mutate(
     file = path_file(path),
     ext = path_ext(file)
-  )
+  ) %>%
+  filter(!ext %in% ext_cut) %>%
+  mutate(
+    URL = paste0(
+      "https://github.com/communitymaplab/geog4300_datascience/blob/main/",
+      path
+    ),
+    Link = paste0("<a href='",
+        "https://github.com/communitymaplab/geog4300_datascience/blob/main/",path,
+        "'>",file,"</a>")
+  ) 
 
+write_csv(data_files,"data/course_data.csv")
+```
+
+Are all those data being used?
+
+```{r}
 #--------------------------------------------------
-# Find scripts
+# Find scripts and labs
 #--------------------------------------------------
 
 script_files <- dir_ls(
   ".scripts",
+  recurse = TRUE,
+  regexp = "\\.(R|qmd)$",
+  type = "file"
+)
+
+lab_files <- dir_ls(
+  "labs",
   recurse = TRUE,
   regexp = "\\.(R|qmd)$",
   type = "file"
@@ -137,26 +109,34 @@ extract_files <- function(script){
     select(script, line, filename)
 }
 
-usage <- map_dfr(script_files, extract_files) %>%
+script_usage <- map_dfr(script_files, extract_files) %>%
     mutate(filename=str_replace(filename,"https://github.com/jshannon75/geog4300/raw/refs/heads/master/data/",""),
             filename=str_replace(filename,"https://github.com/jshannon75/geog4300/raw/master/data/",""),
             filename=str_replace(filename,"data/",""))
 
+lab_usage<- map_dfr(lab_files, extract_files) %>%
+        mutate(filename=str_replace(filename,"https://github.com/jshannon75/geog4300/raw/refs/heads/master/data/",""),
+            filename=str_replace(filename,"https://raw.githubusercontent.com/tonmcg/US_County_Level_Election_Results_08-16/master/",""),
+            filename=str_replace(filename,"data/",""),
+            filename=str_replace(filename,"prep_data/",""),
+            filename=str_replace(filename,"setup/",""))
+
+usage<-bind_rows(script_usage,lab_usage)
 #--------------------------------------------------
 # Match to datasets
 #--------------------------------------------------
 
 dataset_usage <-
   usage |>
-  left_join(
-    data_files |> select(file, path),
+  full_join(
+    data_files |> select(file, ext, path),
     by = c("filename" = "file")
   ) |>
   separate(script,into=c("s_num","title"),sep=" ") |>
   select(-title) |>
   mutate(s_num=str_replace(s_num,"geog4300_","")) |>
   arrange(filename, s_num) |>
-  group_by(filename, path) |>
+  group_by(filename, ext, path) |>
   summarize(
     used_in = paste(sort(unique(s_num)), collapse = ", "),
     .groups = "drop"

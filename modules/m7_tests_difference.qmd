@@ -10,14 +10,19 @@ format: html
 22. Construct contingency tables and apply chi-square tests to assess association between categorical variables, interpreting results in terms of significance and practical meaning. 
 :::
 
+
+## Course materials { .module-section }
+
 # Scripts
-* [S17: Two sample tests]()
-* [S18: Chi square tests]()
-* [S19: ANOVA and post hoc tests]()
+* [S17: Two sample tests](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S17%20Two%20sample%20tests.qmd){target="_blank"}
+* [S18: Chi square tests](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S18%20Chi%20square%20tests.qmd){target="_blank"}
+* [S19: ANOVA and post hoc tests](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S19%20ANOVA%20Post%20hoc.qmd){target="_blank"}
 
 # Slides for class
-* [L11: Two sample tests and chi square]()
-* [L12: Chi-square tests and ANOVA]()
+* [L11: Two sample tests of difference](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L11%20two%20sample%20tests.pptx){target="_blank"}
+* [L12: Chi-square tests and ANOVA](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L12%20chi%20square%20and%20anova.pptx){target="_blank"}
+
+## Additional Resources {.module-section}
 
 # Readings
 * [Chapter 35, T-Tests](https://lmu.pressbooks.pub/critresearchmethodspsych/chapter/t-tests/){target="_blank"} by Stephanie D'Costa in *Critical Research Methods in Psychology*

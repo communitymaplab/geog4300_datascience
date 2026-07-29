@@ -12,18 +12,22 @@ format: html
 
 :::
 
+## Course materials { .module-section }
+
 # Scripts
-* [S15: Confidence intervals]()
-* [S16: Normality]()
+* [S15: Confidence intervals](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S15%20Confidence%20intervals.qmd){target="_blank"}
+* [S16: Normality](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S16%20Normality.qmd){target="_blank"}
+
+# Slides for class
+* [L09: Central limit theorem and confidence intervals](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L09%20Central%20limit%20theorem,%20CIs,%20Sampling.pptx){target="_blank"}
+* [L10: Hypotheses, one sample tests, and normality](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L10%20Hypotheses%20and%20one%20sample%20tests%20and%20normality.pptx){target="_blank"}
+
+## Additional Resources {.module-section}
 
 # Readings
 * [Chap. 10, Estimating unknown quantities from a sample from *Learning Statistics with R*](https://learningstatisticswithr.com/10-estimation.html){target="_blank"} 
 * [Chapter 7, Hypotheses and p-values from *Introductory Biostatistics with R](https://tuos-bio-data-skills.github.io/intro-stats-book/hypotheses-and-p-values.html){target="_blank"} 
 * [Chap 29, 31, and 43 from *The Statistics Handbook*](https://r-statistics.co/How-Statistical-Inference-Works.html){target="_blank"} 
-
-# Slides for class
-* [L09: Central limit theorem and confidence intervals]()
-* [L10: Hypotheses and one sapmle tests]()
 
 # Videos
 * [The Central Limit Theorem, Clearly Explained!!!](https://www.youtube.com/watch?v=YAlJCEDH2uY){target="_blank"}  by StatQuest

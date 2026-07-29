@@ -12,20 +12,24 @@ format: html
 9. Derive new variables from existing ones through calculated transformations, including unit conversions, differences across time periods, and categorical dummy variables. (Labs 2, 3)
 :::
 
-# Scripts
-* [S06: Pivoting wide and long]()
-* [S07: Separate, United, and Paste]()
-* [S08: Functional programming]()
+## Course materials { .module-section }
 
-# Readings
-* [Chapter 3: Data transformation](https://r4ds.hadley.nz/data-transform.html) from R for Data Science
-* [Managing Data frames with the `dplyr` package](https://bookdown.org/rdpeng/exdata/managing-data-frames-with-the-dplyr-package.html) from Exploratory Data Analysis with R by Roger Peng
-* [Chapters 9 through 12](https://mgimond.github.io/ES218/dplyr.html) of Exploratory Data Analysis in R by Manny Gimond
+# Scripts
+* [S06: Functional programming](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S06%20functional%20programming.qmd){target="_blank"}
+* [S07: Separate, United, and Paste](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S07%20separate%20unite%20paste.qmd){target="_blank"}
 
 # Slides for class
-* [L06: Descriptive statistics and Exploratory Data Analysis]()
+* [L06: Classification and descriptive statistics](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L06%20Classification%20and%20descriptive%20stats.pptx){target="_blank"}
+
+## Additional Resources {.module-section}
+
+# Readings
+* [Chapter 3: Data transformation](https://r4ds.hadley.nz/data-transform.html){target="_blank"} from R for Data Science
+* [Managing Data frames with the `dplyr` package](https://bookdown.org/rdpeng/exdata/managing-data-frames-with-the-dplyr-package.html){target="_blank"} from Exploratory Data Analysis with R by Roger Peng
+* [Chapters 9 through 12](https://mgimond.github.io/ES218/dplyr.html){target="_blank"} of Exploratory Data Analysis in R by Manny Gimond
+
 
 # Videos
-* [Data wranglign with R in 27 minutes](https://www.youtube.com/watch?v=oXImkptBpqc) by Equitable Equations
-* [Manipulate your data. Data wrangling. R programmning for beginners.](https://www.youtube.com/watch?v=kg9Kgvv9-0g) by R Programming 101
-* [Dplyr Essentials (easy data manipulation in R)](https://www.youtube.com/watch?v=Gvhkp-Yw65U) by Dataslice
+* [Data wranglign with R in 27 minutes](https://www.youtube.com/watch?v=oXImkptBpqc){target="_blank"} by Equitable Equations
+* [Manipulate your data. Data wrangling. R programmning for beginners.](https://www.youtube.com/watch?v=kg9Kgvv9-0g){target="_blank"} by R Programming 101
+* [Dplyr Essentials (easy data manipulation in R)](https://www.youtube.com/watch?v=Gvhkp-Yw65U){target="_blank"} by Dataslice
