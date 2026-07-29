@@ -51,7 +51,7 @@
   {
     "objectID": "modules/m7_tests_difference.html",
     "href": "modules/m7_tests_difference.html",
-    "title": "Module 8: Tests of association",
+    "title": "Module 7: Tests of difference",
     "section": "",
     "text": "NoteRelevant Learning Standards\n\n\n\n\nApply two-sample tests of difference and accurately interpret results in terms of hypothesis testing, statistical significance, and the direction and magnitude of any differences.\nConstruct contingency tables and apply chi-square tests to assess association between categorical variables, interpreting results in terms of significance and practical meaning.",
     "crumbs": [
@@ -62,7 +62,7 @@
   {
     "objectID": "modules/m7_tests_difference.html#course-materials",
     "href": "modules/m7_tests_difference.html#course-materials",
-    "title": "Module 8: Tests of association",
+    "title": "Module 7: Tests of difference",
     "section": "Course materials",
     "text": "Course materials",
     "crumbs": [
@@ -73,7 +73,7 @@
   {
     "objectID": "modules/m7_tests_difference.html#additional-resources",
     "href": "modules/m7_tests_difference.html#additional-resources",
-    "title": "Module 8: Tests of association",
+    "title": "Module 7: Tests of difference",
     "section": "Additional Resources",
     "text": "Additional Resources",
     "crumbs": [
@@ -208,9 +208,20 @@
   {
     "objectID": "modules/m2_datastructure.html",
     "href": "modules/m2_datastructure.html",
-    "title": "Data structure and formats",
+    "title": "Module 2: Data structure and formats",
     "section": "",
-    "text": "Classify variables by measurement type (nominal, ordinal, interval, ratio) and justify those classifications with reference to the characteristics of the data. (Lab 1)\nDistinguish between vector and raster formats with spatial data.",
+    "text": "NoteRelevant learning standards\n\n\n\n\nClassify variables by measurement type (nominal, ordinal, interval, ratio) and justify those classifications with reference to the characteristics of the data. (Lab 1)\nDistinguish between vector and raster formats with spatial data.",
+    "crumbs": [
+      "Home",
+      "Module 2-Data Structure and Formats"
+    ]
+  },
+  {
+    "objectID": "modules/m2_datastructure.html#course-materials",
+    "href": "modules/m2_datastructure.html#course-materials",
+    "title": "Module 2: Data structure and formats",
+    "section": "Course materials",
+    "text": "Course materials",
     "crumbs": [
       "Home",
       "Module 2-Data Structure and Formats"
@@ -219,7 +230,7 @@
   {
     "objectID": "modules/m2_datastructure.html#additional-resources",
     "href": "modules/m2_datastructure.html#additional-resources",
-    "title": "Data structure and formats",
+    "title": "Module 2: Data structure and formats",
     "section": "Additional Resources",
     "text": "Additional Resources",
     "crumbs": [
