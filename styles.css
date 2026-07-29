@@ -21,3 +21,22 @@
 .sidebar-navigation {
   background-color: #ECF0F1 !important;
 }
+
+/* Module headings */
+h2.module-section {
+  background: #2C3E50;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Subheadings */
+h3 {
+  color: #555;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin-top: 1.1rem;
+  margin-bottom: 0.3rem;
+}
