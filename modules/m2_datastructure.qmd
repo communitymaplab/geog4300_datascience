@@ -3,34 +3,47 @@ title: "Data structure and formats"
 format: html
 ---
 
+::: {.callout-note}
 # Relevant learning standards
 1. Classify variables by measurement type (nominal, ordinal, interval, ratio) and justify those classifications with reference to the characteristics of the data. (Lab 1)
 2. Distinguish between vector and raster formats with spatial data.
+:::
 
-## Course materials { .module-section }
 
-# Scripts
+::: {.required-actions}
+# Required on day 1 
+
+## Videos
+- [Nominal, Ordinal, Interval, and Ratio Data (Grad Coach)](https://www.youtube.com/watch?v=5Yh-9xdJzAs){target="_blank"}
+- [Data types in R programming](https://www.youtube.com/watch?v=VtUVQWl0aRA&t){target="_blank"} by R Programming 101
+- [Vector vs Raster Data in GIS (Felt)](https://www.youtube.com/watch?v=N-3zF10LbHg){target="_blank"}
+
+
+## Readings
+- [Levels of Measurement (LibreTexts)](https://stats.libretexts.org/Workbench/Statistics_for_Behavioral_Science_Majors/01%3A_Naming_Collecting_Data_and_Research_Design/1.04%3A_Levels_of_Measurement){target="_blank"}
+- [Types of Objects in R](https://dshizuka.github.io/RCourse/02_ObjectTypes.html#5_Lists){target="_blank"} by Dai Shizuka, *Intro to R*
+::: 
+
+# Course materials { .module-section }
+
+## Scripts
 * [S04: Vectors, lists, and data frames, oh my!](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S04%20Vectors%20lists%20and%20data%20frames%20oh%20my.qmd){target="_blank"}
 * [S05: Loading and using spatial data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S05%20spatialdata_md.qmd){target="_blank"}
 
-# Slides for class
+## Slides for class
 * [L02-Working with data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L02-Working-with-data.pptx){target="_blank"}
 * [L03-Gitting started](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L03-Gitting-started.pptx){target="_blank"}
 * [L04-Reading data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L04-readingdata.pptx){target="_blank"}
 * [L05-Vectors and rasters](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L05_vector-raster.pptx){target="_blank"}
 
-## Additional Resources {.module-section}
+# Additional Resources {.module-section}
 
-# Readings
-* [Levels of Measurement (LibreTexts)](https://stats.libretexts.org/Workbench/Statistics_for_Behavioral_Science_Majors/01%3A_Naming_Collecting_Data_and_Research_Design/1.04%3A_Levels_of_Measurement){target="_blank"}
-* [R for Psychological Science](https://rstudio-education.github.io/hopr/r-objects.html){target="_blank"}: Chapter 13, R data types
-* [Geospatial Data Types (Geoapify)](https://www.geoapify.com/different-geospatial-data-types/){target="_blank"}
-* [Geocomputation with R](https://r.geocompx.org/spatial-class){target="_blank"}, Chap. 2: Geographic Data in R
+## Readings
+- [Geospatial Data Types (Geoapify)](https://www.geoapify.com/different-geospatial-data-types/){target="_blank"}
+- [Geocomputation with R](https://r.geocompx.org/spatial-class){target="_blank"}, Chap. 2: Geographic Data in R
+- [R for Psychological Science](https://rstudio-education.github.io/hopr/r-objects.html){target="_blank"}: Chapter 13, R data types
 
-
-# Videos
-* [Nominal, Ordinal, Interval, and Ratio Data (Grad Coach)](https://www.youtube.com/watch?v=5Yh-9xdJzAs){target="_blank"}
+## Videos
 * [Vectors, data frames, and lists (Ben Stenhaug)](https://www.youtube.com/watch?v=XHAm_V-KZE8){target="_blank"}
-* [Vector vs Raster Data in GIS (Felt)](https://www.youtube.com/watch?v=N-3zF10LbHg){target="_blank"}
 * [Vector vs Raster Data - GIS Explained (Mr Cognito)](https://www.youtube.com/watch?v=3DVgQFALxCo){target="_blank"}
 * TBD on Simple features

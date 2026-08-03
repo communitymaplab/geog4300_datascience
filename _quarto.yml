@@ -36,9 +36,9 @@ website:
         - href: modules/m3_datawrangling.qmd
           text: Module 3-Data wrangling
         - href: modules/m4_data_visualize.qmd
-          text: Module 4-Visualizing spatial and non-spatial data
-        - href: modules/m5_eda_spatial.qmd
-          text: Module 5-EDA and descriptive spatial statistics
+          text: Module 4-Descriptive statistics and visualization
+        - href: modules/m5_spatial_describe.qmd
+          text: Module 5-Descriptive spatial statistics
         - href: modules/m6_inferential stats.qmd
           text: Module 6-Inferential statistics
         - href: modules/m7_tests_difference.qmd

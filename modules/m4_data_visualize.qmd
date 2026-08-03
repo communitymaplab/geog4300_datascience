@@ -1,5 +1,5 @@
 ---
-title: "Module 4: Data visualization and descriptive stats"
+title: "Module 4: Exploratory data analysis, data visualization, and descriptive stats"
 format: html
 ---
 
