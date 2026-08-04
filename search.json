@@ -159,66 +159,33 @@
     ]
   },
   {
-    "objectID": "modules/m2_datastructure.html#videos",
-    "href": "modules/m2_datastructure.html#videos",
+    "objectID": "modules/m2_datastructure.html#required-on-day-1",
+    "href": "modules/m2_datastructure.html#required-on-day-1",
     "title": "Data structure and formats",
-    "section": "Videos",
-    "text": "Videos\n\nNominal, Ordinal, Interval, and Ratio Data (Grad Coach)\nData types in R programming by R Programming 101\nVector vs Raster Data in GIS (Felt)",
+    "section": "Required on day 1",
+    "text": "Required on day 1\n\nVideos\n\nNominal, Ordinal, Interval, and Ratio Data (Grad Coach)\nData types in R programming by R Programming 101\nVector vs Raster Data in GIS (Felt)\n\n\n\nReadings\n\nLevels of Measurement (LibreTexts)\nTypes of Objects in R by Dai Shizuka, Intro to R",
     "crumbs": [
       "Home",
       "Module 2-Data Structure and Formats"
     ]
   },
   {
-    "objectID": "modules/m2_datastructure.html#readings",
-    "href": "modules/m2_datastructure.html#readings",
+    "objectID": "modules/m2_datastructure.html#course-materials",
+    "href": "modules/m2_datastructure.html#course-materials",
     "title": "Data structure and formats",
-    "section": "Readings",
-    "text": "Readings\n\nLevels of Measurement (LibreTexts)\nTypes of Objects in R by Dai Shizuka, Intro to R",
+    "section": "Course materials",
+    "text": "Course materials\n\nScripts\n\nS04: Vectors, lists, and data frames, oh my!\nS05: Loading and using spatial data\n\n\n\nSlides for class\n\nL02-Working with data\nL03-Gitting started\nL04-Reading data\nL05-Vectors and rasters",
     "crumbs": [
       "Home",
       "Module 2-Data Structure and Formats"
     ]
   },
   {
-    "objectID": "modules/m2_datastructure.html#scripts",
-    "href": "modules/m2_datastructure.html#scripts",
+    "objectID": "modules/m2_datastructure.html#additional-resources",
+    "href": "modules/m2_datastructure.html#additional-resources",
     "title": "Data structure and formats",
-    "section": "Scripts",
-    "text": "Scripts\n\nS04: Vectors, lists, and data frames, oh my!\nS05: Loading and using spatial data",
-    "crumbs": [
-      "Home",
-      "Module 2-Data Structure and Formats"
-    ]
-  },
-  {
-    "objectID": "modules/m2_datastructure.html#slides-for-class",
-    "href": "modules/m2_datastructure.html#slides-for-class",
-    "title": "Data structure and formats",
-    "section": "Slides for class",
-    "text": "Slides for class\n\nL02-Working with data\nL03-Gitting started\nL04-Reading data\nL05-Vectors and rasters",
-    "crumbs": [
-      "Home",
-      "Module 2-Data Structure and Formats"
-    ]
-  },
-  {
-    "objectID": "modules/m2_datastructure.html#readings-1",
-    "href": "modules/m2_datastructure.html#readings-1",
-    "title": "Data structure and formats",
-    "section": "Readings",
-    "text": "Readings\n\nGeospatial Data Types (Geoapify)\nGeocomputation with R, Chap. 2: Geographic Data in R\nR for Psychological Science: Chapter 13, R data types",
-    "crumbs": [
-      "Home",
-      "Module 2-Data Structure and Formats"
-    ]
-  },
-  {
-    "objectID": "modules/m2_datastructure.html#videos-1",
-    "href": "modules/m2_datastructure.html#videos-1",
-    "title": "Data structure and formats",
-    "section": "Videos",
-    "text": "Videos\n\nVectors, data frames, and lists (Ben Stenhaug)\nVector vs Raster Data - GIS Explained (Mr Cognito)\nTBD on Simple features",
+    "section": "Additional Resources",
+    "text": "Additional Resources\n\nReadings\n\nGeospatial Data Types (Geoapify)\nGeocomputation with R, Chap. 2: Geographic Data in R\nR for Psychological Science: Chapter 13, R data types\n\n\n\nVideos\n\nVectors, data frames, and lists (Ben Stenhaug)\nVector vs Raster Data - GIS Explained (Mr Cognito)\nTBD on Simple features",
     "crumbs": [
       "Home",
       "Module 2-Data Structure and Formats"
@@ -261,33 +228,11 @@
     ]
   },
   {
-    "objectID": "modules/m1_introduction.html#prep-your-computer",
-    "href": "modules/m1_introduction.html#prep-your-computer",
+    "objectID": "modules/m1_introduction.html#required-on-day-1-wednesday-819",
+    "href": "modules/m1_introduction.html#required-on-day-1-wednesday-819",
     "title": "Module 1: Introduction to R",
-    "section": "Prep your computer",
-    "text": "Prep your computer\nAs we get started in the class, you should have done the following if you are using your own computer for assignments:\n\nDownloaded and installed R\nDownloaded and installed the RStudio IDE\nDownloaded and installed Git",
-    "crumbs": [
-      "Home",
-      "Module 1-Introduction to R"
-    ]
-  },
-  {
-    "objectID": "modules/m1_introduction.html#readings",
-    "href": "modules/m1_introduction.html#readings",
-    "title": "Module 1: Introduction to R",
-    "section": "Readings",
-    "text": "Readings\n\nAn Introduction to R, Chapters 1 and 2 by Douglas et al. \n\nSkim as needed, but these two chapters give you an overview of how R and RStudio work.",
-    "crumbs": [
-      "Home",
-      "Module 1-Introduction to R"
-    ]
-  },
-  {
-    "objectID": "modules/m1_introduction.html#videos",
-    "href": "modules/m1_introduction.html#videos",
-    "title": "Module 1: Introduction to R",
-    "section": "Videos",
-    "text": "Videos\n\nRstudio for the Total Beginner\nR Programming for ABSOLUTE beginners by (R Programming 101)\n\nLastly, fill out our course survey! This will help me get to know you and see where we are at as a class. - Course survey link",
+    "section": "Required on day 1 (Wednesday, 8/19)",
+    "text": "Required on day 1 (Wednesday, 8/19)\n\nPrep your computer\nAs we get started in the class, you should have done the following if you are using your own computer for assignments:\n\nDownloaded and installed R\nDownloaded and installed the RStudio IDE\nDownloaded and installed Git\n\n\n\nReadings\n\nAn Introduction to R, Chapters 1 and 2 by Douglas et al. \n\nSkim as needed, but these two chapters give you an overview of how R and RStudio work.\n\n\n\n\nVideos\n\nRstudio for the Total Beginner\nR Programming for ABSOLUTE beginners by (R Programming 101)\n\nLastly, fill out our course survey! This will help me get to know you and see where we are at as a class. - Course survey link",
     "crumbs": [
       "Home",
       "Module 1-Introduction to R"
@@ -298,7 +243,7 @@
     "href": "modules/m1_introduction.html#course-materials",
     "title": "Module 1: Introduction to R",
     "section": "Course materials",
-    "text": "Course materials",
+    "text": "Course materials\n\nScripts\nRight-click/Command-click on the links below to save these links to your local folder for the course.\n\nS01: Introduction to R\nS02: Reading data and filtering\nS03: APIs and online data\n\n\n\nSlides for class\n\nLecture 1: Data Science in Geography",
     "crumbs": [
       "Home",
       "Module 1-Introduction to R"
@@ -309,7 +254,7 @@
     "href": "modules/m1_introduction.html#additional-resources",
     "title": "Module 1: Introduction to R",
     "section": "Additional Resources",
-    "text": "Additional Resources",
+    "text": "Additional Resources\n\nReadings\n\nHands-On Programming with R: Chaps 2 & 3\nTidyverse Workflow: Chaps 3 and 5\n\n\n\nVideos\n\nRStudio Tutorial for Beginners (Maxime Rivest)\nIntroduction to R: Interace and Data Structures (MIT OpenCOurseWare/Helena Vallicrosa)\nGetting oriented in RStudio](https://www.youtube.com/watch?v=lTTJPRwnONE&list=PLLxj8fULvXwGOf8uHlL4Tr62oXSB5k_in){target=“_blank”}–part of a playlist. A little dated but still relevant.\nSaving and reading data (Ben Stenhaug)\nThe 5 verbs of dplyr (Ben Stenhaug)\nUsing RStudio Projects (Equitable Equations)\nRStudio Projects (Susan B.)\nAPIs Explained (CertBros)\nHow to GET data from an API using R in RStudio (Dean Chereden)",
     "crumbs": [
       "Home",
       "Module 1-Introduction to R"
