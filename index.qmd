@@ -1,6 +1,10 @@
 ---
 title: "Geog4/6300: Data Science in Geography"
-author: "Dr. Jerry Shannon & Dr. Anna Harper"
+author:
+  - "Dr. Jerry Shannon"
+  - "Dr. Anna Harper"
+language:
+  title-block-author-plural: "Authors"
 subtitle: "University of Georgia, Fall 2026"
 ---
 
@@ -17,6 +21,7 @@ This course is NOT a GIS class, but we will cover how to load and work with spat
 * For lab assignments, we are using [Github Classroom](https://classroom.github.com/){target="_blank"}. This systems allows you to easily "fork" the lab--creating your own copy--and then submit once you are finished. Click on the Labs link in the top menu bar to see links to each assignment. 
 * [ELC](https://elc.uga.edu){target="_blank"} will be the place to go for recordings of our class sessions as well as things related to assessment.
 * The [Resources](resources.qmd) page of this site has multiple online guides to help support your work and learning.
+* We will also often be using the [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday){target="_blank"} repository for in-class activities and group work.
 
 # Preparing for the course
 As we get started in the class, you should have done the following:
