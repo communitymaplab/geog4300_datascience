@@ -21,7 +21,7 @@ format: html
 
 ## Readings
 - [Levels of Measurement (LibreTexts)](https://stats.libretexts.org/Workbench/Statistics_for_Behavioral_Science_Majors/01%3A_Naming_Collecting_Data_and_Research_Design/1.04%3A_Levels_of_Measurement){target="_blank"}
-- [Types of Objects in R](https://dshizuka.github.io/RCourse/02_ObjectTypes.html#5_Lists){target="_blank"} by Dai Shizuka, *Intro to R*
+- [Types of Objects in R](https://dshizuka.github.io/RCourse/02_ObjectTypes.html){target="_blank"} by Dai Shizuka, *Intro to R*
 ::: 
 
 # Course materials { .module-section }
