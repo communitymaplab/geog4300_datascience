@@ -1,0 +1,50 @@
+---
+title: "Geog4/6300: Course learning standards"
+format: html
+---
+
+## Data Literacy & Measurement
+1. Classify variables by measurement type (nominal, ordinal, interval, ratio) and justify those classifications with reference to the characteristics of the data. (Lab 1)
+2. Distinguish between vector and raster formats with spatial data. (Labs 2, 3)
+3. Load tabular and spatial data into a code-based environment from multiple sources, including local files, remote APIs, and spatial file formats. (Labs 0, 1, 2, 3)
+4. Identify and apply appropriate data filtering and cleaning strategies to prepare datasets for analysis, including handling missing or invalid responses. (Labs 0, 1, 3, 4)
+5. Read and interpret existing code written by others, explaining in plain language what each step does to the data. (Lab 1)
+6. Identify and use appropriate external documentation — including package references, help files, and peer resources — to learn and apply unfamiliar functions or methods. (Labs 0, 4)
+
+## Data Wrangling & Transformation
+7. Filter, aggregate, and transform datasets using grouping and summary operations to answer specific analytical questions. (Labs 0, 1, 2, 3)
+8. Join multiple datasets using appropriate join strategies and explain how different join types affect the resulting output. (Labs 0, 2, 3)
+9. Reshape data between wide and long formats to meet the requirements of different analytical or visualization tasks. (Labs 1, 3)
+10. Derive new variables from existing ones through calculated transformations, including unit conversions, differences across time periods, and categorical dummy variables. (Labs 2, 3)
+
+## Descriptive statistics and exploratory analysis
+11. Create effective data visualizations across multiple chart types (line, scatter, histogram, Q-Q plot), applying appropriate aesthetic choices such as color, grouping, and labeling. (Labs 1, 3, 4, 5)
+12. Produce and interpret confidence interval plots that enable visual comparison of means and uncertainty across groups or time periods. (Lab 3)
+13. Visualize spatial data using appropriate mapping tools, selecting suitable classification schemes and cartographic elements to support clear communication. (Labs 2, 3, 4, 6)
+14. Arrange and present tabular results in a readable format appropriate for a technical document or report. (Labs 1, 2, 3, 4, 5)
+15. Use measures of central tendancy and dispersion to describe the variables in tabular datasets (Labs 1, 3)
+
+## Spatial Analysis
+16. Load, manipulate, and perform mathematical operations on raster data, including multi-layer operations and unit conversions. (Lab 2)
+17. Convert between spatial data types (e.g., non-spatial to spatial, vector/raster) to enable different forms of spatial analysis. (Labs 2, 4)
+18. Apply zonal statistics to extract summary values from raster data for polygon and point vector datasets, and integrate those results with attribute data. (Labs 2, 3)
+19. Calculate and interpret descriptive spatial statistics such as mean center, and connect the geographic distribution of observations to patterns in the data. (Lab 2)
+
+## Inferential Statistics
+20. Explaining how evidence from a sample supports conclusions about a population while acknowledging sampling variability and uncertainty. (Labs 3, 4, 5)
+21. Assess the normality of a variable using multiple diagnostic approaches and use those results to select between parametric and non-parametric statistical tests. (Labs 4, 5)
+22. Construct and interpret confidence intervals, explaining how factors such as sample size and spatial scale affect the precision of an estimate. (Lab 3)
+23. Apply two-sample tests of difference and accurately interpret results in terms of hypothesis testing, statistical significance, and the direction and magnitude of any differences. (Lab 4)
+24. Construct contingency tables and apply chi-square tests to assess association between categorical variables, interpreting results in terms of significance and practical meaning. (Lab 4)
+25. Conduct correlation analysis across multiple variable pairs and evaluate results with respect to direction, magnitude, and significance, including changes in correlation structure across time periods or subgroups. (Lab 5)
+26. Build and interpret univariate and multivariate OLS regression models, explaining the role of each coefficient and evaluating overall model fit. (Lab 6)
+27. Diagnose regression model assumptions by assessing residuals for normality, spatial autocorrelation, heteroskedasticity, and multicollinearity, and explain the implications of any violations for model interpretation. (Lab 6)
+
+## Communication & Reproducibility
+28. Communicate statistical findings clearly in writing for a general audience, situating results in their geographic and social context, and use a reproducible document format to integrate code, output, and narrative in a single deliverable. (Labs 0, 1, 2, 3, 4, 5, 6)
+
+## Competency with R and programming
+29. Recognize and be able to manipulate multiple data object types (vectors, data frames, or lists). (Labs 0, 1, 2, 3, 4, 5, 6)
+30. Develop abilities to appropriately load a variety of spatial and non-spatial data formats. (Labs 0, 1, 2, 3, 4, 5, 6)
+31. Effectively navigate the R and RStudio interface. (Labs 0, 1, 2, 3, 4, 5, 6)
+32. Use Git and Github to create and share project materials in a repository format. (Labs 0, 1, 2, 3, 4, 5, 6)
