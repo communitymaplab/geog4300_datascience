@@ -1,5 +1,5 @@
 ---
-title: "Data structure and formats"
+title: "Module 2: Data structure and formats"
 format: html
 ---
 

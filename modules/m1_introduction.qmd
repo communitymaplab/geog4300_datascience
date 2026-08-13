@@ -19,7 +19,7 @@ Right-click/Command-click on the links below to save these links to your local f
 
 * [S01: Introduction to R](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S01%20Into%20to%20R.R){target="_blank"}
 * [S02: Reading data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S02%20Reading%20data.R){target="_blank"}
-* [S03: APIs and online data]()
+* [S03: APIs and online data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S02%20Reading%20data.R){target="_blank"}
 
 # Slides for class
 
