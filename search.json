@@ -150,7 +150,7 @@
   {
     "objectID": "modules/m2_datastructure.html",
     "href": "modules/m2_datastructure.html",
-    "title": "Data structure and formats",
+    "title": "Module 2: Data structure and formats",
     "section": "",
     "text": "NoteRelevant learning standards\n\n\n\n\nClassify variables by measurement type (nominal, ordinal, interval, ratio) and justify those classifications with reference to the characteristics of the data. (Lab 1)\nDistinguish between vector and raster formats with spatial data.",
     "crumbs": [
@@ -161,7 +161,7 @@
   {
     "objectID": "modules/m2_datastructure.html#videos",
     "href": "modules/m2_datastructure.html#videos",
-    "title": "Data structure and formats",
+    "title": "Module 2: Data structure and formats",
     "section": "Videos",
     "text": "Videos\n\nNominal, Ordinal, Interval, and Ratio Data (Grad Coach)\nData types in R programming by R Programming 101\nVector vs Raster Data in GIS (Felt)",
     "crumbs": [
@@ -172,7 +172,7 @@
   {
     "objectID": "modules/m2_datastructure.html#readings",
     "href": "modules/m2_datastructure.html#readings",
-    "title": "Data structure and formats",
+    "title": "Module 2: Data structure and formats",
     "section": "Readings",
     "text": "Readings\n\nLevels of Measurement (LibreTexts)\nTypes of Objects in R by Dai Shizuka, Intro to R",
     "crumbs": [
@@ -183,7 +183,7 @@
   {
     "objectID": "modules/m2_datastructure.html#scripts",
     "href": "modules/m2_datastructure.html#scripts",
-    "title": "Data structure and formats",
+    "title": "Module 2: Data structure and formats",
     "section": "Scripts",
     "text": "Scripts\n\nS03: APIs and online data\nS04: Vectors, lists, and data frames\nS05: Loading and using spatial data",
     "crumbs": [
@@ -194,7 +194,7 @@
   {
     "objectID": "modules/m2_datastructure.html#slides-for-class",
     "href": "modules/m2_datastructure.html#slides-for-class",
-    "title": "Data structure and formats",
+    "title": "Module 2: Data structure and formats",
     "section": "Slides for class",
     "text": "Slides for class\n\nL02-Working with data\nL03-Gitting started\nL04-Reading data\nL05-Vectors and rasters",
     "crumbs": [
@@ -205,7 +205,7 @@
   {
     "objectID": "modules/m2_datastructure.html#readings-1",
     "href": "modules/m2_datastructure.html#readings-1",
-    "title": "Data structure and formats",
+    "title": "Module 2: Data structure and formats",
     "section": "Readings",
     "text": "Readings\n\nGeospatial Data Types (Geoapify)\nGeocomputation with R, Chap. 2: Geographic Data in R\nR for Psychological Science: Chapter 13, R data types",
     "crumbs": [
@@ -216,7 +216,7 @@
   {
     "objectID": "modules/m2_datastructure.html#videos-1",
     "href": "modules/m2_datastructure.html#videos-1",
-    "title": "Data structure and formats",
+    "title": "Module 2: Data structure and formats",
     "section": "Videos",
     "text": "Videos\n\nVectors, data frames, and lists (Ben Stenhaug)\nVector vs Raster Data - GIS Explained (Mr Cognito)\nTBD on Simple features",
     "crumbs": [
