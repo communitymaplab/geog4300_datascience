@@ -35,3 +35,14 @@ str(census_data)
 # "head" and "tail" give you the first and last rows
 head(census_data)
 tail(census_data)
+
+### Thinking about AI usage
+
+# Copy the output of the `str(census_data)` above and copy it
+# into the GPT AI of your choice. Then ask it the following:
+
+# 1. Create code that gives me a bar chart of the LessHS_pct to GradDeg_pct variables
+# 2. Explain to me how to create a bar chart of the LessHS_pct to GradDeg_pct variables, but don't give me code.
+# 3. These are census rates computed from the American Community Survey. What's two other ways I could visualize them?
+
+# What do you see as the potential value of all three responses?
