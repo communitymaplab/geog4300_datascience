@@ -6,7 +6,7 @@ editor_options:
 ---
 While CSVs can be convenient ways to import data, APIs (application program interfaces) provide another way to access data directly from the source. Many orgs provide APIs for those using their data. 
 
-### Working with Daymet
+# Working with Daymet
 
 One example is the Daymet dataset. Created by NASA, the Daymet dataset provides gridded climate data going back to 1980 for the whole US. Here's their website: 
 
@@ -33,11 +33,9 @@ If we wanted to download ten years of data for Athens, we can do so using the 'd
 athens_daymet<-download_daymet(site="athens",lat=33.948693,lon=-83.375475,start=2010,end=2020,internal=TRUE)
 ```
 
-This returns a list, which is difficult to use. Let's extract the tabular data.
-Read more about lists in R here (they're kind of a pain, but have a purpose.)
-https://rstudio.github.io/r-manuals/r-intro/Lists-and-data-frames.html
+This returns a list. Take a second and check it out by clicking on it in the "Environment" tab. How would you describe its structure? 
 
-If you click the little blue arrow by the `athens_daymet` object in the upper right environment box, you'll notice that one of the things it includes is something called "data", which is a data frame. That sounds promising, so let's extract that.
+Lists don't play well with our analysis tools, so let's extract the tabular data. One of the things in this list object is something called "data", which is a data frame. That sounds promising, so let's extract that.
 
 ```{r}
 athens_data<-athens_daymet$data
@@ -51,7 +49,7 @@ hist(athens_data$prcp..mm.day.)
 boxplot(athens_data$tmax..deg.c.)
 ```
 
-Let's pratice! 
+## You try it! 
 
 * Calculate the median maximum and minimum temperatures during the time period using these Athens data.
 * Try downloading 10 years of climate data for a point of your choosing.
@@ -60,72 +58,29 @@ Let's pratice!
 
 
 
-### Another example of reading data from the web
+# Another example of reading data from the web
 
-The Athens-Clarke County open data website (hosted by ESRI) provides a URL for direct loading of data from their servers, so you always have the most up to date dataset. For example, we can get National Historic District boundaries from this page: https://data-athensclarke.opendata.arcgis.com/datasets/AthensClarke::historic-districts-national-register/about. 
+The Athens-Clarke County open data website (hosted by ESRI) provides a URL for direct loading of data from their servers, so you always have the most up to date dataset. For example, we can get city park boundaries from this page: https://data-athensclarke.opendata.arcgis.com/datasets/AthensClarke::acc-parks/about. 
 
 There's a link there to download the data as a geojson spatial data file, which we can do with the following code. Find it by clicking on "I want to use this" in the lower left and then "View API Resources". This code also uses the tmap package to map out these data.
 
 ```{r}
 library(sf)
 
-hist_dist<-st_read("https://enigma.accgov.com/server/rest/services/Historic_Districts_National_Registry/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson")
+parks<-st_read("https://enigma.accgov.com/server/rest/services/ACC_Parks/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson")
 
 library(tmap)
-sf_use_s2(FALSE) #Addresses topology issues in the dataset
-tm_shape(hist_dist)+
+tm_shape(parks)+
   tm_borders()
 
 tmap_mode("view")
-tm_shape(hist_dist)+
-  tm_polygons("District",alpha = 0.6)
+tm_shape(parks)+
+  tm_polygons("Public_",alpha = 0.6)
 ```
 
 Practice task: Find another dataset of interest on ACC's data website and load it into R.
-That website again is: https://data-athensclarke.opendata.arcgis.com/
+https://data-athensclarke.opendata.arcgis.com/
 
 ```{r}
 
 ```
-
-
-### Census data and tidycensus
-
-Lastly, we can make use of the Census API and the awesome tidycensus package created by Kyle Walker. There's more info on the tidycensus package in Kyle's book: https://walker-data.com/census-r/.
-
-This page is also useful: https://walker-data.com/tidycensus/articles/basic-usage.html
-
-To use tidycensus, you need to register for a Census API Key. You can do so here: https://api.census.gov/data/key_signup.html
-
-We're going to download data on median income by county.
-
-To start with, you need to install and call the tidycensus package and register your key. Just replace "key" below with the key you received. The overwrite parameter replaces previous keys and install saves the key for future work sessions.
-
-```{r}
-#install.packages(tidycensus)
-library(tidycensus)
-
-key<-"Insert your key here"
-
-#census_api_key(key, overwrite = FALSE, install = TRUE)
-```
-
-Let's start by downloading a list of available variables from the 2015-19 American Community Survey. We'll specify the year, dataset, and whether to cache this file locally on your computer.
-
-```{r}
-v20 <- load_variables(2020, "acs5", cache = TRUE)
-```
-
-You can open this downloaded file to see the list. You have a variable ID (name), specific variable label (label), and table name (concept). To find variables related to internet usage, filter the data frame and search for Internet under concept. It looks like we want table B19013, which has several variables related to median household income. 
-
-Let's download those variables. We'll first create a subsetted dataframe showing just variables from B19013. We'll then use get_acs to download them, both by the full list and then for the specific variable for median income for the whole population.
-
-```{r}
-var_select<-v20 %>% filter(substr(name,1,6)=="B19013")
-
-cty_medinc<-get_acs(geography="county",variables=var_select$name,year=2020)
-
-cty_medinc_all<-get_acs(geography="county",variables="B19013_001",year=2020)
-```
-
-Feel free to practice with this--find other variables of interest to you and try downloading them.
