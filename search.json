@@ -196,7 +196,7 @@
     "href": "modules/m2_datastructure.html#slides-for-class",
     "title": "Module 2: Data structure and formats",
     "section": "Slides for class",
-    "text": "Slides for class\n\nL02-Working with data\nL03-Gitting started\nL04-Reading data\nL05-Vectors and rasters",
+    "text": "Slides for class\n\nL04-Reading data\nL05-Spatial data",
     "crumbs": [
       "Home",
       "Module 2-Data Structure and Formats"
@@ -240,7 +240,7 @@
     "href": "labs.html",
     "title": "Labs",
     "section": "",
-    "text": "Labs are hosted on Github Classroom. The links below can be used to create your branched version for each lab assignment.\nTo find a lab once you’ve created it, go to the Github page and find your account page by clicking the logo in the upper left. You should see it listed on the lefthand column, or you can search your repositories from that spot.\nYou can edit labs by manually downloading/uploading files or by using a Github client such as Github Desktop.\n\nLab 1: Lab 1 sign-up link\nLab 2:\nLab 3:\nLab 4:\nLab 5:\nLab 6:\nLab 7:"
+    "text": "Labs are hosted on Github Classroom. The links below can be used to create your branched version for each lab assignment.\nTo find a lab once you’ve created it, go to the Github page and find your account page by clicking the logo in the upper left. You should see it listed on the lefthand column, or you can search your repositories from that spot.\nYou can edit labs by manually downloading/uploading files or by using a Github client such as Github Desktop.\n\nLab 0: Lab 0 sign-up link\nLab 1:\nLab 2:\nLab 3:\nLab 4:\nLab 5:\nLab 6:\nLab 7:"
   },
   {
     "objectID": "course_data.html",
