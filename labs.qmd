@@ -1,0 +1,17 @@
+---
+title: "Labs"
+---
+
+Labs are hosted on Github Classroom. The links below can be used to create your branched version for each lab assignment. 
+
+To find a lab once you've created it, go to the [Github page](https://github.com/){target="_blank"} and find your account page by clicking the logo in the upper left. You should see it listed on the lefthand column, or you can search your repositories from that spot.
+
+You can edit labs by manually downloading/uploading files or by using a Github client such as Github Desktop.
+
+- Lab 1: [Lab 1 sign-up link](https://classroom.github.com/a/F7g0N47s){target="_blank"}
+- Lab 2:
+- Lab 3:
+- Lab 4:
+- Lab 5:
+- Lab 6: 
+- Lab 7:

@@ -12,6 +12,8 @@ website:
         text: Course modules
       - href: course_data.qmd
         text: Course data
+      - href: labs.qmd
+        text: Course labs
       - href: resources.qmd
         text: Resources
 
