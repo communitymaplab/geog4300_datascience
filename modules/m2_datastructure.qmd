@@ -32,10 +32,8 @@ format: html
 * [S05: Loading and using spatial data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S05%20spatialdata_md.qmd){target="_blank"}
 
 ## Slides for class
-* [L02-Working with data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L02-Working-with-data.pptx){target="_blank"}
-* [L03-Gitting started](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L03-Gitting-started.pptx){target="_blank"}
 * [L04-Reading data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L04-readingdata.pptx){target="_blank"}
-* [L05-Vectors and rasters](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L05_vector-raster.pptx){target="_blank"}
+* [L05-Spatial data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L05-spatialdata.pptx){target="_blank"}
 
 # Additional Resources {.module-section}
 

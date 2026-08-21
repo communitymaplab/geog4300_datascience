@@ -1,8 +1,289 @@
 ---
-title: "Geog4/6300: Vectors, Lists, and Data frames, oh my!"
-output: html_notebook
-editor_options: 
-  chunk_output_type: console
+title: "R Fundamentals with Daymet Climate Data"
+format: html
 ---
+[Created with assistance from Microsoft Co-pilot]
 
-TBD: Script that wwalks through different types of R objects
+This script will give you experience working four common R objects:
+
+- Vectors
+- Lists
+- Matrices
+- Data frames
+
+You will also work with several different data types:
+
+- Character
+- Numeric
+- Logical
+- Factor
+
+
+To do this, we'll continue work with the `daymetr` package
+
+Let's load that and the tidyverse.
+
+```{r}
+library(tidyverse)
+library(daymetr)
+```
+
+# Step 1: Create Basic Vectors
+
+Let's say we want to look at climate conditions in four Georgia cities. We can start by creating basic vectors for their names and coordinates.
+
+```{r}
+site_name <- c(
+  "Athens",
+  "Atlanta",
+  "Savannah",
+  "Augusta"
+)
+
+latitude <- c(
+  33.95,
+  33.75,
+  32.08,
+  33.47
+)
+
+longitude <- c(
+  -83.38,
+  -84.39,
+  -81.09,
+  -81.97
+)
+```
+
+Take a look at those objects in the Environment tab, or use the `str` or `glimpse` functions. What types of data are each stored as?
+
+## Practice
+
+Create a vector named `elevation` containing four elevation values in the correct order. You can look those elevations up online.
+
+```{r}
+# your code here
+```
+
+# Step 2: Create Logical Vectors
+
+Logical variables contain only TRUE or FALSE.
+
+Suppose we decide that sites south of 33° latitude are considered coastal. We can run a logical test on the `latitude` object and then save its result. 
+
+```{r}
+coastal_site <- latitude < 33
+coastal_site
+```
+
+Check its data type. What does "FALSE" and "TRUE" mean in this context?
+
+## You try it!
+
+Create a logical vector identifying sites west of -83.37 longitude. This is the longitude of Athens, so it's west or east of our city.
+
+```{r}
+# your code here
+```
+
+# Step 3: Create Factors
+Factors are a form of categorical data in cases where a variable may contain repeated values. Using factors saves memory and speeds analysis, since the variable is stored using a factor ID--usually numeric like 1, 2, 3, etc.
+
+For example, let's classify sites into regions.
+
+```{r}
+region <- factor(
+  c(
+    "North",
+    "North",
+    "Coastal",
+    "Central"
+  )
+)
+```
+
+We can then look at that factor. How is it different from a character vector like `site_name`?
+
+```{r}
+region
+
+levels(region)
+str(region)
+```
+
+Check its structure.
+
+```{r}
+str(region)
+```
+
+## You try it!
+
+Create a factor called `urban_class` with categories:
+
+- Urban
+- Urban
+- Rural
+- Urban
+
+```{r}
+# your code here
+```
+
+# Step 4: Download Daymet Data
+
+We used `download_daymet` in a previous script. Let's download data just for Athens just to take a closer look at this list object.
+
+```{r}
+athens_weather <- download_daymet(
+  site = "Athens",
+  lat = 33.95,
+  lon = -83.38,
+  start = 2023,
+  end = 2025,
+  internal = TRUE
+)
+```
+
+Daymet returns a list, which can contain many object types.
+
+```{r}
+str(athens_weather)
+```
+
+As we did previously, we can extract the weather data frame using the `$` symbol to refer to its name inside the list object.
+
+```{r}
+athweather_tbl <- athens_weather$data
+
+head(athweather_tbl)
+```
+
+# Step 6: Create a function to download data for each city
+
+We could download each city separately for analysis, but we have all the ingredients to do that at once. To start with, let's combine the separate vectors we have created into a single data frame. We can do so using the `data.frame` function, which as the name suggests creates data frames from vectors.
+
+```{r}
+ga_city<-data.frame(site_name,region,latitude,longitude)
+```
+
+Now we can create a custom function that uses this data to download climate data from Daymet:
+
+```{r}
+daymet_get<-function(site_sel){
+  site_data<-ga_city %>% filter(site_name==site_sel) # Filters the dataset to just the site we specified
+  
+  daymet_data<-download_daymet(
+      site = site_sel,
+      lat = site_data$latitude,
+      lon = site_data$longitude,
+      start = 2025,
+      end = 2025,
+      internal = TRUE
+  )
+  
+  data_tbl<-daymet_data$data %>%
+    mutate(site_name=site_sel) #Add the city name to the downloaded data
+}
+```
+
+Using the `map_df` function from the `purrr` package, we can download all cities at once using this function.
+
+```{r}
+city_data<-map_df(ga_city$site_name,daymet_get)
+```
+
+# Step 6: Data Frames
+
+What data types are present in our downloaded dataset?
+
+```{r}
+str(city_data)
+```
+
+# Step 7: Creating New Variables
+
+Create a logical variable identifying hot days.
+
+```{r}
+city_data <- city_data %>%
+  mutate(
+    hot_day = tmax..deg.c. > 30
+  )
+```
+
+Count hot days.
+
+```{r}
+city_data %>%
+  count(hot_day)
+```
+
+## You try it!
+
+Create code that counts cold days and or wet days? Units are degrees Celsius or millimeters respectively.
+
+# Step 8: Convert Character to Factor
+
+Convert month values into categories.
+
+```{r}
+city_data <- city_data %>%
+  mutate(
+    season = case_when(
+      yday < 80 ~ "Winter",
+      yday < 172 ~ "Spring",
+      yday < 264 ~ "Summer",
+      yday < 355 ~ "Fall",
+      TRUE ~ "Winter"
+    ),
+    season = factor(season)
+  )
+```
+
+Inspect the factor.
+
+```{r}
+levels(city_data$season)
+```
+
+# Step 9: Create a Matrix
+
+The following code uses some data wrangling to change our data into a matrix, with the rows being the day of the year (yday) and the columns being each city.
+
+```{r}
+temp_matrix <- city_data %>%
+  select(site_name, yday, `tmax..deg.c.`) %>%
+  pivot_wider(
+    names_from = site_name,
+    values_from = `tmax..deg.c.`
+  ) %>%
+  column_to_rownames("yday") %>%
+  as.matrix()
+```
+
+Check its dimensions.
+
+```{r}
+dim(temp_matrix)
+```
+
+Find the mean value.
+
+```{r}
+mean(temp_matrix)
+```
+
+What's the mean temperature by city?
+
+```{r}
+colMeans(temp_matrix)
+```
+
+What's the mean temerature by day?
+
+```{r}
+rowMeans(temp_matrix)
+```
+
+## How is this matrix different from a data frame?
