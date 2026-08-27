@@ -12,24 +12,36 @@ format: html
 9. Derive new variables from existing ones through calculated transformations, including unit conversions, differences across time periods, and categorical dummy variables. (Labs 2, 3)
 :::
 
+::: {.required-actions}
+# Required on day 1 
+
+## Readings
+- [Data Wrangling: What it is, why it matters, & how to do it?](https://ischool.syracuse.edu/data-wrangling/){target="_blank"} by Syracuse University's School of Information Studies
+- [Measures of Central Tendency and Spread](https://stats.libretexts.org/Bookshelves/Applied_Statistics/Introduction_to_Statistics_in_the_Psychological_Sciences_(Cote_Gordon_Randell_and_Marvin)/01%3A_Unit_1-_Fundamentals_of_Statistics/1.03%3A_Measures_of_Central_Tendency_and_Spread){target="_blank"} from Introduction to Statistics in the Psychological Sciences
+
+## Videos
+- [Data wrangling with R in 27 minutes](https://www.youtube.com/watch?v=oXImkptBpqc){target="_blank"} by Equitable Equations
+
+::: 
+
 ## Course materials { .module-section }
 
 # Scripts
-* [S06: Functional programming](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S06%20functional%20programming.qmd){target="_blank"}
-* [S07: Separate, United, and Paste](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S07%20separate%20unite%20paste.qmd){target="_blank"}
+- [S06: Functional programming](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S06%20functional%20programming.qmd){target="_blank"}
+- [S07: Separate, Unite, and Paste](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S07%20separate%20unite%20paste.qmd){target="_blank"}
 
 # Slides for class
-* [L06: Classification and descriptive statistics](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L06%20Classification%20and%20descriptive%20stats.pptx){target="_blank"}
+- [L06: Descriptive statistics](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L06-Descriptive%20statistics.pptx){target="_blank"}
+- [L07: Data wrangling and exploratory data analysis](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L07-Data%20wrangling%20and%20EDA.pptx){target="_blank"}
 
 ## Additional Resources {.module-section}
 
 # Readings
-* [Chapter 3: Data transformation](https://r4ds.hadley.nz/data-transform.html){target="_blank"} from R for Data Science
-* [Managing Data frames with the `dplyr` package](https://bookdown.org/rdpeng/exdata/managing-data-frames-with-the-dplyr-package.html){target="_blank"} from Exploratory Data Analysis with R by Roger Peng
-* [Chapters 9 through 12](https://mgimond.github.io/ES218/dplyr.html){target="_blank"} of Exploratory Data Analysis in R by Manny Gimond
-
+- [Chapter 3: Data transformation](https://r4ds.hadley.nz/data-transform.html){target="_blank"} from R for Data Science
+- [Managing Data frames with the `dplyr` package](https://bookdown.org/rdpeng/exdata/managing-data-frames-with-the-dplyr-package.html){target="_blank"} from Exploratory Data Analysis with R by Roger Peng
+- [Chapters 9 through 12](https://mgimond.github.io/ES218/dplyr.html){target="_blank"} of Exploratory Data Analysis in R by Manny Gimond
+- [Data transformation with dplyr :: Cheatsheet](https://rstudio.github.io/cheatsheets/html/data-transformation.html){target="_blank"}
 
 # Videos
-* [Data wranglign with R in 27 minutes](https://www.youtube.com/watch?v=oXImkptBpqc){target="_blank"} by Equitable Equations
-* [Manipulate your data. Data wrangling. R programmning for beginners.](https://www.youtube.com/watch?v=kg9Kgvv9-0g){target="_blank"} by R Programming 101
-* [Dplyr Essentials (easy data manipulation in R)](https://www.youtube.com/watch?v=Gvhkp-Yw65U){target="_blank"} by Dataslice
+- [Manipulate your data. Data wrangling. R programmning for beginners.](https://www.youtube.com/watch?v=kg9Kgvv9-0g){target="_blank"} by R Programming 101
+- [Dplyr Essentials (easy data manipulation in R)](https://www.youtube.com/watch?v=Gvhkp-Yw65U){target="_blank"} by Dataslice\
