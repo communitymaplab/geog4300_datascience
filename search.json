@@ -357,6 +357,28 @@
     ]
   },
   {
+    "objectID": "modules/m3_datawrangling.html#readings",
+    "href": "modules/m3_datawrangling.html#readings",
+    "title": "Module 3: Data wrangling",
+    "section": "Readings",
+    "text": "Readings\n\nData Wrangling: What it is, why it matters, & how to do it? by Syracuse University’s School of Information Studies\nMeasures of Central Tendency and Spread from Introduction to Statistics in the Psychological Sciences",
+    "crumbs": [
+      "Home",
+      "Module 3-Data wrangling"
+    ]
+  },
+  {
+    "objectID": "modules/m3_datawrangling.html#videos",
+    "href": "modules/m3_datawrangling.html#videos",
+    "title": "Module 3: Data wrangling",
+    "section": "Videos",
+    "text": "Videos\n\nData wrangling with R in 27 minutes by Equitable Equations",
+    "crumbs": [
+      "Home",
+      "Module 3-Data wrangling"
+    ]
+  },
+  {
     "objectID": "modules/m3_datawrangling.html#course-materials",
     "href": "modules/m3_datawrangling.html#course-materials",
     "title": "Module 3: Data wrangling",
