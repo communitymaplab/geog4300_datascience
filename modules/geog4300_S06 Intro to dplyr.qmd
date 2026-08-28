@@ -1,0 +1,130 @@
+---
+title: "Filter, group_by, and summarise"
+format: html
+---
+
+The 'dplyr' package is a core part of the tidyverse and the main tool used for basic data wrangling. In this script, we'll go over filter, mutate, count, group_by and summarise.
+
+To do so, let's load just `dplyr` (and `readr`) and the county census data we've been working with.
+
+```{r}
+library(dplyr)
+library(readr) #To read the file
+
+#If you've got the data in your working folder in a "data" subfolder
+census_data <- read_csv("data/ACSCtyData_2022ACS.csv")
+
+#If you want to read it from Github
+# census_data <- read_csv(
+#   "https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/data/ACSCtyData_2022ACS.csv"
+# )
+```
+
+## Filtering data
+
+What if you only want data for some states, like the Southeast? Or counties with >30% poverty? You can use "filter" (part of the tidyverse).
+Remember that the tidyverse uses the pipe, which looks like this: %>%
+
+(Base R now includes its own pipe, which looks like this: |> . Use the one that you prefer!)
+
+```{r}
+census_data_se<-census_data %>%
+  filter(region=="SE")
+
+#Base R pipe
+census_data_se<-census_data |>
+  filter(region=="SE")
+```
+
+What states are in our new data?
+```{r}
+table(census_data_se$st_name)
+```
+
+You can use multiple filters using & (and) or | (or)
+Counties in the Northeast with high educational attainment:
+
+```{r}
+census_data_elites<-census_data %>%
+  filter(region=="NE" & BADeg_pct > 25)
+```
+
+Counties in the Southeast or Northeast with high poverty rates:
+
+```{r}
+census_data_elites1<-census_data %>%
+  filter(region=="NE" | region=="SE") %>%
+  filter(BADeg_pct > 25)
+table(census_data_elites1$St_name)
+```
+
+## You try it!!
+Filter all counties with a poverty rate (pov_pop_pct) > 20% (BADeg_pct)
+Call this census_data_pov
+
+
+# Group_by, summarise, count, select, and mutate
+
+One core `dplyr` function is `mutate`, which is how we create new variables. Let's sum HSGrad_pct and SomeCol_pct to get a single count for both.
+
+```{r}
+census_data_ed<-census_data_ed %>%
+  mutate(LessBA_pct=HSGrad_pct+SomeCol_pct)
+
+hist(census_data_ed$LessBA_pct)
+boxplot(census_data_ed$LessBA_pct)
+```
+
+We can also do summary calculations. The `summarise` function also creates a new variable, but it does so by condensing observations into one row, whether for the whole dataset or by subgroups.
+
+For example, let's count the total population living in these elite counties by state. To do so, we need to group counties together by some categorical variable. In this case, we can use the `st_name` variable to create subgroups and then use `summarise` to perform the calculation. This function will reduce multiple rows to just one row per group.
+
+```{r}
+census_data_elitepop<-census_data_elites %>%
+  group_by(st_name) %>%
+  summarise(pop=sum(totpop_race))
+```
+
+If we just want the count of counties by state, we can use the function `count`. That's equivalent to `group_by` and `summarise` if all you need is a count of observations.
+
+```{r}
+census_data_elites_tbl<-census_data_elites %>%
+  count(st_name)
+
+#This function does the same thing
+census_data_elites_tbl1<-census_data_elites %>%
+  group_by(st_name) %>%
+  summarise(count=n())
+```
+
+The `select` command allows you to reduce the number of variables/columns in your data. You can select by column names or numbers
+
+```{r}
+names(census_data)
+
+census_data_pov<-census_data %>%
+  select(GEOID,st_name,region,pov_pop_pct)
+```
+
+Use a `:` to select a range of variable names. Let's select just educational variables
+
+```{r}
+census_data_ed<-census_data %>%
+  select(GEOID,st_name,region,LessHS_pct:GradDeg_pct)
+```
+
+What does that dataset look like?
+
+```{r}
+head(census_data_ed)
+```
+
+## You try it! 
+Information about Taylor Swift and Beyonce songs on Spotify is available in the course data folder: swift_beyonce_spotify.csv
+
+Load the data into R. Then try the following
+ * Filter the dataset to look at only songs in A major (key_mode)
+ * Count the number of songs by key AND artist name (hint: the `count` function can take multiple variables)
+ * Create a histogram for the danceability variable for an artist of your choosing
+ * Create a new variable using mutate that sums danceability, energy, and loudness
+ * Calculate which artist has the highest mean value for your new variable
