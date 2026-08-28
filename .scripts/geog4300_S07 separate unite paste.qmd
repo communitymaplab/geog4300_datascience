@@ -104,3 +104,39 @@ If you want a further challenge, try to identify what other chains Waffle House 
 
 ```
 
+###Long and wide format
+Summarizing multiple variables can be tricky. You can calculate each mean separately, but this can be cumbersome for a large number of variables. One solution is to use functions that collapse multiple variables down to just two columns: one for the variable name and the other for the observational values. This "long" format is useful in lots of ways, but for our purposes, it can allow us to summarize multiple variables in just one line of code. The two commands we use for this in the tidyverse are pivot_wide and pivot_longer.
+
+Here's how they work. Let's say we wanted to look at visits per day for different waffle houses. We could first select just the variables of interest and then use 'pivot_longer' to bring all these variables into two *longer* columns. The *names_to* parameter names the variable with all the former variable headings. The *values_to* parameter tells what to do with all the values in those columns. Here's what this looks like.
+
+```{r}
+wh_visits_long<-whdata_6a %>%
+  select(placekey,location_name,street_address,city,region,D1:D7) %>%
+  pivot_longer(D1:D7,
+               names_to="day",
+               values_to="visits")
+```
+
+You'll notice that this new table has just seven columns, and that the day and visits are now in two long columns. Now let's get the mean visits per day and location.
+
+```{r}
+wh_visits_long1<-wh_visits_long %>%
+  group_by(placekey,location_name,street_address,city,region,day) %>%
+  summarise(mean_visit=mean(visits))
+```
+
+Easy, right? But the resulting table is hard to read. We can now use 'pivot_wider' to push out the data *wide*. In this case, we just have to identify the variable with the new variable names (using 'names_from') and values (using 'values_from').
+
+```{r}
+wh_visits_long2<-wh_visits_long1 %>%
+  pivot_wider(names_from=day,
+              values_from=mean_visit)
+```
+
+## You try it!
+Use pivots, group_by, and summarise to get the mean visits per day per state.
+
+```{r}
+
+```
+
