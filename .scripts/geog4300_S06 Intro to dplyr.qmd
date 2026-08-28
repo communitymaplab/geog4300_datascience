@@ -1,6 +1,8 @@
 ---
 title: "Filter, group_by, and summarise"
 format: html
+editor_options: 
+  chunk_output_type: console
 ---
 
 The 'dplyr' package is a core part of the tidyverse and the main tool used for basic data wrangling. In this script, we'll go over filter, mutate, count, group_by and summarise.
@@ -9,6 +11,7 @@ To do so, let's load just `dplyr` (and `readr`) and the county census data we've
 
 ```{r}
 library(dplyr)
+
 library(readr) #To read the file
 
 #If you've got the data in your working folder in a "data" subfolder
@@ -118,6 +121,39 @@ What does that dataset look like?
 ```{r}
 head(census_data_ed)
 ```
+
+# Joins
+You can connect data frames when they share common variables. For example, you could connect this census data to data on climactic conditions. Let's load a dataset of monthly median observations from Daymet.
+
+```{r}
+daymet_cty<-read_csv("data/daymet_monthly_median_2010-2021.csv")
+```
+
+Both this dataset and the county data have a FIPS code for the county. It's `cty_txt` and `cty_fips` respectively. The trouble is that the first of those has a "G" in front of the five digit code. Let's add that to cty_fips using `paste0`, which pastes (concatenates) strings together. We can then use `left_join` to join the two datasets.
+
+```{r}
+census2<-census_data %>%
+  mutate(cty_txt=paste0("G",cty_fips)) %>%
+  select(cty_txt,LessHS_pct:GradDeg_pct) #What does this line do?
+
+daymet_census<-daymet_cty %>%
+  filter(date=="Y2020-1") %>% #What does this line do?
+  left_join(census2)
+```
+
+There are other kinds of joins! What do these do? How are they different?
+See also: https://statisticsglobe.com/r-dplyr-join-inner-left-right-full-semi-anti 
+
+```{r}
+daymet_census<-daymet_cty %>%
+  filter(date=="Y2020-1") %>% 
+  anti_join(census2)
+
+daymet_census<-daymet_cty %>%
+  filter(date=="Y2020-1") %>%
+  inner_join(census2)
+```
+
 
 ## You try it! 
 Information about Taylor Swift and Beyonce songs on Spotify is available in the course data folder: swift_beyonce_spotify.csv

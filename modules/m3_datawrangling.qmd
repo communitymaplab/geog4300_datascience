@@ -27,7 +27,7 @@ format: html
 ## Course materials { .module-section }
 
 # Scripts
-- [S06: Functional programming](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S06%20functional%20programming.qmd){target="_blank"}
+- [S06: Introduction to dplyr](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S06%20Intro%20to%20dplyr.qmd){target="_blank"}
 - [S07: Separate, Unite, and Paste](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S07%20separate%20unite%20paste.qmd){target="_blank"}
 
 # Slides for class
