@@ -2,13 +2,13 @@
 title: "Labs"
 ---
 
-Labs are hosted on Github Classroom. The links below can be used to create your branched version for each lab assignment. 
+To start your lab, go to the master repostory linked below and create a "Fork" using the menu button. You can then edit labs by manually downloading/uploading files or by using a Github client such as Github Desktop.
 
 To find a lab once you've created it, go to the [Github page](https://github.com/){target="_blank"} and find your account page by clicking the logo in the upper left. You should see it listed on the lefthand column, or you can search your repositories from that spot.
 
-You can edit labs by manually downloading/uploading files or by using a Github client such as Github Desktop.
+I'll leave comments for the labs on the README page.
 
-- Lab 0: [Lab 0 sign-up link](https://classroom.github.com/a/F7g0N47s){target="_blank"}
+- Lab 0: [Lab 0 master repository](https://github.com/communitymaplab/geog4300_lab0/tree/master){target="_blank"}
 - Lab 1: 
 - Lab 2:
 - Lab 3:
