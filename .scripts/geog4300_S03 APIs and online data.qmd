@@ -51,9 +51,13 @@ boxplot(athens_data$tmax..deg.c.)
 
 ## You try it! 
 
-* Calculate the median maximum and minimum temperatures during the time period using these Athens data.
+* Calculate the median maximum and minimum temperatures during the time period using these Athens data. (function is `median`)
 * Try downloading 10 years of climate data for a point of your choosing.
 
+```{r}
+median(athens_data$tmin..deg.c.)
+median(athens_data$tmax..deg.c.)
+```
 
 
 
@@ -66,6 +70,7 @@ There's a link there to download the data as a geojson spatial data file, which 
 
 ```{r}
 library(sf)
+
 
 parks<-st_read("https://enigma.accgov.com/server/rest/services/ACC_Parks/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson")
 
