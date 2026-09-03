@@ -126,6 +126,28 @@
     ]
   },
   {
+    "objectID": "modules/m4_data_visualize.html#readings",
+    "href": "modules/m4_data_visualize.html#readings",
+    "title": "Module 4: Exploratory data analysis, data visualization, and descriptive stats",
+    "section": "Readings",
+    "text": "Readings\n\nChapters 2 and 4 of Data Visualization by Claus Wilke\nChapter 3 of Data visualization: A Practical Introduction by Kieran Healy",
+    "crumbs": [
+      "Home",
+      "Module 4-Descriptive statistics and visualization"
+    ]
+  },
+  {
+    "objectID": "modules/m4_data_visualize.html#videos",
+    "href": "modules/m4_data_visualize.html#videos",
+    "title": "Module 4: Exploratory data analysis, data visualization, and descriptive stats",
+    "section": "Videos",
+    "text": "Videos\n\nggplot2 explained in 5 minutes! by R for Ecology",
+    "crumbs": [
+      "Home",
+      "Module 4-Descriptive statistics and visualization"
+    ]
+  },
+  {
     "objectID": "modules/m4_data_visualize.html#course-materials",
     "href": "modules/m4_data_visualize.html#course-materials",
     "title": "Module 4: Exploratory data analysis, data visualization, and descriptive stats",
@@ -240,7 +262,7 @@
     "href": "labs.html",
     "title": "Labs",
     "section": "",
-    "text": "To start your lab, go to the master repostory linked below and create a “Fork” using the menu button. You can then edit labs by manually downloading/uploading files or by using a Github client such as Github Desktop.\nTo find a lab once you’ve created it, go to the Github page and find your account page by clicking the logo in the upper left. You should see it listed on the lefthand column, or you can search your repositories from that spot.\nI’ll leave comments for the labs on the README page.\n\nLab 0: Lab 0 master repository\nLab 1: Lab 1 master repository\nLab 2:\nLab 3:\nLab 4:\nLab 5:\nLab 6:\nLab 7:"
+    "text": "To start your lab, go to the master repostory linked below and create a “Fork” using the menu button. You can then edit labs by manually downloading/uploading files or by using a Github client such as Github Desktop.\nTo find a lab once you’ve created it, go to the Github page and find your account page by clicking the logo in the upper left. You should see it listed on the lefthand column, or you can search your repositories from that spot.\nI’ll leave comments for the labs on the README page.\n\nLab 0: Lab 0 master repository\nLab 1:\nLab 2:\nLab 3:\nLab 4:\nLab 5:\nLab 6:\nLab 7:"
   },
   {
     "objectID": "course_data.html",
