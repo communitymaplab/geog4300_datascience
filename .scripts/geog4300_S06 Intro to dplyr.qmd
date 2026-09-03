@@ -5,7 +5,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-The 'dplyr' package is a core part of the tidyverse and the main tool used for basic data wrangling. In this script, we'll go over filter, mutate, count, group_by and summarise.
+The `dplyr` package is a core part of the tidyverse and the main tool used for basic data wrangling. In this script, we'll learn how to use the dplyr functions filter(), mutate(), group_by(), summarise(), count(), and select() for data wrangling.
 
 To do so, let's load just `dplyr` (and `readr`) and the county census data we've been working with.
 
@@ -58,17 +58,39 @@ Counties in the Southeast or Northeast with high poverty rates:
 census_data_elites1<-census_data %>%
   filter(region=="NE" | region=="SE") %>%
   filter(BADeg_pct > 25)
-table(census_data_elites1$St_name)
+table(census_data_elites1$st_name)
 ```
 
 ## You try it!!
-Filter all counties with a poverty rate (pov_pop_pct) > 20% (BADeg_pct)
+Filter all counties with a poverty rate (pov_pop_pct) > 20%
 Call this census_data_pov
 
 
 # Group_by, summarise, count, select, and mutate
 
-One core `dplyr` function is `mutate`, which is how we create new variables. Let's sum HSGrad_pct and SomeCol_pct to get a single count for both.
+The `select` function allows you to keep only the variables (columns) you need. You can select by column names or numbers
+
+```{r}
+names(census_data)
+
+census_data_pov<-census_data %>%
+  select(cty_fips,st_name,region,pov_pop_pct)
+```
+
+Use a `:` to select a range of variable names. Let's select just educational variables
+
+```{r}
+census_data_ed<-census_data %>%
+  select(cty_fips,st_name,region,LessHS_pct:GradDeg_pct)
+```
+
+What does that dataset look like?
+
+```{r}
+head(census_data_ed)
+```
+
+A core `dplyr` function is `mutate`, which is how we create new variables. Let's sum HSGrad_pct and SomeCol_pct to create a new variable representing the percentage of adults with a high school diploma or some college but not a bachelor's degree.
 
 ```{r}
 census_data_ed<-census_data_ed %>%
@@ -98,28 +120,6 @@ census_data_elites_tbl<-census_data_elites %>%
 census_data_elites_tbl1<-census_data_elites %>%
   group_by(st_name) %>%
   summarise(count=n())
-```
-
-The `select` command allows you to reduce the number of variables/columns in your data. You can select by column names or numbers
-
-```{r}
-names(census_data)
-
-census_data_pov<-census_data %>%
-  select(GEOID,st_name,region,pov_pop_pct)
-```
-
-Use a `:` to select a range of variable names. Let's select just educational variables
-
-```{r}
-census_data_ed<-census_data %>%
-  select(GEOID,st_name,region,LessHS_pct:GradDeg_pct)
-```
-
-What does that dataset look like?
-
-```{r}
-head(census_data_ed)
 ```
 
 # Joins

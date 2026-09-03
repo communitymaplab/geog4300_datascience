@@ -12,11 +12,23 @@ format: html
 13. Arrange and present tabular results in a readable format appropriate for a technical document or report. (Labs 1, 2, 3, 4, 5)
 :::
 
+::: {.required-actions}
+# Required on day 1 
+
+## Readings
+- [Chapters 2 and 4 of Data Visualization](https://clauswilke.com/dataviz/aesthetic-mapping.html){target="_blank"} by Claus Wilke
+- [Chapter 3 of Data visualization: A Practical Introduction](https://socviz.co/03-ggplot-basics.html){target="_blank"} by Kieran Healy
+
+## Videos
+- [ggplot2 explained in 5 minutes!](https://www.youtube.com/watch?v=FdVy57oGJuc){target="_blank"} by R for Ecology
+
+::: 
+
 ## Course materials { .module-section }
 
 # Scripts
-* [S09: Visualizing census data using ggplot](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S08%20census%20data%20and%20ggplot.qmd){target="_blank"}
-* [S10: Visualizing distribution](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S09%20visualizing%20distribution.qmd){target="_blank"}
+- [S09: Visualizing census data using ggplot](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S08%20census%20data%20and%20ggplot.qmd){target="_blank"}
+- [S10: Visualizing distribution](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S09%20visualizing%20distribution.qmd){target="_blank"}
 
 # Slides for class
 *None yet!*
@@ -24,15 +36,13 @@ format: html
 ## Additional Resources {.module-section}
 
 # Readings
-* [Chap 13, EDA in R in *The Statistics Handbook*](https://r-statistics.co/Exploratory-Data-Analysis-in-R.html){target="_blank"}
-* [Chapter 3 of Data visualization: A Practical Introduction](https://socviz.co/03-ggplot-basics.html){target="_blank"} by Kieran Healy
-* [R Graphics Cookbook](https://r-graphics.org/){target="_blank"}: Really this whole book is relevant--find what interests you!
-* [Chapter 9 of Geocomputation with R](https://r.geocompx.org/adv-map){target="_blank"}. Be aware that tmap v.4 has significant changes over v.3, so you may need to adapt some things from this text.
+- [Chap 13, EDA in R in *The Statistics Handbook*](https://r-statistics.co/Exploratory-Data-Analysis-in-R.html){target="_blank"}
+- [R Graphics Cookbook](https://r-graphics.org/){target="_blank"}: Really this whole book is relevant--find what interests you!
+- [Chapter 9 of Geocomputation with R](https://r.geocompx.org/adv-map){target="_blank"}. Be aware that tmap v.4 has significant changes over v.3, so you may need to adapt some things from this text.
 
 
 # Videos
-* [Exploratory Data Analysis](https://www.youtube.com/watch?v=QiqZliDXCCg){target="_blank"} by IBM Technology
-* [Describe and Summarise your data](https://www.youtube.com/watch?v=M5LDAE8mGKo){target="_blank"} by R Programming 101
-* [ggplot2 explained in 5 minutes!](https://www.youtube.com/watch?v=FdVy57oGJuc){target="_blank"} by R for Ecology
-* [Data visualization with R in 36 minutes](https://www.youtube.com/watch?v=McL9MMwmIZY){target="_blank"} by Equitable Equations
-* [Introduction to TMap](https://www.youtube.com/watch?v=4L9jlPUYdxY){target="_blank"} by GeoProgramming (again, this uses v3 syntax, so some adaptation may be needed)
+- [Exploratory Data Analysis](https://www.youtube.com/watch?v=QiqZliDXCCg){target="_blank"} by IBM Technology
+- [Describe and Summarise your data](https://www.youtube.com/watch?v=M5LDAE8mGKo){target="_blank"} by R Programming 101
+- [Data visualization with R in 36 minutes](https://www.youtube.com/watch?v=McL9MMwmIZY){target="_blank"} by Equitable Equations
+- [Introduction to TMap](https://www.youtube.com/watch?v=4L9jlPUYdxY){target="_blank"} by GeoProgramming (again, this uses v3 syntax, so some adaptation may be needed)
