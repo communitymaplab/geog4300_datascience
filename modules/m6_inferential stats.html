@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 6: Statistical inference and generalization – Data Science in Geography (Geog4/6300)</title>
+<title>m6_inferential-stats – Data Science in Geography (Geog4/6300)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -217,101 +246,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#course-materials" id="toc-course-materials" class="nav-link active" data-scroll-target="#course-materials">Course materials</a></li>
-  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts">Scripts</a></li>
-  <li><a href="#slides-for-class" id="toc-slides-for-class" class="nav-link" data-scroll-target="#slides-for-class">Slides for class</a>
-  <ul class="collapse">
-  <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
-  </ul></li>
-  <li><a href="#readings" id="toc-readings" class="nav-link" data-scroll-target="#readings">Readings</a></li>
-  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Module 6: Statistical inference and generalization</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
+<p><span class="math inline">\(��m��mo�L�D��;�%g�?w��ŷ���ovH0��a�5��*�ؒ��l͛�S�iy�r�O7����%L]��%���hk����&gt;v1�HB������d\�(eoIx�&gt;3�6BS%���(
+��f\)</span>�h�����eԎ���H���<code>ݶf{�Fo�Y���@00uMb�z-��XI$&amp;�gf���7Ӵ�u|'K.�oP P���F�.��o��9B&lt;~.����[����&lt;٭�$�����{1�A��.�bKx�L������'�u8n5���e,]�H����V��Ww�$�C�el��|zys��K�i-�q�ݬbk,wnG��;��~�e�r͒���~'1</code>V⦫�-<em>[��L�K�‘2@����仪��n���2�N��ƶ�G���i/U��’E�@�<code>H��;J�������+J�n#���6ڴ�ĹG���N�G�'�Z!�����Wi��NJ�@���A��Z|�[��$q}i�ҷ�QbtTEC$��m��mo�L�D��;�%g�?w��ŷ���ovH0��a�5��*�ؒ��l͛�S�iy�r�O7����%L]��%���hk����&gt;v1�HB������d\�(eoIx�&gt;3�6BS%���( ��f$�h�����eԎ���H���</code>ݶf{�Fo�Y���<span class="citation" data-cites="00uMb">@00uMb</span>�z-��XI<span class="math inline">\(&amp;�gf���7Ӵ�u|'K.�oP
+P���F�.��o��9B&lt;~.����[����&lt;٭�\)</span>�����{1�A��.�bKx�L������’�u8n5���e,]�H����V��Ww�<span class="math inline">\(�C�el��|zys��K�i-�q�ݬbk,wnG��;��~�e�r͒���~'1`V⦫�-*[��L�K�'2@����仪��n���2�N��ƶ�G���i/U��'E�@�`H��;J�������+J�n#���6ڴ�ĹG���N�G�'�Z!�����Wi��NJ�@���A��Z|�[��\)</span>q}i�ҷ�QbtTEC<span class="math inline">\(��m��mo�L�D��;�%g�?w��ŷ���ovH0��a�5��*�ؒ��l͛�S�iy�r�O7����%L]��%���hk����&gt;v1�HB������d\�(eoIx�&gt;3�6BS%���(
+��f\)</span>�h�����eԎ���H���<code>ݶf{�Fo�Y���@00uMb�z-��XI$&amp;�gf���7Ӵ�u|'K.�oP P���F�.��o��9B&lt;~.����[����&lt;٭�$�����{1�A��.�bKx�L������'�u8n5���e,]�H����V��Ww�$�C�el��|zys��K�i-�q�ݬbk,wnG��;��~�e�r͒���~'1</code>V⦫�-</em>[��L�K�‘2@����仪��n���2�N��ƶ�G���i/U��’E�@�<code>H��;J�������+J�n#���6ڴ�ĹG���N�G�'�Z!�����Wi��NJ�@���A��Z|�[��$q}i�ҷ�QbtTEC$��m��mo�L�D��;�%g�?w��ŷ���ovH0��a�5��*�ؒ��l͛�S�iy�r�O7����%L]��%���hk����&gt;v1�HB������d\�(eoIx�&gt;3�6BS%���( ��f$�h�����eԎ���H���</code>ݶf{�Fo�Y���<span class="citation" data-cites="00uMb">@00uMb</span>�z-��XI<span class="math inline">\(&amp;�gf���7Ӵ�u|'K.�oP
+P���F�.��o��9B&lt;~.����[����&lt;٭�\)</span>�����{1�A��.�bKx�L������’�u8n5���e,]�H����V��Ww�<span class="math inline">\(�C�el��|zys��K�i-�q�ݬbk,wnG��;��~�e�r͒���~'1`V⦫�-*[��L�K�'2@����仪��n���2�N��ƶ�G���i/U��'E�@�`H��;J�������+J�n#���6ڴ�ĹG���N�G�'�Z!�����Wi��NJ�@���A��Z|�[��\)</span>q}i�ҷ�QbtTEC<span class="math inline">\(��m��mo�L�D��;�%g�?w��ŷ���ovH0��a�5��*�ؒ��l͛�S�iy�r�O7����%L]��%���hk����&gt;v1�HB������d\�(eoIx�&gt;3�6BS%���(
+��f\)</span>�h�����eԎ���H���<code>ݶf{�Fo�Y���@00uMb�z-��XI$&amp;�gf���7Ӵ�u|'K.�oP P���F�.��o��9B&lt;~.����[����&lt;٭�$�����{1�A��.�bKx�L������'�u8n5���e,]�H����V��Ww�$�C�el��|zys��K�i-�q�ݬbk,wnG��;��~�e�r͒���~'1</code>V⦫�-*[��L�K�‘2@����仪��n���2�N��ƶ�G���i/U��’E�@�`H��;J�������+J�n#���6ڴ�ĹG���N�G�’�Z!�����Wi��NJ�@���A��Z|�[��<span class="math inline">\(q}i�ҷ�QbtTEC\)</span>��m��mo�L�D��;�%g�?w��ŷ���ovH0��a�5��*�ؒ��l͛�S�iy�r�O7����%L]��%���hk����&gt;v1�HB������d�(eoIx�&gt;3�6BS%���</p>
 
 
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Relevant Learning Standards
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol start="18" type="1">
-<li>Explaining how evidence from a sample supports conclusions about a population while acknowledging sampling variability and uncertainty.</li>
-<li>Assess the normality of a variable using multiple diagnostic approaches and use those results to select between parametric and non-parametric statistical tests.</li>
-<li>Construct and interpret confidence intervals, explaining how factors such as sample size and spatial scale affect the precision of an estimate.</li>
-</ol>
-</div>
-</div>
-<section id="course-materials" class="level2 module-section">
-<h2 class="module-section anchored" data-anchor-id="course-materials">Course materials</h2>
-</section>
-<section id="scripts" class="level1">
-<h1>Scripts</h1>
-<ul>
-<li><a href="https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S15%20Confidence%20intervals.qmd" target="_blank">S15: Confidence intervals</a></li>
-<li><a href="https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S16%20Normality.qmd" target="_blank">S16: Normality</a></li>
-</ul>
-</section>
-<section id="slides-for-class" class="level1">
-<h1>Slides for class</h1>
-<ul>
-<li><a href="https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L09%20Central%20limit%20theorem,%20CIs,%20Sampling.pptx" target="_blank">L09: Central limit theorem and confidence intervals</a></li>
-<li><a href="https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L10%20Hypotheses%20and%20one%20sample%20tests%20and%20normality.pptx" target="_blank">L10: Hypotheses, one sample tests, and normality</a></li>
-</ul>
-<section id="additional-resources" class="level2 module-section">
-<h2 class="module-section anchored" data-anchor-id="additional-resources">Additional Resources</h2>
-</section>
-</section>
-<section id="readings" class="level1">
-<h1>Readings</h1>
-<ul>
-<li><a href="https://learningstatisticswithr.com/10-estimation.html" target="_blank">Chap. 10, Estimating unknown quantities from a sample from <em>Learning Statistics with R</em></a></li>
-<li><a href="https://tuos-bio-data-skills.github.io/intro-stats-book/hypotheses-and-p-values.html" target="_blank">Chapter 7, Hypotheses and p-values from *Introductory Biostatistics with R</a></li>
-<li><a href="https://r-statistics.co/How-Statistical-Inference-Works.html" target="_blank">Chap 29, 31, and 43 from <em>The Statistics Handbook</em></a></li>
-</ul>
-</section>
-<section id="videos" class="level1">
-<h1>Videos</h1>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=YAlJCEDH2uY" target="_blank">The Central Limit Theorem, Clearly Explained!!!</a> by StatQuest</li>
-<li><a href="https://www.youtube.com/watch?v=ivd8wEHnMCg" target="_blank">The Central Limit Theorem</a> by Simple Learning Pro</li>
-<li><a href="https://www.youtube.com/watch?v=tdj-hoivzHQ" target="_blank">P-Values, Null Hypothesis, and Alternative Hypothesis in 3 Minutes</a> by 3-Minute Data Science</li>
-<li><a href="https://www.youtube.com/watch?v=ENnlSlvQHO0" target="_blank">Confidence Interval [Simply explained]</a> by numiqo</li>
-<li><a href="https://www.youtube.com/watch?v=Djxj0NXNmzg" target="_blank">Confidence Intervals in R</a> by Equitable Equations</li>
-</ul>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
