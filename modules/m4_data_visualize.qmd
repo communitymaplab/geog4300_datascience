@@ -31,7 +31,7 @@ format: html
 - [S10: Visualizing distribution](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S09%20visualizing%20distribution.qmd){target="_blank"}
 
 # Slides for class
-*None yet!*
+- [L08: Data visualization and color theory](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L08-Data%20visualization.pptx){target="_blank"}
 
 ## Additional Resources {.module-section}
 
