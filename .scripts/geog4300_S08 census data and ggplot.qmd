@@ -1,5 +1,5 @@
 ---
-title: "vizualizing census data with ggplot"
+title: "visualizing census data with ggplot"
 output: html_notebook
 editor_options: 
   chunk_output_type: console
@@ -20,7 +20,7 @@ To start with, you need to install and call the tidycensus package and register 
 ```{r}
 #install.packages(tidycensus)
 
-census_api_key("733eb53a4287ab992637dcdd57408410992465ed", overwrite = FALSE, install = TRUE)
+census_api_key("**key goes here**", overwrite = FALSE, install = TRUE)
 ```
 
 Let's start by downloading a list of available variables from the 2019-23 American Community Survey. We'll specify the year, dataset, and whether to cache this file locally on your computer.
@@ -29,42 +29,35 @@ Let's start by downloading a list of available variables from the 2019-23 Americ
 v23 <- load_variables(2023, "acs5")
 ```
 
-You can view this downloaded data frame to explore the available variables. You have a variable ID (name), specific variable label (label), and table name (concept). To find variables related to internet usage, filter the data frame and search for "Internet" in the concept column. Table B19013 contains variables related to median household income and its race-specific variants.
+You can view this downloaded data frame to explore the available variables. You have a variable ID (name), specific variable label (label), and table name (concept). To find variables related to income, filter the data frame and search for "Median Household Income" in the concept column. Table B19013 contains variables related to median household income and its race-specific variants.
 
-Let's download those variables. We'll first create a subsetted dataframe showing just variables from B19013. We'll then use get_acs to download them.
+Let's download those variables. We'll first create a subsetted dataframe showing just variables from B19013 for the 2019-2023 five-year ACS sample. We'll then use get_acs to download them.
 
 ```{r}
 var_select<-v23 %>% filter(substr(name,1,6)=="B19013")
 
-cty_medinc<-get_acs(geography="county",
-                    variables=var_select$name,
-                    year=2023)
-```
-
-For some analyses and visualizations, it is useful to reshape these data into wide format. To do so, we need to remove the margin of error column (`moe`) and then use `pivot_wider`. We can also separate the county and state name into distinct columns using separate.
-
-```{r}
-cty_medinc_wide<-cty_medinc %>%
-  select(-moe) %>%
-  pivot_wider(names_from=variable,
-              values_from=estimate) %>%
-  separate(NAME,
-           into=c("county","state"),
-           sep=", ")
-
-#Alternative with the `output` parameter. 
-#Columns ending with "E" are the estimate. "M" is margin of error.
-cty_medinc_wide_1<-get_acs(geography="county",
+cty_medinc_wide<-get_acs(geography="county",
                     variables=var_select$name,
                     year=2023,
                     output="wide")%>%
   separate(NAME,into=c("county","state"),sep=", ")
 ```
 
+For some analyses and visualizations, it is useful to reshape these data into wide format. To do so, we need to remove the margin of error column (`moe`) and then use `pivot_wider`. We can also separate the county and state name into distinct columns using separate.
+
+```{r}
+#Alternative in long format
+#Columns ending with "E" are the estimate. "M" is margin of error.
+cty_medinc_long<-get_acs(geography="county",
+                    variables=var_select$name,
+                    year=2023)%>%
+  separate(NAME,into=c("county","state"),sep=", ")
+```
+
 There's more info on the tidycensus package in Kyle's book: https://walker-data.com/census-r/. This page is also useful: https://walker-data.com/tidycensus/articles/basic-usage.html
 
 ##You try it!
-Can you download data on tenure status (owner/renter)  at county level using tidycensus?
+Can you download data on tenure status (owner/renter)  at county level using tidycensus? Hint: search the v23 dataframe for 'tenure' in the concept column, or look for table B25003.
 
 ```{r}
 
@@ -169,6 +162,7 @@ plot_basic
 
 plot_basic+theme_minimal()
 plot_basic+theme_dark()
+plot_basic+theme_bw()
 plot_basic+theme_void()
 ```
 
@@ -184,4 +178,4 @@ plot_basic+theme_void()
 ```
 
 ##Going further
-Ask your AI of choice to suggest other enhancements to the plot_basic code above. Which do you like? How do those work?
+Ask your AI of choice to suggest other enhancements to the plot_basic code above. For example: 'What are good ways to highlight the income disparity on this plot?' or 'How would you add a regression line?' Which do you like? How do those work?
