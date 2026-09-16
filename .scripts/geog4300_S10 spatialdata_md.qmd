@@ -8,7 +8,6 @@ editor_options:
 
 There are several packages available to create and edit spatial data in R. This includes both raster and vector data. This script focuses on the latter. The sf (stands for "simple features") package is one efficient way to load vector data. Other popular packages for spatial data are raster, terra, and stars.
 
-
 ```{r}
 #install.packages("sf")
 library(tidyverse)
@@ -17,54 +16,54 @@ library(tidycensus)
 library(viridis)
 ```
 
-The main way to read in data using sf is the function `st_read`, which uses gdal to read a variety of vector file formats (shapefile, geopackage, geojson, etc.). The resulting object is formatted just like a data frame. 
+The main way to read in data using sf is the function `st_read`, which uses GDAL to read a variety of vector file formats (shapefile, GeoPackage, GeoJSON, etc.). The resulting object is formatted just like a data frame. 
 
 Let's load six core Atlanta counties.
 
 ```{r}
-ga_cty<-st_read("data/ACSCtyData_2022ACS_simplify.gpkg") %>% 
+ga_cty <- st_read("data/ACSCtyData_2022ACS_simplify.gpkg") %>% 
   st_transform(4326) %>%
-  filter(st_name=="Georgia")
+  filter(st_name == "Georgia")
 ```
 
-For this analysis, we'll be looking at Waffle Houses in the Atlanta metro. We will read in a csv file with a national dollar store listing, select only those identified as being in Atlanta and still open (no end year). Lastly, we will use st_as_sf to convert to spatial data.
+For this analysis, we'll be looking at Waffle Houses in the Atlanta metro. We will read in a CSV file with a national Waffle House listing, select only those identified as being in Atlanta and still open (no end year). Lastly, we will use st_as_sf to convert to spatial data.
 
 ```{r}
-wh_stores<-read_csv("data/wh_locations_coords.csv") %>%
-  st_as_sf(coords=c("Longitude","Latitude"), #Identify the coordinate variables
-           crs=4326, #Identify the projection (4326 is WGS84)
-           remove=FALSE) %>% #Don't remove the coordinate variables
- filter(State=="GA") #Select just stores in Georgia
+wh_stores <- read_csv("data/wh_locations_coords.csv") %>%
+  st_as_sf(coords = c("Longitude", "Latitude"), #Identify the coordinate variables
+           crs = 4326, #Identify the projection (4326 is WGS84)
+           remove = FALSE) %>% #Don't remove the coordinate variables
+  filter(State == "GA") #Select just stores in Georgia
 ```
 
-The sf package also has a set of spatial functions that can be used on these data. For example, you could convert the PUMA polygons to centroids. We then use geom_sf in ggplot to visualize those points.
+The sf package also has a set of spatial functions that can be used on these data. For example, you could convert the county polygons to centroids. We then use geom_sf in ggplot to visualize those points.
 
 ```{r}
 ggplot(ga_cty) + 
   geom_sf()
 
-ga_cty_points<-ga_cty %>%
+ga_cty_points <- ga_cty %>%
   st_centroid()
 
 ggplot(ga_cty_points) + 
   geom_sf()
 ```
 
-
 ### Tools for viewing/mapping spatial data
+
 ```{r}
 #install.packages("tmap")
 library(tmap)
 ```
 
-You can make maps with ggplot, but it's not the best option out there (in your instructor's opinion). The tmap package is a popular tool for mapping spatial data. Here's a basic plot in tmap, which follows a similar logic to ggplot:
+You can make maps with ggplot, but it's not the best option out there (in your instructor's opinion). The tmap package is a popular tool for mapping spatial data. Here's a basic plot in tmap, which follows similar logic to ggplot:
 
 ```{r}
-tm_shape(ga_cty)+
+tm_shape(ga_cty) +
   tm_polygons()
 ```
 
-You can make a choropleth map by adding a variable. Here we, will use the count of total population using the Jenks natural breaks classification method.
+You can make a choropleth map by adding a variable. Here we will use the count of total population using the Jenks natural breaks classification method.
 
 ```{r}
 tm_shape(ga_cty) +
@@ -75,7 +74,8 @@ tm_shape(ga_cty) +
 ```
 
 ## You try it!
-Create a map of this county census data showing the percentage of foreign born residents: `fb_pct`. Use the `st_transform` function to Albers conic projection (CRS 5070) and display the data with Jenks natural breaks classification.
+
+Create a map of this county census data showing the percentage of foreign-born residents: `fb_pct`. Use the `st_transform` function to transform to Albers conic projection (CRS 5070) and display the data with Jenks natural breaks classification.
 
 For even more challenge, load the census data and select a different state before mapping.
 
@@ -83,7 +83,7 @@ For even more challenge, load the census data and select a different state befor
 
 ```
 
-You can you can also add Waffle Houses. The code below uses just Dollar Generals for mapping. The `st_intersection` function to keep only those in the ATlanta metro.
+You can also add Waffle Houses. The code below uses the `st_intersection` function to keep only those in the Atlanta metro.
 
 ```{r}
 tm_shape(ga_cty) +
@@ -91,11 +91,11 @@ tm_shape(ga_cty) +
     fill = "totpop_race",
     fill.scale = tm_scale_intervals(style = "jenks")
   ) +
-tm_shape(wh_stores)+
-  tm_dots(size=0.3,fill_alpha=0.5) 
+  tm_shape(wh_stores) +
+    tm_dots(size = 0.3, fill_alpha = 0.5) 
 ```
 
-We can make this map prettier, adding a north arrow and a scale bar as well as titling the legend.
+We can make this map prettier by adding a north arrow and a scale bar as well as titling the legend.
 
 ```{r}
 tm_shape(ga_cty) +
@@ -105,16 +105,18 @@ tm_shape(ga_cty) +
     fill.legend = tm_legend(title = "Total Population")
   ) +
   tm_shape(wh_stores) +
-  tm_symbols(
-    size = 0.3,
-    fill_alpha = 0.5
-  ) +
+    tm_symbols(
+      size = 0.3,
+      fill_alpha = 0.5
+    ) +
   tm_compass() +
   tm_scalebar(position = c("left", "bottom")) 
 ```
 
-###You try it!
-Make a map showing median household income and another dollar store chain besides Dollar General. How does it compare to Dollar General's map?
+## You try it!
+
+Make a map showing median household income overlaid with Waffle House locations. How does the distribution of Waffle Houses relate to median household income across the region? Create a second map showing a different demographic or economic variable alongside the Waffle House data and compare the spatial patterns.
+
 ```{r}
 
 ```
@@ -129,29 +131,29 @@ tm_shape(ga_cty) +
     fill = "totpop_race",
     fill.scale = tm_scale_intervals(style = "jenks")
   ) +
-tm_shape(wh_stores)+
-  tm_dots(size=0.3,fill_alpha=0.5) 
+  tm_shape(wh_stores) +
+    tm_dots(size = 0.3, fill_alpha = 0.5) 
 ```
 
-There are other good mapping packages available. For example, mapview (https://r-spatial.github.io/mapview/) provides quick interactive maps and the the leaflet package (https://rstudio.github.io/leaflet/) creates maps using that popular javascript library.
+There are other good mapping packages available. For example, mapview (https://r-spatial.github.io/mapview/) provides quick interactive maps, and the leaflet package (https://rstudio.github.io/leaflet/) creates maps using the popular JavaScript library.
 
-### You try it!
+## You try it!
 
 Do some research on the tmap package. 
 
--Can you change the colors used in the choropleth map?
--Can you change the break points between classes for the choropleth map?
--Can you make the Waffle House dots yellow?
+- Can you change the colors used in the choropleth map?
+- Can you change the break points between classes for the choropleth map?
+- Can you make the Waffle House dots yellow?
 
-# Loading raster data
+## Loading raster data
 
-There are several packages for raster data available, but `terra` is probably the most common. Since rasters aren't made of tables, they load in a different format, "SpatRaster" 
+There are several packages for raster data available, but `terra` is probably the most common. Since rasters aren't made of tables, they load in a different format: "SpatRaster".
 
 ```{r}
 library(terra)
 ```
 
-Some raster files can be big, so let's make sure we download it first locally. We'll then load it.
+Some raster files can be large, so let's make sure we download it first locally. We'll then load it.
 
 ```{r}
 download.file(
@@ -160,35 +162,36 @@ download.file(
   mode = "wb"
 )
 
-ga_dem<-rast("data/dem_ga_clip.tif")
+ga_dem <- rast("data/dem_ga_clip.tif")
 ```
 
 What can we say about that raster?
 
 ```{r}
-#What's its dimensions--height, width, and depth in cells (pixels)?
+# What are its dimensions—height, width, and depth in cells (pixels)?
 dim(ga_dem)
 
-#How many cells does it have in total?
+# How many cells does it have in total?
 ncell(ga_dem)
 
-#What's its spatial resolution (in the units of the projection, decimal degrees in this case)?
+# What is its spatial resolution (in the units of the projection, decimal degrees in this case)?
 res(ga_dem)
 
-#What's its projection?
+# What is its projection?
 crs(ga_dem)
 
-#What is its spatial extent? This will be in decimal degrees.
+# What is its spatial extent? This will be in decimal degrees.
 ext(ga_dem)
 ```
 
-We can also use regular R functions to summarise the DEM, since it is structured in the same way as a matrix.
+We can also use regular R functions to summarize the DEM, since it is structured in the same way as a matrix.
 
 ```{r}
 summary(ga_dem)
 ```
 
 And we can plot it:
+
 ```{r}
 plot(ga_dem)
 
@@ -199,13 +202,12 @@ plot(
 )
 ```
 
-If you want to see this raster in matrix format, that's easy, too.
+If you want to see this raster in matrix format, that's easy too.
 
 ```{r}
 dem_mat <- as.matrix(ga_dem, wide = TRUE)
 dim(dem_mat)
 ```
-
 
 We'll talk more about rasters later in the course.
 
