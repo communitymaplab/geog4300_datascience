@@ -273,11 +273,18 @@
     "text": "Below is a table showing the main datasets in the course. All of them are available on Github, but you should also be able to right-click the link to download them locally.\nIt’s HIGHLY recommended that you save these to a single folder for all your course materials in a folder called “data.” Most course scripts reference the Github repository to load these datasets, but this makes them easy to find should you not have access to that repo."
   },
   {
+    "objectID": "data/dollarstores_atlcore.html",
+    "href": "data/dollarstores_atlcore.html",
+    "title": "Data Science in Geography (Geog4/6300)",
+    "section": "",
+    "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     dataset\n\n\n       GEOGCRS[“WGS 84”,ENSEMBLE[“World Geodetic System 1984 ensemble”,MEMBER[“World Geodetic System 1984 (Transit)”],MEMBER[“World Geodetic System 1984 (G730)”],MEMBER[“World Geodetic System 1984 (G873)”],MEMBER[“World Geodetic System 1984 (G1150)”],MEMBER[“World Geodetic System 1984 (G1674)”],MEMBER[“World Geodetic System 1984 (G1762)”],MEMBER[“World Geodetic System 1984 (G2139)”],MEMBER[“World Geodetic System 1984 (G2296)”],ELLIPSOID[“WGS 84”,6378137,298.257223563,LENGTHUNIT[“metre”,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[“Greenwich”,0,ANGLEUNIT[“degree”,0.0174532925199433]],CS[ellipsoidal,2],AXIS[“geodetic latitude (Lat)”,north,ORDER[1],ANGLEUNIT[“degree”,0.0174532925199433]],AXIS[“geodetic longitude (Lon)”,east,ORDER[2],ANGLEUNIT[“degree”,0.0174532925199433]],USAGE[SCOPE[“Horizontal component of 3D system.”],AREA[“World.”],BBOX[-90,-180,90,180]],ID[“EPSG”,4326]] +proj=longlat +datum=WGS84 +no_defs 3452 4326 EPSG:4326 WGS 84 longlat EPSG:7030 true"
+  },
+  {
     "objectID": "labs.html",
     "href": "labs.html",
     "title": "Labs",
     "section": "",
-    "text": "To start your lab, go to the master repostory linked below and create a “Fork” using the menu button. You can then edit labs by manually downloading/uploading files or by using a Github client such as Github Desktop.\nTo find a lab once you’ve created it, go to the Github page and find your account page by clicking the logo in the upper left. You should see it listed on the lefthand column, or you can search your repositories from that spot.\nI’ll leave comments for the labs on the README page.\n\nLab 0: Lab 0 master repository\nLab 1: Lab 1 master repository\nLab 2:\nLab 3:\nLab 4:\nLab 5:\nLab 6:\nLab 7:"
+    "text": "To start your lab, go to the master repostory linked below and create your own version by clicking on the green “Use this template” button. Save the template under our class organization (Geog4-6300-Fall-2026). You can then edit labs by manually downloading/uploading files or by using a Github client such as Github Desktop.\nTo find a lab once you’ve created it, go to the Github page and find your account page by clicking the logo in the upper left. You should see it listed on the lefthand column, or you can search your repositories from that spot.\nI’ll leave comments for the labs on the README page.\n\nLab 0: Lab 0 master repository\nLab 1: Lab 1 master repository\nLab 2: Lab 2 master repository\nLab 3:\nLab 4:\nLab 5:\nLab 6:\nLab 7:"
   },
   {
     "objectID": "modules/index.html",
