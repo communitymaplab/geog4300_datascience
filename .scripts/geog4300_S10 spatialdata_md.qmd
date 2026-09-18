@@ -115,10 +115,25 @@ tm_shape(ga_cty) +
 
 ## You try it!
 
-Make a map showing median household income overlaid with Waffle House locations. How does the distribution of Waffle Houses relate to median household income across the region? Create a second map showing a different demographic or economic variable alongside the Waffle House data and compare the spatial patterns.
+Make a map showing median household income (`medinc`) overlaid with Waffle House locations. How does the distribution of Waffle Houses relate to median household income across the region? Create a second map showing a different demographic or economic variable alongside the Waffle House data and compare the spatial patterns.
 
 ```{r}
+tmap_mode("view")
 
+tm_shape(ga_cty) +
+  tm_polygons(
+    fill = "medinc",
+    fill.scale = tm_scale_intervals(style = "jenks"),
+    fill.legend = tm_legend(title = "Median household income"),
+    alpha=0.3
+  ) +
+  tm_shape(wh_stores) +
+    tm_symbols(
+      size = 0.3,
+      fill_alpha = 0.5
+    ) +
+  tm_compass() +
+  tm_scalebar(position = c("left", "bottom")) 
 ```
 
 You can also make interactive maps with tmap. Make sure you set the output to the Console using the gear icon above.
@@ -163,6 +178,7 @@ download.file(
 )
 
 ga_dem <- rast("data/dem_ga_clip.tif")
+plot(ga_dem)
 ```
 
 What can we say about that raster?
@@ -188,6 +204,7 @@ We can also use regular R functions to summarize the DEM, since it is structured
 
 ```{r}
 summary(ga_dem)
+hist(ga_dem)
 ```
 
 And we can plot it:
@@ -207,6 +224,9 @@ If you want to see this raster in matrix format, that's easy too.
 ```{r}
 dem_mat <- as.matrix(ga_dem, wide = TRUE)
 dim(dem_mat)
+
+#Highest/lowest Waffle Houses in Georgia?
+wh_stores$elev<-extract(ga_dem,wh_stores)
 ```
 
 We'll talk more about rasters later in the course.
