@@ -7,86 +7,80 @@ editor_options:
 
 ## Working with raster data in R
 
-The raster package in R provides a suite of tools for loading and working with raster data. We can load a digital elevation model (DEM) geotiff of elevation in Georgia using the raster function as shown below.
+The raster package in R provides a suite of tools for loading and working with raster data. We can load a version of the National Land Cover Database for Houston as a geotiff using the `rast` function from the terra package as shown below.
+
+As a reminder, a raster consists of a grid of equally sized cells. Each cell stores a value. In the NLCD dataset, these values represent land cover classes, while in a DEM they represent elevation.
 
 ```{r}
-#| label: cars
 #install.packages("raster")
-library(raster)
+library(terra)
 library(sf)
 library(tidyverse)
 library(tidycensus)
 library(FedData)
 library(tmap)
 
-houston<-st_read("data/US_ua_2020_urban.gpkg") %>%
-  filter(str_detect(NAME10,"Houston")) %>%
-  select(NAME10) %>%
+seattle<-st_read("data/us_2025_uac20.gpkg") %>%
+  filter(str_detect(NAME20,"Seattle")) %>%
+  select(NAME20) %>%
   st_transform(4326)
 
-legend<-pal_nlcd()
+nlcd_legend <- pal_nlcd() %>%
+  mutate(ID=as.character(ID))
 
-nlcd21<-raster("data/nlcd/nlcd_houston21.tif")
-plot(nlcd21,col=legend$Color)
+nlcd25<-rast("data/nlcd_conus_2025_seattle.tif")
+plot(nlcd25,col=nlcd_legend$Color)
 ```
 
-
-You can look at the distribution of values for these elevations using a regular histogram.
-
-```{r}
-hist(nlcd21)
-```
-
-This is categorical data, so you could also look at the number of pixels/cells in each category using the `freq` function, wrapped in a data frame so that it comes out as usable table.
+The NLCD is a categorical raster--each cell belongs to a discrete land cover class (forest, developed land, wetlands, etc.) rather than storing a continuous numeric measurement, so you could look at the number of pixels/cells in each category using the `freq` function. In the code below, this is wrapped in a data frame so that it comes out as usable table.
 
 ```{r}
-freq_table<-data.frame(freq(nlcd21))
+freq_table<-data.frame(freq(nlcd25))
 
 #Remove the black/0 value cells and add in a description of each land use type
 freq_table_join<-freq_table %>%
   filter(value!=0) %>%
-  left_join(legend %>% rename(value=ID))
+  mutate(value=as.character(value)) %>% #Treats the numeric land use code as a character
+  left_join(nlcd_legend %>% rename(value=ID))
 ```
 
-##You try it!
-How could you calculate the percentage of land in Houston covered by each land use type? You'd need to get the total number of pixels and then divide the counts for each area by that number.
+## You try it!
+Create a new column called percent_land showing the percentage of all non-zero NLCD cells represented by each land-cover class. Which class occupies the largest percentage of land area? You'd need to get the total number of pixels and then divide the counts for each area by that number.
 
 ```{r}
 
 ```
 
-#Value extraction
+# Value extraction
 
 What if you have point data and want to extract values for the raster? Let's load points for Starbucks in Houston. The extract function (from raster) pulls the value for each point. What's the most common land use type for each one?
 
 ```{r}
-starbucks_houston<-read_csv("data/brandlocations.csv") %>%
+starbucks_seattle<-read_csv("data/brandlocations.csv") %>%
+  filter(city=="Seattle" & region=="WA" & brands=="Starbucks") %>%
   st_as_sf(coords=c("X","Y"),crs=4326) %>%
-  st_join(houston,join=st_within) %>%
-  filter(!is.na(NAME10) & brands=="Starbucks")
+  st_transform(st_crs(nlcd25))
 
-starbucks_nlcd<-raster::extract(nlcd21,starbucks_houston)
+starbucks_nlcd<-terra::extract(nlcd25,starbucks_seattle)
 ```
 
 The resulting object is just a simple vector of elevation values. We have to bind it back to the original data frame. The easiest way to do so is using base R.
 
 ```{r}
-starbucks_houston$nlcd<-starbucks_nlcd
+starbucks_seattle$nlcd<-starbucks_nlcd
 
-View(starbucks_houston)
+View(starbucks_seattle)
 ```
 
 We can also plot these values using tmap.
 
 ```{r}
-library(tmap)
-
-tm_shape(starbucks_houston)+
+tm_shape(starbucks_seattle)+
   tm_dots("nlcd")
 ```
 
-##You try it!
-How could you count the number of Starbucks locations in each land use type?
+## You try it!
+Create a frequency table showing the number of Starbucks locations in each NLCD class. Which land-cover type contains the most Starbucks locations?
 
 ```{r}
 
@@ -100,7 +94,7 @@ You can see more of what's possible with this package at this link: https://cran
 library(exactextractr)
 nlcd_grid<-st_make_grid(nlcd21,cellsize = 10000) %>% st_as_sf()
 
-extracted_values <- exact_extract(nlcd21, nlcd_grid,'mode') 
+extracted_values <- exact_extract(nlcd25, nlcd_grid,'mode') 
 
 nlcd_grid$ID<-extracted_values
 
@@ -111,8 +105,8 @@ ggplot(nlcd_grid)+
   geom_sf(aes(fill=Class))
 ```
 
-#You try it!
-Make some change to this summary of land use by changing the cell size or shape. How does that change the pattern?
+## You try it!
+Repeat the analysis using either a smaller grid size (5 km) or a larger grid size (20 km). How does changing the aggregation scale affect the spatial pattern?
 
 ```{r}
 
@@ -161,7 +155,7 @@ ggplot(houston_grid1)+
   geom_sf(aes(fill=dem_houston))
 ```
 
-###Mapping countours and slope
+## Mapping countours and slope
 
 We can use the `contour` function to add contours to a plot of the elevations. The `add=TRUE` parameter keeps the underlying map.
 
@@ -176,7 +170,7 @@ The terrain function allows you to extract properties like slope and aspect. Her
 x <- terrain(houston_dem, opt = "slope", unit = "degrees")
 plot(x$slope)
 
-x1<-x >= 5
+x1<-x >= 10
 
 plot(x1)
 ```

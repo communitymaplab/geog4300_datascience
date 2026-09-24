@@ -1,0 +1,252 @@
+Source,Facility_Name,Address,City_Town,State,ZIP_Code,County_Parish,Telephone_Number
+ahd,Atrium Health Floyd Medical Center Behavioral Health,306 SHORTER AVENUE NW,ROME,GA,30165,FLOYD,(706) 509-3500
+ahd,Emory Hospital Perry,1120 MORNINGSIDE DRIVE,PERRY,GA,31069,HOUSTON,(478) 987-3600
+ahd,Emory Saint Joseph's Hospital,5665 PEACHTREE DUNWOODY ROAD NE,ATLANTA,GA,30342,FULTON,(678) 843-7001
+ahd,Memorial Health Dwaine and Cynthia Willett Children's Hospital of Savannah,4700 WATERS AVENUE,SAVANNAH,GA,31404,CHATHAM,(912) 350-8000
+ahd,Memorial Health University Medical Center,4700 WATERS AVENUE,SAVANNAH,GA,31404,CHATHAM,(912) 350-8000
+ahd,NGMC Braselton,1400 RIVER PLACE,BRASELTON,GA,30517,HALL,(770) 848-8000
+ahd,Piedmont Augusta Hospital Summerville Campus,2260 WRIGHTSBORO ROAD,AUGUSTA,GA,30904,RICHMOND,(706) 481-7000
+ahd,Piedmont Macon Medical Center,350 HOSPITAL DRIVE,MACON,GA,31217,BIBB,(478) 765-7000
+ahd,Piedmont McDuffie,2460 WASHINGTON ROAD,THOMSON,GA,30824,MCDUFFIE,(706) 595-1411
+ahd,Saint Mary's Sacred Heart Hospital,367 CLEAR CREEK PARKWAY,LAVONIA,GA,30553,FRANKLIN,(706) 356-7800
+ahd,SGMC Smith Northview Hospital,4280 N VALDOSTA ROAD,VALDOSTA,GA,31602,LOWNDES,(229) 433-8000
+ahd,Early Medical Center,11740 COLUMBIA STREET,BLAKELY,GA,39823,EARLY,(229) 723-4241
+CMS,St Francis-downtown,One St Francis Dr,Greenville,SC,29601,Greenville,(800) 805-5678
+CMS,Memorial Health Meadows Hospital,One Meadows Parkway,Vidalia,GA,30474,Toombs,(912) 535-5828
+CMS,Erlanger Medical Center,975 E 3Rd St,Chattanooga,TN,37403,Hamilton,(423) 778-7000
+CMS,Piedmont Cartersville Medical Center,960 Joe Frank Harris Parkway,Cartersville,GA,30120,Bartow,(470) 490-1000
+CMS,Beaufort County Memorial Hospital,955 Ribaut Rd,Beaufort,SC,29902,Beaufort,(843) 522-5200
+CMS,Jenkins County Medical Center,931 East Winthrope Avenue,Millen,GA,30442,Jenkins,(478) 982-4221
+CMS,Carolinas Medical Center-northeast,920 Church St N,Concord,NC,28025,Cabarrus,(704) 783-3000
+CMS,Archbold Brooks,903 N Court Street,Quitman,GA,31643,Brooks,(912) 263-4171
+CMS,Crisp Regional Hospital,902 7Th Street North,Cordele,GA,31015,Crisp,(229) 276-3100
+CMS,Dodge County Hospital,901 Griffin Ave,Eastman,GA,31023,Dodge,(478) 448-4067
+CMS,Tift Regional Medical Center,901 E 18Th Street,Tifton,GA,31794,Tift,(229) 382-7120
+CMS,Archbold Mitchell,90  E Stephens Street,Camilla,GA,31730,Mitchell,(229) 336-5284
+CMS,"Transylvania Regional Hospital, Inc",90 Hospital Drive PO Box 1116,Brevard,NC,28712,Transylvania,(828) 883-5302
+CMS,Jasper Memorial Hospital,898 College Street,Monticello,GA,31064,Jasper,(706) 468-6411
+CMS,Wellstar Douglas Medical Center,8954 Hospital Drive,Douglasville,GA,30134,Douglas,(770) 949-1500
+CMS,Atrium Health University City,8800 North Tyron Street,Charlotte,NC,28262,Mecklenburg,(704) 548-6000
+CMS,Monroe County Hospital,88 Martin Luther King Jr Drive,Forsyth,GA,31029,Monroe,(478) 994-2521
+CMS,Wayne Memorial Hospital,865 South First Street,Jesup,GA,31545,Wayne,(912) 427-6811
+CMS,Lake Butler Hospital,850 E Main St,Lake Butler,FL,32054,Union,(386) 496-2323
+CMS,Clay County Hospital,83825 Highway 9    P O Box 1270,Ashland,AL,36251,Clay,(256) 354-2131
+CMS,Navicent Health Baldwin,821 North Cobb Street,Milledgeville,GA,31061,Baldwin,(478) 454-3550
+CMS,Novant Health Mint Hill Medical Center,8201 Healthcare Loop,Charlotte,NC,28215,Mecklenburg,(704) 384-4089
+CMS,Medical Center Barbour,820 W Washington St,Eufaula,AL,36027,Barbour,(334) 688-7271
+CMS,Phoebe Worth Medical Center,807 South Isabella Street,Sylvester,GA,31791,Worth,(229) 777-3851
+CMS,Community Hospital Inc,805 Friendship Road,Tallassee,AL,36078,Elmore,(334) 283-6541
+CMS,Upson Regional Medical Center,801 W Gordon Street,Thomaston,GA,30286,Upson,(706) 647-8111
+CMS,Musc Health Lancaster Medical Center,800 W Meeting St,Lancaster,SC,29720,Lancaster,(803) 286-1481
+CMS,Baptist Health Medical Center - Jacksonville,800 Prudential Dr,Jacksonville,FL,32207,Duval,(904) 202-2000
+CMS,Anmed Health,800 N Fant St,Anderson,SC,29621,Anderson,(864) 512-2830
+CMS,Pardee Hospital Henderson County,800 N Justice St,Hendersonville,NC,28791,Henderson,(828) 696-1000
+CMS,Grady Memorial Hospital,"80 Jesse Hill, Jr Drive Se",Atlanta,GA,30303,Fulton,(404) 616-1000
+CMS,Atrium Health Navicent The Medical Center,777 Hemlock Street,Macon,GA,31201,Bibb,(478) 633-1000
+CMS,"Piedmont Newnan Hospital, Inc",745 Poplar Road,Newnan,GA,30265,Coweta,(770) 400-2300
+CMS,"Northeast Georgia Medical Center, Inc",743 Spring Street,Gainesville,GA,30501,Hall,(770) 535-3553
+CMS,Prisma Health Hillcrest Hospital,741 South East Main Street,Simpsonville,SC,29681,Greenville,(864) 454-6100
+CMS,Piedmont Columbus Regional Midtown,710 Center Street,Columbus,GA,31901,Muscogee,(706) 571-1000
+CMS,Adventhealth Murray,"707 Old Dalton Ellijay Road, PO Box 1406",Chatsworth,GA,30705,Murray,(706) 517-2031
+CMS,Tanner Medical Center - Carrollton,705 Dixie Street,Carrollton,GA,30117,Carroll,(770) 836-9580
+CMS,Mizell Memorial Hospital,702 N Main St,Opp,AL,36467,Covington,(334) 493-3541
+CMS,Prisma Health Greenville Memorial Hospital,701 Grove Road,Greenville,SC,29605,Greenville,(864) 455-7000
+CMS,Harris Regional Hospital,68 Hospital Rd,Sylva,NC,28779,Jackson,(828) 586-7000
+CMS,Wellstar Kennestone Regional Medical Center,677 Church Street,Marietta,GA,30060,Cobb,(770) 793-5000
+CMS,Shands Jacksonville,655 W 8Th St,Jacksonville,FL,32209,Duval,(904) 244-4000
+CMS,Emory Johns Creek Hospital,6325 Hospital Parkway,Johns Creek,GA,30097,Gwinnett,(678) 474-7000
+CMS,Ascension Sacred Heart Bay,615 N Bonita Ave,Panama City,FL,32401,Bay,(850) 769-1511
+CMS,Washington County Regional Medical Center,610 Sparta Road,Sandersville,GA,31082,Washington,(478) 240-2100
+CMS,Citizens Baptist Medical Center,604 Stone Avenue,Talladega,AL,35160,Talladega,(256) 761-4542
+CMS,Wellstar Spalding Medical Center,601 South 8Th Street,Griffin,GA,30223,Spalding,(770) 228-2721
+CMS,Tanner Medical Center Villa Rica,601 Dallas Highway,Villa Rica,GA,30180,Carroll,(770) 456-3101
+CMS,Riverview Regional Medical Center,600 South Third Street,Gadsden,AL,35901,Etowah,(256) 543-5200
+CMS,"Southeastern Regional Medical Center, Inc",600 Celebrate Life Parkway North,Newnan,GA,30265,Coweta,(404) 844-8334
+CMS,Warm Springs Medical Center,5995 Spring Street,Warm Springs,GA,31830,Meriwether,(706) 655-9351
+CMS,Hampton Regional Medical Center,595 West Carolina Avenue,Varnville,SC,29944,Hampton,(803) 943-2771
+CMS,"Saint Joseph's Hospital Of Atlanta, Inc",5665 Peachtree Dunwoody Road,Atlanta,GA,30342,Fulton,(678) 843-7001
+CMS,Emory University Hospital Midtown,"550 Peachtree Street,  Ne",Atlanta,GA,30308,Fulton,(404) 686-2450
+CMS,St Mary's Good Samaritan Hospital,5401 Lake Oconee Parkway,Greensboro,GA,30642,Greene,(706) 453-7331
+CMS,Candler Hospital,5353 Reynolds Street,Savannah,GA,31405,Chatham,(912) 819-5290
+CMS,Piedmont Newton Hospital,5126 Hospital Drive Ne,Covington,GA,30014,Newton,(770) 786-7053
+CMS,Flint River Community Hospital,"509 Sumter Street, Box 770",Montezuma,GA,31063,Dooly,(478) 472-3100
+CMS,Colleton Medical Center,501 Robertson Boulevard,Walterboro,SC,29488,Colleton,(843) 782-2000
+CMS,Adventhealth Redmond,501 Redmond Road Nw,Rome,GA,30165,Floyd,(706) 802-3012
+CMS,Elmore Community Hospital,500 Hospital Drive,Wetumpka,AL,36092,Elmore,(334) 567-4311
+CMS,Prisma Health Richland Hospital,5 Medical Park,Columbia,SC,29203,Richland,(803) 296-2548
+CMS,Savannah Health Services Llc Dba Memorial Health University Medical Center,4700 Waters Avenue,Savannah,GA,31404,Chatham,(912) 350-3691
+CMS,Liberty Regional Medical Center,462 E G Miles Parkway,Hinesville,GA,31313,Liberty,(912) 369-9400
+CMS,Effingham Health System,459 Ga Highway 119 South,Springfield,GA,31329,Effingham,(912) 754-0160
+CMS,Mayo Clinic,4500 San Pablo Rd,Jacksonville,FL,32224,Duval,(904) 953-2000
+CMS,Northside Hospital Cherokee,450 Northside Cherokee Boulevard,Canton,GA,30115,Cherokee,(770) 244-1000
+CMS,Dlp Swain County Hospital Llc,45 Plateau Street,Bryson City,NC,28713,Swain,(828) 488-2155
+CMS,Hca Florida Gulf Coast Hospital,449 W 23Rd St,Panama City,FL,32405,Bay,(850) 747-7926
+CMS,North Walton Doctors Hospital,4413 Us Hwy 331 S,Defuniak Springs,FL,32435,Walton,(850) 920-2065
+CMS,Jack Hughston Memorial Hospital,4401 River Chase Drive,Phenix City,AL,36867,Russell,(334) 732-3000
+CMS,Flowers Hospital,4370 West Main Street,Dothan,AL,36302,Houston,(334) 793-5000
+CMS,Jackson Hospital,4250 Hospital Dr,Marianna,FL,32446,Jackson,(850) 526-2200
+CMS,Ascension St Vincent's Southside,4201 Belfort Rd,Jacksonville,FL,32216,Duval,(904) 296-3700
+CMS,Abbeville Area Medical Center,420 Thomson Circle,Abbeville,SC,29620,Abbeville,(864) 366-5011
+CMS,Phoebe Putney Memorial Hospital,417 Third Avenue,Albany,GA,31703,Dougherty,(229) 312-4068
+CMS,Baptist Medical Center East,400 Taylor Road,Montgomery,AL,36117,Montgomery,(334) 244-8330
+CMS,Floyd Cherokee Medical Center,400 Northwood Dr,Centre,AL,35960,Cherokee,(256) 927-5531
+CMS,Prisma Health Baptist Parkridge,400 Palmetto Health Parkway,Columbia,SC,29212,Lexington,(803) 907-7011
+CMS,Medical Center Enterprise,400 N Edwards Street,Enterprise,AL,36330,Coffee,(334) 347-0584
+CMS,Candler County Hospital,400 Cedar Street,Metter,GA,30439,Candler,(912) 685-5741
+CMS,Northeast Alabama Regional Medical Center,400 East 10Th Street,Anniston,AL,36207,Calhoun,(256) 235-5121
+CMS,Piedmont Macon North Hospital,400 Charter Boulevard,Macon,GA,31210,Bibb,(478) 757-5990
+CMS,Elbert Memorial Hospital,4 Medical Drive,Elberton,GA,30635,Elbert,(706) 213-2535
+CMS,Wellstar Cobb Medical Center,3950 Austell Rd,Austell,GA,30106,Cobb,(770) 732-4000
+CMS,Erlanger Murphy Medical Center,3990 East Us Highway 64 Alt,Murphy,NC,28906,Cherokee,(828) 837-8161
+CMS,Highlands Medical Center,380 Woods Cove Road,Scottsboro,AL,35768,Jackson,(256) 259-4444
+CMS,Doctors Hospital,3651 Wheeler Road,Augusta,GA,30909,Richmond,(706) 651-6008
+CMS,"Ty Cobb Regional Medical Center, Llc",367 Clear Creek Parkway,Lavonia,GA,30553,Franklin,(706) 356-7800
+CMS,Northside Hospital Duluth,3620 Howell Ferry Road,Duluth,GA,30096,Gwinnett,(678) 312-1000
+CMS,Hca Florida Memorial Hospital,3625 University Blvd S,Jacksonville,FL,32216,Duval,(904) 702-6111
+CMS,Burke Medical Center,351 South Liberty Street,Waynesboro,GA,30830,Burke,(706) 554-4435
+CMS,"Coliseum Medical Centers, Llc, Dba",350 Hospital Drive,Macon,GA,31217,Bibb,(478) 765-7000
+CMS,Union General Hospital,35 Hospital Road,Blairsville,GA,30512,Union,(706) 745-2111
+CMS,Hca Florida Lake City Hospital,340 Nw Commerce Dr,Lake City,FL,32055,Columbia,(386) 719-9000
+CMS,Doctors Memorial Hospital Inc,333 N Byron Butler Pkwy,Perry,FL,32347,Taylor,(850) 584-0800
+CMS,Russell Medical Center,3316 Highway 280,Alexander City,AL,35010,Tallapoosa,(256) 329-7100
+CMS,Union Medical Center,322 West South Street,Union,SC,29379,Union,(864) 301-2000
+CMS,"Ngmc Barrow, Llc",316 North Broad Street,Winder,GA,30680,Barrow,(770) 848-8611
+CMS,Coosa Valley Medical Center,315 W Hickory St,Sylacauga,AL,35150,Talladega,(256) 249-5000
+CMS,Colquitt Regional Medical Center,3131 South Main Street,Moultrie,GA,31768,Colquitt,(229) 985-3420
+CMS,Atrium Health Floyd Medical Center,304 Turner Mccall Boulevard,Rome,GA,30162,Floyd,(706) 509-6900
+CMS,Aiken Regional Medical Center,302 University Parkway,Aiken,SC,29801,Aiken,(803) 641-5900
+CMS,Bacon County Hospital,302 South Wayne Street,Alma,GA,31510,Bacon,(912) 632-8961
+CMS,Turning Point Hospital,3015 Veterans Parkway,Moultrie,GA,31788,Colquitt,(229) 985-4815
+CMS,Wellstar North Fulton Medical Center,3000 Hospital Boulevard,Roswell,GA,30076,Fulton,(770) 751-2500
+CMS,Edgefield County Healthcare An Affiliate Of Self R,300 Ridge Medical Plaza,Edgefield,SC,29384,Laurens,(803) 637-3174
+CMS,Prisma Health Oconee Memorial Hospital,298 Memorial Dr,Seneca,SC,29672,Oconee,(864) 482-3100
+CMS,Rutherford Regional Medical Center,288 South Ridgecrest Ave,Rutherfordton,NC,28139,Rutherford,(828) 286-5000
+CMS,Emory Hillandale Hospital,2801 Dekalb Medical Parkway,Lithonia,GA,30058,De Kalb,(404) 501-8040
+CMS,Lexington Medical Center,2720 Sunset Blvd,West Columbia,SC,29169,Lexington,(803) 791-2000
+CMS,Emory Decatur Hospital,2701 N Decatur Road,Decatur,GA,30033,De Kalb,(404) 501-1000
+CMS,Newberry County Memorial Hospital,2669 Kinard St PO Box 497,Newberry,SC,29108,Newberry,(803) 405-7145
+CMS,Hca Florida Capital Hospital,2626 Capital Medical Blvd,Tallahassee,FL,32308,Leon,(850) 656-5000
+CMS,Doctors Memorial Hospital,2600 Hospital Dr,Bonifay,FL,32425,Holmes,(850) 547-1120
+CMS,"Southwell Medical, A Campus Of Trmc",260 Mj Taylor Road,Adel,GA,31620,Cook,(229) 896-8077
+CMS,"Memorial Healthcare System, Inc",2525 Desales Ave,Chattanooga,TN,37404,Hamilton,(423) 495-2525
+CMS,Caromont Regional Medical Center,2525 Court Dr,Gastonia,NC,28052,Gaston,(704) 834-4891
+CMS,Wellstar Paulding Medical Center,2518 Jimmy Lee Smith Parkway,Hiram,GA,30141,Paulding,(470) 644-7000
+CMS,Marshall Medical Centers,2505 U S Highway 431 North,Boaz,AL,35957,Marshall,(256) 593-8310
+CMS,Sgmc Health,"2501 North Patterson Street, PO Box 1727",Valdosta,GA,31602,Lowndes,(229) 333-1020
+CMS,Pelham Medical Center,250 Westmoreland Road,Greer,SC,29651,Greenville,(864) 560-6554
+CMS,Hilton Head Regional Medical Center,25 Hospital Center Blvd,Hilton Head Island,SC,29926,Beaufort,(843) 681-6122
+CMS,University Mcduffie County Regional Medical Center,2460 Washington Road,Thomson,GA,30824,Mc Duffie,(706) 595-1411
+CMS,Optim Medical Center - Tattnall,247 S Main Street,Reidsville,GA,30453,Tattnall,(912) 557-1000
+CMS,Musc Health Columbia Medical Center Downtown,2435 Forest Drive,Columbia,SC,29204,Richland,(803) 256-5300
+CMS,Southeast Georgia Health System- Brunswick Campus,2415 Parkwood Drive,Brunswick,GA,31520,Glynn,(912) 466-7000
+CMS,Atrium Health Floyd Polk Medical Center,2360 Rockmart Highway,Cedartown,GA,30125,Polk,(770) 748-2500
+CMS,Parkridge Medical Center,2333 Mccallie Ave,Chattanooga,TN,37404,Hamilton,(423) 894-4220
+CMS,Affiliate Of Vitruvian Health,2305 Chambliss Ave Nw,Cleveland,TN,37311,Bradley,(423) 339-4100
+CMS,Prisma Health Laurens County Hospital,22725 Highway 76 East,Clinton,SC,29325,Laurens,(864) 833-9100
+CMS,Northeast Georgia Medical Center Lumpkin,227 Mountain Drive,Dahlonega,GA,30533,Lumpkin,(770) 219-7146
+CMS,Madison County Memorial Hospital,224 Nw Crane Ave,Madison,FL,32340,Madison,(850) 973-2271
+CMS,Piedmont Walton Hospital,2151 W Spring Street,Monroe,GA,30655,Walton,(770) 267-8461
+CMS,Optim Medical Center - Screven,215 Mims Road,Sylvania,GA,30467,Screven,(912) 564-7426
+CMS,St Francis Hospital- Emory Healthcare,2122 Manchester Expressway,Columbus,GA,31995,Muscogee,(706) 596-4020
+CMS,Miller County Hospital,209 N Cuthbert Street,Colquitt,GA,39837,Miller,(229) 758-4231
+CMS,Ascension St Vincent's St Johns County,205 Trinity Way,St. Johns,FL,32259,St. Johns,(904) 450-6020
+CMS,Calhoun-liberty Hospital,20370 Ne Burns Ave,Blountstown,FL,32424,Calhoun,(850) 674-5411
+CMS,Lake Martin Community Hospital,201 Mariarden Road,Dadeville,AL,36853,Tallapoosa,(256) 825-7821
+CMS,Atrium Health Cleveland,201 E Grover St,Shelby,NC,28150,Cleveland,(704) 487-3000
+CMS,Hca Florida Orange Park Hospital,2001 Kingsley Ave,Orange Park,FL,32073,Clay,(904) 276-8500
+CMS,The East Alabama Healthcare Authority,2000 Pepperell Parkway,Opelika,AL,36801,Lee,(334) 528-1300
+CMS,Southeast Georgia Health System -- Camden Campus,2000 Dan Proctor Drive,Saint Marys,GA,31558,Camden,(912) 576-6401
+CMS,Dorminy Medical Center,"200 Perry House Road, Box 1447",Fitzgerald,GA,31750,Ben Hill,(229) 424-7100
+CMS,Evans Memorial Hospital,200 N River Street,Claxton,GA,30417,Evans,(912) 739-5105
+CMS,Dekalb Regional Medical Center,200 Med Center Drive,Fort Payne,AL,35968,De Kalb,(256) 845-3150
+CMS,Fairview Park Hospital,200 Industrial Boulevard,Dublin,GA,31021,Laurens,(478) 274-3100
+CMS,Prisma Health Baptist Easley Hospital,200 Fleetwood Drive,Easley,SC,29640,Pickens,(864) 442-7606
+CMS,Novant Health Presbyterian Medical Center,200 Hawthorne Lane Box 33549,Charlotte,NC,28233,Mecklenburg,(704) 384-4000
+CMS,Higgins General Hospital,200 Allen Memorial Drive,Bremen,GA,30110,Haralson,(770) 812-2000
+CMS,Atrium Health Navicent Peach,1960 Highway 247 Connector,Byron,GA,31008,Peach,(478) 654-2000
+CMS,"Piedmont Hospital, Inc",1968 Peachtree Rd Nw,Atlanta,GA,30309,Fulton,(404) 605-5000
+CMS,Memorial Satilla Health,1900 Tebeau Street,Waycross,GA,31501,Ware,(912) 287-2500
+CMS,Highlands Cashiers Hospital,190 Hospital Drive,Highlands,NC,28741,Macon,(828) 526-1200
+CMS,Southern Tennessee Regional Health System Winchest,185 Hospital Road,Winchester,TN,37398,Franklin,(931) 967-8200
+CMS,Vanderbilt Tullahoma-harton Hospital,1801 N Jackson St Box 460,Tullahoma,TN,37388,Coffee,(931) 393-3000
+CMS,Allendale County Hospital,1787 Allendale Fairfax Rd,Fairfax,SC,29827,Allendale,(803) 632-3311
+CMS,Prisma Health  Patewood Hospital,175 Patewood Drive,Greenville,SC,29615,Greenville,(864) 797-1000
+CMS,Morgan Medical Center,1740 Lions Club Road,Madison,GA,30650,Morgan,(706) 342-1667
+CMS,Piedmont Medical Center,1731 Frank Gaston Blvd,Rock Hill,SC,29732,York,(803) 329-1234
+CMS,Piedmont Eastside Medical Center,1700 Medical Way,Snellville,GA,30078,Gwinnett,(770) 979-0200
+CMS,Ascension St Vincent's Clay County,1670 St Vincents Way,Middleburg,FL,32068,Clay,(904) 602-1000
+CMS,Jeff Davis Hospital,163 South Tallahassee Street,Hazlehurst,GA,31539,Jeff Davis,(912) 375-7781
+CMS,Stephens County Hospital,163 Hospital Drive,Toccoa,GA,30577,Stephens,(706) 282-4250
+CMS,Appling Healthcare,163 E Tollison Street,Baxley,GA,31513,Appling,(912) 367-9841
+CMS,Mountain Lakes Medical Center,162 Legacy Point,Clayton,GA,30525,Rabun,(706) 782-3100
+CMS,Houston Healthcare,1601 Watson Boulevard,Warner Robins,GA,31093,Houston,(478) 922-4281
+CMS,Ed Fraser Memorial Hospital,159 N 3Rd St,Macclenny,FL,32063,Baker,(904) 259-3151
+CMS,Cherokee Medical Center,1530 N Limestone St,Gaffney,SC,29340,Cherokee,(864) 487-4271
+CMS,Wellstar West Georgia Medical Center,1514 Vernon Road,Lagrange,GA,30240,Troup,(706) 882-1411
+CMS,Novant Health Matthews Medical Center,1500 Matthews Twnshp Prkwy Box 3310,Matthews,NC,28106,Mecklenburg,(704) 384-6500
+CMS,Memorial Hospital And Manor,1500 E Shotwell Street,Bainbridge,GA,39819,Decatur,(229) 246-3500
+CMS,East Georgia Regional Medical Center,1499 Fair Road,Statesboro,GA,30458,Bulloch,(912) 486-1500
+CMS,Bleckley Memorial Hospital,145 Peacock Street,Cochran,GA,31014,Bleckley,(478) 934-6211
+CMS,Piedmont Rockdale Hospital,"1412 Milstead Avenue, Ne",Conyers,GA,30012,Rockdale,(770) 918-3000
+CMS,Prisma Health Greer Memorial Hospital,1413 John B White Sr Blvd Suite D,Spartanburg,SC,29306,Spartanburg,(864) 848-8200
+CMS,Emory University Hospital,"1364 Clifton Road, Ne",Atlanta,GA,30322,De Kalb,(404) 686-8500
+CMS,Northwest Florida Community Hospital,1360 Brickyard Rd,Chipley,FL,32428,Washington,(850) 638-1610
+CMS,Piedmont Augusta Hospital,1350 Walton Way,Augusta,GA,30901,Richmond,(706) 722-9011
+CMS,Baptist Medical Center  Beaches,1350 13Th Ave S,Jacksonville Beach,FL,32250,Duval,(904) 247-2900
+CMS,Troy Regional Medical Center,1330 Highway 231 South,Troy,AL,36081,Pike,(334) 670-5000
+CMS,Self Regional Healthcare,1325 Spring Street,Greenwood,SC,29646,Greenwood,(864) 227-4111
+CMS,Kershawhealth,1315 Roberts Street,Camden,SC,29020,Kershaw,(803) 432-4311
+CMS,Tallahassee Memorial Healthcare,1300 Miccosukee Rd,Tallahassee,FL,32308,Leon,(850) 431-1155
+CMS,Piedmont Mountainside Hospital Inc,1266 Highway 515 South,Jasper,GA,30143,Pickens,(706) 692-2441
+CMS,Dale Medical Center,126 Hospital Ave,Ozark,AL,36360,Dale,(334) 774-2601
+CMS,Phoebe Sumter Medical Center,126 Highway 280 W,Americus,GA,31719,Sumter,(229) 931-1280
+CMS,Piedmont Fayette Hospital,1255 Highway 54 West,Fayetteville,GA,30214,Fayette,(770) 719-7000
+CMS,Baptist Medical Center - Nassau,1250 S 18Th St,Fernandina Beach,FL,32034,Nassau,(904) 321-3500
+CMS,Angel Medical Center,124 Center Court PO Box 1209,Franklin,NC,28734,Macon,(828) 524-8411
+CMS,St Mary's Hospital,1230 Baxter Street,Athens,GA,30606,Clarke,(706) 389-3000
+CMS,Cannon Memorial Hospital,123 W G Acker Drive,Pickens,SC,29671,Pickens,(864) 878-4791
+CMS,Sgmc Berrien Campus,1221 E Mcpherson Avenue,Nashville,GA,31639,Berrien,(229) 543-7100
+CMS,Wiregrass Medical Center,1200 W Maple Avenue,Geneva,AL,36340,Geneva,(334) 684-3655
+CMS,Wiregrass Medical Center,1200 W Maple Avenue,Geneva,AL,36340,Geneva,(334) 684-3655
+CMS,Northside Hospital Forsyth,1200 Northside Forsyth Drive,Cumming,GA,30041,Forsyth,(770) 844-3200
+CMS,Hamilton Medical Center,1200 Memorial Drive,Dalton,GA,30720,Whitfield,(706) 272-6105
+CMS,Wills Memorial Hospital,120 Gordon Street,Washington,GA,30673,Wilkes,(706) 678-9212
+CMS,Piedmont Athens Regional Medical Center,1199 Prince Avenue,Athens,GA,30606,Clarke,(706) 475-7000
+CMS,Lifebrite Community Hospital Of Early,11740 Columbia Street,Blakely,GA,39823,Early,(229) 723-4241
+CMS,St Joseph's Hospital - Savannah,11705 Mercy Boulevard,Savannah,GA,31419,Chatham,(912) 819-4100
+CMS,Emanuel Medical Center,117 Kite Road,Swainsboro,GA,30401,Emanuel,(478) 289-1304
+CMS,Sgmc Health Lanier,116 West Thigpen Avenue,Lakeland,GA,31635,Lanier,(229) 482-8402
+CMS,Grady General Hospital,"1155 5Th Street, Se",Cairo,GA,39828,Grady,(229) 377-0251
+CMS,Piedmont Henry Hospital,1133 Eagle's Landing Parkway,Stockbridge,GA,30281,Henry,(678) 604-1000
+CMS,Houston Healthcare,1120 Morningside Dr,Perry,GA,31069,Houston,(478) 987-3600
+CMS,"Wellstar Mcg Health, Affiliated With Med Col",1120 15Th Street,Augusta,GA,30912,Richmond,(706) 721-6569
+CMS,Starr Regional Medical Center Athens,1114 W Madison Ave,Athens,TN,37371,Mc Minn,(423) 745-1411
+CMS,Southeast Health Medical Center,1108 Ross Clark Circle,Dothan,AL,36301,Houston,(334) 793-8701
+CMS,"Coffee Regional Medical Center, Inc",1101 Ocilla Road,Douglas,GA,31642,Atkinson,(912) 384-1900
+CMS,Chatuge Regional Hospital,110 S Main Street,Hiawassee,GA,30546,Towns,(706) 896-2222
+CMS,Southern Regional Medical Center,"11 Upper Riverdale Road, Sw",Riverdale,GA,30274,Clayton,(770) 991-8160
+CMS,Novant Health Ballantyne Medical Center,10905 Providence Road W,Charlotte,NC,28277,Mecklenburg,(704) 384-4000
+CMS,Jefferson Hospital,1067 Peachtree St,Louisville,GA,30434,Jefferson,(478) 625-7000
+CMS,Atrium Health Pineville,10628 Park Rd,Charlotte,NC,28210,Mecklenburg,(704) 379-5000
+CMS,Clinch Memorial Hospital,1050 Valdosta Highway,Homerville,GA,31634,Clinch,(912) 487-5211
+CMS,Wellstar Sylvan Grove Medical Center,1050 Mcdonough Road,Jackson,GA,30233,Butts,(770) 775-7861
+CMS,Adventhealth Gordon,1035 Red Bud Road,Calhoun,GA,30701,Gordon,(706) 629-2895
+CMS,Tanner Medical Center-east Alabama,1032 Main Street South,Wedowee,AL,36278,Randolph,(256) 357-2111
+CMS,Bullock County Hospital,102 West Conecuh Avenue,Union Springs,AL,36089,Bullock,(334) 738-2140
+CMS,Donalsonville Hospital Inc,102 Hospital Cir,Donalsonville,GA,39845,Seminole,(229) 524-5217
+CMS,St Lukes Hospital,101 Hospital Drive,Columbus,NC,28722,Polk,(828) 894-3311
+CMS,Crenshaw Community Hospital,101 Hospital Circle,Luverne,AL,36049,Crenshaw,(334) 335-3374
+CMS,Crenshaw Community Hospital,101 Hospital Circle,Luverne,AL,36049,Crenshaw,(334) 335-3374
+CMS,Spartanburg Medical Center,101 E Wood St,Spartanburg,SC,29303,Spartanburg,(864) 560-6554
+CMS,Gadsden Regional Medical Center,1007 Goodyear Avenue,Gadsden,AL,35903,Etowah,(256) 494-4000
+CMS,Novant Health Huntersville Medical Center,10030 Gilead Road,Huntersville,NC,28078,Mecklenburg,(704) 316-4000
+CMS,Coastal Carolina Hospital,1000 Medical Center Drive,Hardeeville,SC,29927,Jasper,(843) 784-8000
+CMS,Northside Hospital Gwinnett,1000 Medical Center Boulevard,Lawrenceville,GA,30045,Gwinnett,(678) 312-4310
+CMS,Northside Hospital,"1000 Johnson Ferry Road, Ne",Atlanta,GA,30342,Fulton,(404) 851-8000
+CMS,Carolinas Medical Center/behav Health,1000 Blythe Blvd,Charlotte,NC,28203,Mecklenburg,(704) 355-2000
+CMS,Florida State Hospital Unit 31 Med,100 N Main St,Chattahoochee,FL,32324,Gadsden,(850) 663-7536
+CMS,Adventhealth Hendersonville,100 Hospital Drive,Hendersonville,NC,28792,Henderson,(828) 684-8501
+CMS,Chi Memorial Hospital- Georgia,100 Gross Crescent Circle,Fort Oglethorpe,GA,30742,Catoosa,(770) 874-5400
+CMS,Piedmont Columbus Regional Northside,100 Frist Court,Columbus,GA,31909,Muscogee,(706) 494-2101
+CMS,Ascension St Vincent's Riverside,1 Shircliff Way,Jacksonville,FL,32204,Duval,(904) 308-7300
+CMS,Musc Health Chester Medical Center,1 Medical Park Drive,Chester,SC,29706,Chester,(803) 581-3151
