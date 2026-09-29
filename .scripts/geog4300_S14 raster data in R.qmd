@@ -28,9 +28,32 @@ seattle<-st_read("data/tl_2025_us_uac20.gpkg") %>%
 nlcd_legend <- pal_nlcd() %>%
   mutate(ID=as.character(ID))
 
-nlcd25<-rast("data/nlcd_2025_seattle.tif")
-plot(nlcd25,col=nlcd_legend$Color)
+nlcd25_raw<-rast("data/nlcd_2025_seattle.tif")
+plot(nlcd25_raw,col=nlcd_legend$Color)
+
+#Change the data to factor/character rather than numeric values
+nlcd25<-as.factor(nlcd25_raw)
+
+#Add in the class names for each land use type
+levels(nlcd25)<-data.frame(value=as.numeric(nlcd_legend$ID),class=nlcd_legend$Class)
+plot(nlcd25)
 ```
+
+We can make a prettier looking map with tmap. We first reproject it to UTM Zone 10, which is a better fit for Seattle. The `trim` function gets rid of the NA cells that this produces.
+
+```{r}
+nlcd25_utm <- project(nlcd25, "EPSG:32610", method = "near") 
+
+tm_shape(trim(nlcd25_utm)) +
+  tm_raster(
+    col.scale = tm_scale_categorical(values = nlcd_legend$Color),
+    col.legend = tm_legend(title = "NLCD 2025", position = tm_pos_out("right"))
+  ) +
+  tm_title("Land Cover, Seattle") +
+  tm_layout(frame = FALSE)
+
+```
+
 
 The NLCD is a categorical raster--each cell belongs to a discrete land cover class (forest, developed land, wetlands, etc.) rather than storing a continuous numeric measurement, so you could look at the number of pixels/cells in each category using the `freq` function. In the code below, this is wrapped in a data frame so that it comes out as usable table.
 
@@ -228,6 +251,14 @@ plot(mean_compare)
 ## You try it!
 
 These temperatures are measured in Kelvin. To convert Kelvin to Celsius, subtract 273.15. Do math on the mean 2022 dataset to convert those temperatures to Celsius and plot them. Then try converting to Fahrenheit (you'll need to look up the formula.)
+
+```{r}
+
+```
+
+## Try this, too!
+
+Use your AI system of choice to create a more developed version of the `mean_compare` map using ggplot or tmap. The map should include a title and meaningful legend. You can also ask for suggestions on the most suitable color scheme.
 
 ```{r}
 
