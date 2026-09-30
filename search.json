@@ -64,35 +64,55 @@
     "href": "modules/m5_eda_spatial.html",
     "title": "Module 5: Exploratory data analysis with spatial data",
     "section": "",
-    "text": "NoteRelevant Learning Standards\n\n\n\n\nLoad, manipulate, and perform mathematical operations on raster data, including multi-layer operations and unit conversions.\nConvert between spatial data types (e.g., non-spatial to spatial, vector/raster) to enable different forms of spatial analysis.\nApply zonal statistics to extract summary values from raster data for polygon and point vector datasets, and integrate those results with attribute data.\nCalculate and interpret descriptive spatial statistics such as mean center, and connect the geographic distribution of observations to patterns in the data."
+    "text": "NoteRelevant Learning Standards\n\n\n\n\nLoad, manipulate, and perform mathematical operations on raster data, including multi-layer operations and unit conversions.\nConvert between spatial data types (e.g., non-spatial to spatial, vector/raster) to enable different forms of spatial analysis.\nApply zonal statistics to extract summary values from raster data for polygon and point vector datasets, and integrate those results with attribute data.\nCalculate and interpret descriptive spatial statistics such as mean center, and connect the geographic distribution of observations to patterns in the data.",
+    "crumbs": [
+      "Home",
+      "Module 5-Descriptive spatial statistics"
+    ]
   },
   {
     "objectID": "modules/m5_eda_spatial.html#readings",
     "href": "modules/m5_eda_spatial.html#readings",
     "title": "Module 5: Exploratory data analysis with spatial data",
     "section": "Readings",
-    "text": "Readings\n\nChapter 2 and 3 of Spatial Visualization with tmap by Martijn Tennekes and Kajub Nowosad"
+    "text": "Readings\n\nChapter 2 and 3 of Spatial Visualization with tmap by Martijn Tennekes and Kajub Nowosad",
+    "crumbs": [
+      "Home",
+      "Module 5-Descriptive spatial statistics"
+    ]
   },
   {
     "objectID": "modules/m5_eda_spatial.html#videos",
     "href": "modules/m5_eda_spatial.html#videos",
     "title": "Module 5: Exploratory data analysis with spatial data",
     "section": "Videos",
-    "text": "Videos\n\nSimple Features in R with the sf package by MarFishEco\nMaking maps in R using TMAP by Earth Analytics"
+    "text": "Videos\n\nSimple Features in R with the sf package by MarFishEco\nMaking maps in R using TMAP by Earth Analytics",
+    "crumbs": [
+      "Home",
+      "Module 5-Descriptive spatial statistics"
+    ]
   },
   {
     "objectID": "modules/m5_eda_spatial.html#course-materials",
     "href": "modules/m5_eda_spatial.html#course-materials",
     "title": "Module 5: Exploratory data analysis with spatial data",
     "section": "Course materials",
-    "text": "Course materials"
+    "text": "Course materials",
+    "crumbs": [
+      "Home",
+      "Module 5-Descriptive spatial statistics"
+    ]
   },
   {
     "objectID": "modules/m5_eda_spatial.html#additional-resources",
     "href": "modules/m5_eda_spatial.html#additional-resources",
     "title": "Module 5: Exploratory data analysis with spatial data",
     "section": "Additional Resources",
-    "text": "Additional Resources"
+    "text": "Additional Resources",
+    "crumbs": [
+      "Home",
+      "Module 5-Descriptive spatial statistics"
+    ]
   },
   {
     "objectID": "modules/m3_datawrangling.html",
