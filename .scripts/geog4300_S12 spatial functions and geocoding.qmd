@@ -81,25 +81,31 @@ tm_shape(hosp_buffer) +
 # Mapping proximity
 What if we want to identify the number of people in these buffers for Gwinnett County?
 
-We can start by downloading a block shapefile using the tigris package, which is also made by Kyle Walker. Blocks are from the Census Tiger files.
+We can start by downloading the block group populations for Gwinnett from using the `tidycensus` package.
 
 ```{r}
-blocks<-tigris::blocks(state=13,county=135)
+library(tidycensus)
+blockgroup<-get_acs(variables="B01001_001E",
+                state="13",
+                geography="block group",
+                geometry=TRUE) %>%
+  filter(str_detect(NAME,"Gwinnett"))
 
-tm_shape(blocks)+
+tm_shape(blockgroup)+
   tm_borders()
 ```
 
-Blocks are very detailed! What if we wanted to dissolve the block boundaries to create tract polygons? We can just use `group_by` and `summarise`, and sf will dissolve the boundaries.
+Block groups are very detailed! What if we wanted to dissolve the block boundaries to create tract polygons? We can just use `group_by` and `summarise`, and sf will dissolve the boundaries.
 
 ```{r}
-blocks_tract<-blocks %>%
-  group_by(STATEFP20,COUNTYFP20,TRACTCE20) %>%
+bg_tract<-blockgroup %>%
+  mutate(tct_fips=substr(GEOID,1,11)) %>%
+  group_by(tct_fips) %>%
   summarise()
 
-tm_shape(blocks_tract)+
+tm_shape(bg_tract)+
   tm_polygons(border.col = "blue")+
-tm_shape(st_centroid(blocks))+
+tm_shape(st_centroid(blockgroup))+
   tm_dots()
 ```
 
@@ -112,21 +118,23 @@ library(rmapshaper)
 #We need the CRS projections for these two layer to match!
 st_crs(hosp_buffer)
 
-blocks_no_hosp<- blocks_tract %>%
+tct_no_hosp<- bg_tract %>%
   st_transform(st_crs(hosp_buffer)) %>%
   ms_erase(hosp_buffer)
 
-tm_shape(blocks_no_hosp)+
+tm_shape(tct_no_hosp)+
   tm_polygons(col="#1204b3",col_alpha=0.5)
 ```
 
 **You try it!**
-How many **blocks** are NOT within a 5 mile buffer of a hospital? Use st_centroid to create block centroids and st_join to do a spatial join to the hospital buffers. Then count the number of blocks without a joined hospital buffer.
-
-Also, what's the population of those blocks?
+How many **block groups** are NOT within a 5 mile buffer of a hospital? Adjust the code above to work with the block group dataset you downloaded. Use `ms_erase` to remove and block groups fully within the buffers. Then count the number of block group observations that are left. Lastly, sum the population of these block groups.
 
 ```{r}
+tct_no_hosp<- blockgroup %>%
+  st_transform(st_crs(hosp_buffer)) %>%
+  ms_erase(hosp_buffer)
 
+sum(tct_no_hosp$estimate)
 ```
 
 # Masking a raster
