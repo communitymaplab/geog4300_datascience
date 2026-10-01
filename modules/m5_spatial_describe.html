@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Module 4: Exploratory data analysis, data visualization, and descriptive stats – Data Science in Geography (Geog4/6300)</title>
+<title>Module 5: Exploratory data analysis with spatial data – Data Science in Geography (Geog4/6300)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -105,14 +105,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Course data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../labs.html"> 
-<span class="menu-text">Course labs</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../learning_standards.html"> 
-<span class="menu-text">Learning standards</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
@@ -134,7 +126,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/m4_data_visualize.html">Module 4-Descriptive statistics and visualization</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../modules/m5_spatial_describe.html">Module 5-Descriptive spatial statistics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -180,13 +172,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/m4_data_visualize.html" class="sidebar-item-text sidebar-link active">
+  <a href="../modules/m4_data_visualize.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Module 4-Descriptive statistics and visualization</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../modules/m5_spatial_describe.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../modules/m5_spatial_describe.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Module 5-Descriptive spatial statistics</span></a>
   </div>
 </li>
@@ -218,19 +210,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#required-on-day-1" id="toc-required-on-day-1" class="nav-link active" data-scroll-target="#required-on-day-1">Required on day 1</a>
-  <ul class="collapse">
-  <li><a href="#readings" id="toc-readings" class="nav-link" data-scroll-target="#readings">Readings</a></li>
-  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
-  </ul></li>
-  <li><a href="#course-materials" id="toc-course-materials" class="nav-link" data-scroll-target="#course-materials">Course materials</a></li>
+  <li><a href="#course-materials" id="toc-course-materials" class="nav-link active" data-scroll-target="#course-materials">Course materials</a></li>
   <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts">Scripts</a></li>
   <li><a href="#slides-for-class" id="toc-slides-for-class" class="nav-link" data-scroll-target="#slides-for-class">Slides for class</a>
   <ul class="collapse">
   <li><a href="#additional-resources" id="toc-additional-resources" class="nav-link" data-scroll-target="#additional-resources">Additional Resources</a></li>
   </ul></li>
-  <li><a href="#readings-1" id="toc-readings-1" class="nav-link" data-scroll-target="#readings-1">Readings</a></li>
-  <li><a href="#videos-1" id="toc-videos-1" class="nav-link" data-scroll-target="#videos-1">Videos</a></li>
+  <li><a href="#readings" id="toc-readings" class="nav-link" data-scroll-target="#readings">Readings</a></li>
+  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
   </ul>
 </nav>
     </div>
@@ -239,7 +226,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Module 4: Exploratory data analysis, data visualization, and descriptive stats</h1>
+<h1 class="title">Module 5: Exploratory data analysis with spatial data</h1>
 </div>
 
 
@@ -266,64 +253,49 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol start="10" type="1">
-<li>Create effective data visualizations across multiple chart types (line, scatter, histogram, Q-Q plot), applying appropriate aesthetic choices such as color, grouping, and labeling. (Labs 1, 3, 4, 5)</li>
-<li>Produce and interpret confidence interval plots that enable visual comparison of means and uncertainty across groups or time periods. (Lab 3)</li>
-<li>Visualize spatial data using appropriate mapping tools, selecting suitable classification schemes and cartographic elements to support clear communication. (Labs 2, 3, 4, 6)</li>
-<li>Arrange and present tabular results in a readable format appropriate for a technical document or report. (Labs 1, 2, 3, 4, 5)</li>
+<ol start="14" type="1">
+<li>Load, manipulate, and perform mathematical operations on raster data, including multi-layer operations and unit conversions.</li>
+<li>Convert between spatial data types (e.g., non-spatial to spatial, vector/raster) to enable different forms of spatial analysis.</li>
+<li>Apply zonal statistics to extract summary values from raster data for polygon and point vector datasets, and integrate those results with attribute data.</li>
+<li>Calculate and interpret descriptive spatial statistics such as mean center, and connect the geographic distribution of observations to patterns in the data.</li>
 </ol>
 </div>
 </div>
-<section id="required-on-day-1" class="level1 required-actions">
-<h1>Required on day 1</h1>
-<section id="readings" class="level2">
-<h2 class="anchored" data-anchor-id="readings">Readings</h2>
-<ul>
-<li><a href="https://clauswilke.com/dataviz/aesthetic-mapping.html" target="_blank">Chapters 2 and 4 of Data Visualization</a> by Claus Wilke</li>
-<li><a href="https://socviz.co/03-ggplot-basics.html" target="_blank">Chapter 3 of Data visualization: A Practical Introduction</a> by Kieran Healy</li>
-</ul>
-</section>
-<section id="videos" class="level2">
-<h2 class="anchored" data-anchor-id="videos">Videos</h2>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=FdVy57oGJuc" target="_blank">ggplot2 explained in 5 minutes!</a> by R for Ecology</li>
-</ul>
-</section>
-</section>
 <section id="course-materials" class="level2 module-section">
 <h2 class="module-section anchored" data-anchor-id="course-materials">Course materials</h2>
 </section>
 <section id="scripts" class="level1">
 <h1>Scripts</h1>
 <ul>
-<li><a href="https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S08%20census%20data%20and%20ggplot.qmd" target="_blank">S09: Visualizing census data using ggplot</a></li>
-<li><a href="https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S09%20visualizing%20distribution.qmd" target="_blank">S10: Visualizing distribution</a></li>
+<li><a href="https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S11%20Point%20pattern%20analysis%20in%20R.qmd" target="_blank">S11: Point pattern analysis in R</a></li>
+<li><a href="https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S12%20spatial%20functions%20and%20geocoding.qmd" target="_blank">S12: Spatial functions and geocoding</a></li>
+<li><a href="https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S14%20raster%20data%20in%20R.qmd" target="_blank">S14: Raster data in R</a></li>
 </ul>
 </section>
 <section id="slides-for-class" class="level1">
 <h1>Slides for class</h1>
 <ul>
-<li><a href="https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L08-Data%20visualization.pptx" target="_blank">L08: Data visualization and color theory</a></li>
+<li><a href="https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L07%20Point%20pattern%20analysis%20and%20MAUP.pptx" target="_blank">L07: Point pattern analysis</a></li>
 </ul>
 <section id="additional-resources" class="level2 module-section">
 <h2 class="module-section anchored" data-anchor-id="additional-resources">Additional Resources</h2>
 </section>
 </section>
-<section id="readings-1" class="level1">
+<section id="readings" class="level1">
 <h1>Readings</h1>
 <ul>
-<li><a href="https://r-statistics.co/Exploratory-Data-Analysis-in-R.html" target="_blank">Chap 13, EDA in R in <em>The Statistics Handbook</em></a></li>
-<li><a href="https://r-graphics.org/" target="_blank">R Graphics Cookbook</a>: Really this whole book is relevant–find what interests you!</li>
-<li><a href="https://r.geocompx.org/adv-map" target="_blank">Chapter 9 of Geocomputation with R</a>. Be aware that tmap v.4 has significant changes over v.3, so you may need to adapt some things from this text.</li>
+<li><a href="https://r.geocompx.org/spatial-operations" target="_blank">Chapters 4, 5, 6, and 8 of <em>Geocomputation with R</em></a></li>
+<li><a href="https://aterui.github.io/rgis-for-ecology/raster-data-terra-basics.html" target="_blank">Chapters 3-5 of <em>R-GIS for Ecology</em></a>. These chapters give an overview of <code>sf</code>, <code>terra</code>, and methods of going between vector and raster data.</li>
+<li><a href="https://edzer.github.io/sswr/day2.html" target="_blank">Chapter 2 of <em>Spatial Statistics with R</em></a>, which gives a good overview of the universe of spatial packages for R and sf’s formatting. It uses <code>spatstat</code> for point-pattern analysis, which has its own data formatting.</li>
 </ul>
 </section>
-<section id="videos-1" class="level1">
+<section id="videos" class="level1">
 <h1>Videos</h1>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=QiqZliDXCCg" target="_blank">Exploratory Data Analysis</a> by IBM Technology</li>
-<li><a href="https://www.youtube.com/watch?v=M5LDAE8mGKo" target="_blank">Describe and Summarise your data</a> by R Programming 101</li>
-<li><a href="https://www.youtube.com/watch?v=McL9MMwmIZY" target="_blank">Data visualization with R in 36 minutes</a> by Equitable Equations</li>
-<li><a href="https://www.youtube.com/watch?v=4L9jlPUYdxY" target="_blank">Introduction to TMap</a> by GeoProgramming (again, this uses v3 syntax, so some adaptation may be needed)</li>
+<li><a href="https://www.youtube.com/watch?v=PU0z5q23_Ss" target="_blank">ArcGIS Pro: Calculating Zonal Statistics</a> by Tessellations Incorporated. Uses ESRI tools but provides an introduction to this method of analysis</li>
+<li><a href="https://www.youtube.com/watch?v=VmWS_gSrCbk&amp;t" target="_blank">Introduction to Spatial Statistics</a> by GIScience. Includes a good walkthrough of how to use/interpret mean center</li>
+<li><a href="https://www.youtube.com/watch?v=AYb2IUHwvyg" target="_blank">Quadrats</a> by BBA Science</li>
+<li><a href="https://www.youtube.com/watch?v=LK4HeAX3VFg" target="_blank">Terra package tutorial</a> training by Jason Flower for a group in Brisbane, Australia</li>
 </ul>
 
 
