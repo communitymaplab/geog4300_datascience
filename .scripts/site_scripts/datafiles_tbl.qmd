@@ -1,39 +1,36 @@
 ---
 title: "Course Datasets"
 format: html
+editor_options: 
+  chunk_output_type: console
 ---
 
 This page lists datasets available in the course repository. It also links them to scripts and labs
 
 
 ```{r}
+library(tidyverse)
+library(fs)
+library(here)
+
+course_data <- read_csv("data/course_data_full.csv") %>%
+  rename(file=`File name`)
+
 #--------------------------------------------------
-# Find datasets
+# List all the datasets datasets
 #--------------------------------------------------
 ext_cut<-c("cpg","dbf","prj","shx","tfw","xml","html")
 
-data_files <- dir_ls(
-  "data",
-  recurse = TRUE,
-  type = "file"
-) |>
+data_files <- dir_ls(here::here("data"), recurse = TRUE, type = "file") |>
   tibble(path = _) |>
+  mutate(file = path_file(path), ext = path_ext(file)) |>
+  filter(!ext %in% ext_cut, file != "course_data.csv") |>
   mutate(
-    file = path_file(path),
-    ext = path_ext(file)
-  ) %>%
-  filter(!ext %in% ext_cut) %>%
-  mutate(
-    URL = paste0(
-      "https://github.com/communitymaplab/geog4300_datascience/blob/main/",
-      path
-    ),
-    Link = paste0("<a href='",
-        "https://github.com/communitymaplab/geog4300_datascience/blob/main/",path,
-        "'>",file,"</a>")
-  ) 
+    URL = paste0("https://github.com/communitymaplab/geog4300_datascience/blob/main/", path),
+    Link = paste0("<a href='", URL, "'>", file, "</a>")
+  )
 
-write_csv(data_files,"data/course_data.csv")
+#write_csv(data_files,"data/course_data.csv")
 ```
 
 Are all those data being used?
@@ -44,14 +41,14 @@ Are all those data being used?
 #--------------------------------------------------
 
 script_files <- dir_ls(
-  ".scripts",
+  here(".scripts"),
   recurse = TRUE,
   regexp = "\\.(R|qmd)$",
   type = "file"
 )
 
 lab_files <- dir_ls(
-  "labs",
+  "D:/git_sync/geog4300_labs",
   recurse = TRUE,
   regexp = "\\.(R|qmd)$",
   type = "file"
@@ -144,6 +141,67 @@ dataset_usage <-
 
 dataset_usage
 ```
+
+Remove data file listing if it's not present. Then add new files
+
+```{r}
+course_data_new<-course_data %>% 
+  inner_join(data_files %>% select(file),by="file")
+
+new<-data_files %>%
+  anti_join(course_data_new,by="file") %>%
+  rename(`Path in the Repo`=path,
+         `File type`=ext) %>%
+  select(-URL)
+
+course_data_new1<-course_data_new %>%
+  bind_rows(new) %>%
+  rename(`File name`=file)
+
+write_csv(course_data_new1,"data/course_data_full.csv")
+```
+
+
+Process for identifying explicitly named files
+
+```{r}
+used_files <- unique(usage$filename)
+
+# Listed in the CSV but no longer used by any script/lab, or gone from disk
+dropped <- course_data |>
+  filter(!file %in% used_files | !file %in% data_files$file)
+
+# On disk and used, but not yet in the CSV
+added <- data_files |>
+  filter(file %in% used_files, !file %in% course_data$file)
+
+# Updated list: keep surviving rows (and any columns you've added by hand),
+# append new files, refresh the "used_in" column
+course_data_new <- course_data |>
+  anti_join(dropped, by = "file") |>
+  select(-any_of("used_in")) |>
+  bind_rows(added) |>
+  left_join(
+    dataset_usage |> select(file = filename, used_in),
+    by = "file"
+  ) |>
+  arrange(file)
+
+# For review before anything is saved
+dropped
+added
+
+# On disk, not in the CSV, and not used anywhere: candidates for deleting from the repo
+data_files |>
+  filter(!file %in% used_files, !file %in% course_data$file)
+
+# Referenced in code but not found in data/ (typos, remote files, stale paths)
+usage |> filter(!filename %in% data_files$file)
+
+# Once the changes look right:
+# write_csv(course_data_new, "data/course_data.csv")
+```
+
 
 
 ```{r}
