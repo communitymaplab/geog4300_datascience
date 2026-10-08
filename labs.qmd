@@ -16,3 +16,7 @@ I'll leave comments for the labs on the README page.
 - Lab 5:
 - Lab 6: 
 - Lab 7:
+
+## Data sprints!
+
+- Midterm data sprint: [Midterm data repostory](https://github.com/Geog4-6300-Fall-2026/geog4300_datasprint_midterm/tree/main){target="_blank"}
