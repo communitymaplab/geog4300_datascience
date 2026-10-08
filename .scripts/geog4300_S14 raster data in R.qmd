@@ -7,126 +7,144 @@ editor_options:
 
 ## Working with raster data in R
 
-The raster package in R provides a suite of tools for loading and working with raster data. We can load a digital elevation model (DEM) geotiff of elevation in Georgia using the raster function as shown below.
+The terra package in R provides a suite of tools for loading and working with raster data. We can load a version of the National Land Cover Database for Seattle as a geotiff using the `rast` function from the terra package as shown below.
+
+As a reminder, a raster consists of a grid of equally sized cells. Each cell stores a value. In the NLCD dataset, these values represent land cover classes, while in a DEM they represent elevation.
 
 ```{r}
-#| label: cars
 #install.packages("raster")
-library(raster)
+library(terra)
 library(sf)
 library(tidyverse)
 library(tidycensus)
 library(FedData)
 library(tmap)
 
-houston<-st_read("data/US_ua_2020_urban.gpkg") %>%
-  filter(str_detect(NAME10,"Houston")) %>%
-  select(NAME10) %>%
+seattle<-st_read("data/tl_2025_us_uac20.gpkg") %>%
+  filter(str_detect(NAME20,"Seattle")) %>%
+  select(NAME20) %>%
   st_transform(4326)
 
-legend<-pal_nlcd()
+nlcd_legend <- pal_nlcd() %>%
+  mutate(ID=as.character(ID))
 
-nlcd21<-raster("data/nlcd/nlcd_houston21.tif")
-plot(nlcd21,col=legend$Color)
+nlcd25_raw<-rast("data/nlcd_2025_seattle.tif")
+plot(nlcd25_raw,col=nlcd_legend$Color)
+
+#Change the data to factor/character rather than numeric values
+nlcd25<-as.factor(nlcd25_raw)
+
+#Add in the class names for each land use type
+levels(nlcd25)<-data.frame(value=as.numeric(nlcd_legend$ID),class=nlcd_legend$Class)
+plot(nlcd25)
+```
+
+We can make a prettier looking map with tmap. We first reproject it to UTM Zone 10, which is a better fit for Seattle. The `trim` function gets rid of the NA cells that this produces.
+
+```{r}
+nlcd25_utm <- project(nlcd25, "EPSG:32610", method = "near") 
+
+tm_shape(trim(nlcd25_utm)) +
+  tm_raster(
+    col.scale = tm_scale_categorical(values = nlcd_legend$Color),
+    col.legend = tm_legend(title = "NLCD 2025", position = tm_pos_out("right"))
+  ) +
+  tm_title("Land Cover, Seattle") +
+  tm_layout(frame = FALSE)
+
 ```
 
 
-You can look at the distribution of values for these elevations using a regular histogram.
+The NLCD is a categorical raster--each cell belongs to a discrete land cover class (forest, developed land, wetlands, etc.) rather than storing a continuous numeric measurement, so you could look at the number of pixels/cells in each category using the `freq` function. In the code below, this is wrapped in a data frame so that it comes out as usable table.
+
+The freq() function counts the number of raster cells that have each unique value. For a categorical raster like NLCD, this provides the number of cells belonging to each land-cover class.
 
 ```{r}
-hist(nlcd21)
-```
-
-This is categorical data, so you could also look at the number of pixels/cells in each category using the `freq` function, wrapped in a data frame so that it comes out as usable table.
-
-```{r}
-freq_table<-data.frame(freq(nlcd21))
+freq_table<-data.frame(freq(nlcd25))
 
 #Remove the black/0 value cells and add in a description of each land use type
 freq_table_join<-freq_table %>%
   filter(value!=0) %>%
-  left_join(legend %>% rename(value=ID))
+  mutate(value=as.character(value)) %>% #Treats the numeric land use code as a character
+  left_join(nlcd_legend %>% rename(value=ID))
 ```
 
-##You try it!
-How could you calculate the percentage of land in Houston covered by each land use type? You'd need to get the total number of pixels and then divide the counts for each area by that number.
+## You try it!
+Create a new column called percent_land showing the percentage of all non-zero NLCD cells represented by each land-cover class. Which class occupies the largest percentage of land area? You'd need to get the total number of pixels and then divide the counts for each area by that number.
 
 ```{r}
 
 ```
 
-#Value extraction
+# Value extraction
 
-What if you have point data and want to extract values for the raster? Let's load points for Starbucks in Houston. The extract function (from raster) pulls the value for each point. What's the most common land use type for each one?
+What if you have point data and want to extract values for the raster? Let's load points for Starbucks in Seattle. The extract function (from terra) pulls the value for each point. What's the most common land use type for each one?
 
 ```{r}
-starbucks_houston<-read_csv("data/brandlocations.csv") %>%
+starbucks_seattle<-read_csv("data/brandlocations.csv") %>%
+  filter(city=="Seattle" & region=="WA" & brands=="Starbucks") %>%
   st_as_sf(coords=c("X","Y"),crs=4326) %>%
-  st_join(houston,join=st_within) %>%
-  filter(!is.na(NAME10) & brands=="Starbucks")
+  st_transform(st_crs(nlcd25))
 
-starbucks_nlcd<-raster::extract(nlcd21,starbucks_houston)
+starbucks_nlcd<-terra::extract(nlcd25,starbucks_seattle)
 ```
 
-The resulting object is just a simple vector of elevation values. We have to bind it back to the original data frame. The easiest way to do so is using base R.
+The resulting object is a data frame containing the feature ID and the corresponding raster value extracted at each point. We have to bind it back to the original data frame. The easiest way to do so is using base R.
 
 ```{r}
-starbucks_houston$nlcd<-starbucks_nlcd
-
-View(starbucks_houston)
+starbucks_seattle$nlcd<-as.character(starbucks_nlcd$nlcd_2025_seattle)
 ```
 
 We can also plot these values using tmap.
 
 ```{r}
-library(tmap)
-
-tm_shape(starbucks_houston)+
+tm_shape(starbucks_seattle)+
   tm_dots("nlcd")
 ```
 
-##You try it!
-How could you count the number of Starbucks locations in each land use type?
+## You try it!
+Create a frequency table showing the number of Starbucks locations in each NLCD class. Which land-cover type contains the most Starbucks locations?
 
 ```{r}
 
 ```
 
-We can also use a different package, `exactextractr`, to identify the most common land use type in a subarea. Here, we create a simple hex cell grid using `st_make_grid`.
+We can also use a different package, `exactextractr`, to identify the most common land use type in a subarea. Here, we create a simple hex cell grid using `st_make_grid`. The `extract` function works well for points, but when working with polygons we often want to summarize all raster cells that fall inside an area. The exactextractr package provides efficient tools for calculating statistics such as the mean, majority class (mode), minimum, or maximum values within polygons.
+
+For categorical data, mode refers to the most common raster value within each polygon, not the statistical average.
 
 You can see more of what's possible with this package at this link: https://cran.r-project.org/web/packages/exactextractr/vignettes/vig2_categorical.html
 
 ```{r}
 library(exactextractr)
-nlcd_grid<-st_make_grid(nlcd21,cellsize = 10000) %>% st_as_sf()
+nlcd_grid<-st_make_grid(nlcd25,cellsize = 10000) %>% 
+  st_as_sf() %>%
+  mutate(row_id=row_number())
 
-extracted_values <- exact_extract(nlcd21, nlcd_grid,'mode') 
+extracted_values <- exact_extract(nlcd25, nlcd_grid,'mode') 
 
-nlcd_grid$ID<-extracted_values
+nlcd_grid$ID<-as.character(extracted_values)
 
 nlcd_grid<-nlcd_grid %>%
-  left_join(legend)
+  left_join(nlcd_legend)
 
 ggplot(nlcd_grid)+
   geom_sf(aes(fill=Class))
 ```
 
-#You try it!
-Make some change to this summary of land use by changing the cell size or shape. How does that change the pattern?
+## You try it!
+Repeat the analysis using either a smaller grid size (5 km) or a larger grid size (20 km). How does changing the aggregation scale affect the spatial pattern?
 
 ```{r}
 
 ```
 
-#Working with elevation data
-The NLCD is categorical data. What about continuous/ratio data like elevation? We can load a digital elevation model (DEM) dataset for the Houston area with the raster package.
+# Working with elevation data
+The NLCD is categorical data. What about continuous/ratio data like elevation? We can load a digital elevation model (DEM) dataset for the area.
 
 ```{r}
-#Unzip the dem if necessary
-#unzip("data/dem_houston.zip",exdir="data")
-
-houston_dem<-raster("data/dem_houston.tif")
-plot(houston_dem)
+seattle_dem<-rast("data/seattle_dem_opentopo.tif")
+plot(seattle_dem)
 ```
 
 What if we wanted to get mean values of this elevation data by area? This is called zonal statistics. We often use this with census geographies to be able to link raster data to demographics characteristics. In this case, we'll just make a simple hexagonal grid to aggregate these data.
@@ -134,56 +152,115 @@ What if we wanted to get mean values of this elevation data by area? This is cal
 The `exact_extract` function can also be used to calculate the mean elevation per cell.
 
 ```{r}
-library(terra)
-houston_bbox=st_bbox(houston_dem) %>% st_as_sfc()
+seattle_bbox=st_bbox(seattle_dem) %>% st_as_sfc()
 
-houston_grid<-st_make_grid(houston_bbox,cellsize=0.05,square=FALSE) %>%
+citygrid<-st_make_grid(seattle_bbox,cellsize=0.05,square=FALSE) %>%
   st_as_sf() %>%
   mutate(id=row_number())
-plot(houston_grid)
+plot(citygrid)
 
-dem_extract<-exact_extract(houston_dem,houston_grid,"mean")
+dem_extract<-exact_extract(seattle_dem,citygrid,"mean")
 
-houston_grid1<-houston_grid %>%
-  bind_cols(data.frame(dem_houston=dem_extract)) %>%
-  filter(is.na(dem_houston)==FALSE)
+citygrid1<-citygrid %>%
+  bind_cols(data.frame(dem=dem_extract)) %>%
+  filter(is.na(dem)==FALSE)
 
 ``` 
  
-It looks like grid cell 407 has the highest elevation. Let's map that out.
+It looks like grid cell 413 has the highest elevation. Let's map that out.
 
 ```{r}
-tm_shape(houston_grid1)+
-  tm_polygons("dem_houston",style="jenks")
-
-
-ggplot(houston_grid1)+
-  geom_sf(aes(fill=dem_houston))
+tm_shape(citygrid1)+
+  tm_polygons("dem",style="jenks")
 ```
 
-###Mapping countours and slope
+## Mapping contours and slope
 
 We can use the `contour` function to add contours to a plot of the elevations. The `add=TRUE` parameter keeps the underlying map.
 
 ```{r}
-plot(houston_dem)
-contour(houston_dem,add=TRUE,col="brown")
+plot(seattle_dem)
+contour(seattle_dem,add=TRUE,col="brown")
 ```
 
 The terrain function allows you to extract properties like slope and aspect. Here, we map both slope and then select only those areas with a slope greater than 10 degrees. The third line of code is a raster reclassification, making a raster where 1 represents cells that meet the criteria (slope > 10%) and 0 is those cells that don't.
 
 ```{r}
-x <- terrain(houston_dem, opt = "slope", unit = "degrees")
+x <- terrain(seattle_dem, "slope", unit = "degrees")
 plot(x$slope)
 
-x1<-x >= 5
+x1<- x >= 10
 
 plot(x1)
 ```
 
-Note that raster is an older package, and both `terra` (created as the successor to `raster`) and `stars` are newer. 
+# Climate data and raster math
 
-Here's another walkthrough of raster data in R with some more advanced functions:
-https://ourcodingclub.github.io/tutorials/spatial/
+Since rasters are (under the hood) a numeric matrix, we can also do math with them. For example, what if we want to look at changes to the July temperatures over the last 50 years or so? We can use raster data from the ERA5 climate reanalysis to do so.
 
-For 3D Visualization, the rayshader package can do some pretty amazing things. Here's one walkthrough: https://wcmbishop.github.io/rayshader-demo.
+When multiple rasters share the same extent and resolution, terra stores them as a multilayer raster object. Each layer might represent a different time period, variable, or observation. Here, we use list.files, to identify files from two July time ranges: 1950-52 and 2022-24. We then load them at once using the `rast` function from terra.
+
+```{r}
+temp1950_files<-list.files("data/era5_temperature/temp_july1950_1952",
+                     pattern=".tif",
+                     full.names=T)
+
+temp_1950<-rast(temp1950_files)
+
+temp2022_files<-list.files("data/era5_temperature/temp_july2022_2024",
+                     pattern=".tif",
+                     full.names=T)
+
+temp_2022<-rast(temp2022_files)
+```
+
+How many layers/rasters are in each file?
+
+```{r}
+nlyr(temp_1950)
+
+nlyr(temp_2022)
+```
+
+What are descriptive statistics for each one?
+
+```{r}
+mean(temp_1950)
+median(temp_1950)
+```
+
+Notice that in this case, you get a range. That's because the function is calculating a mean for *each cell* of the raster. So that's the range of mean values across the whole dataset.
+
+You can see this by using `plot`.
+
+```{r}
+plot(mean(temp_1950))
+plot(median(temp_1950))
+```
+
+Beyond that, you can also do math to compare layers, subtracting one from another.
+
+```{r}
+mean_1950<-mean(temp_1950)
+mean_2022<-mean(temp_2022)
+
+mean_compare<-mean_2022-mean_1950
+plot(mean_compare)
+```
+
+## You try it!
+
+These temperatures are measured in Kelvin. To convert Kelvin to Celsius, subtract 273.15. Do math on the mean 2022 dataset to convert those temperatures to Celsius and plot them. Then try converting to Fahrenheit (you'll need to look up the formula.)
+
+```{r}
+
+```
+
+## Try this, too!
+
+Use your AI system of choice to create a more developed version of the `mean_compare` map using ggplot or tmap. The map should include a title and meaningful legend. You can also ask for suggestions on the most suitable color scheme.
+
+```{r}
+
+```
+

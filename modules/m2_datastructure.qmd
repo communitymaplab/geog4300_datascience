@@ -29,13 +29,10 @@ format: html
 ## Scripts
 * [S03: APIs and online data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S03%20APIs%20and%20online%20data.qmd){target="_blank"}
 * [S04: Vectors, lists, and data frames](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S04%20Vectors%20lists%20and%20data%20frames%20oh%20my.qmd){target="_blank"}
-* [S05: Loading and using spatial data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S05%20spatialdata_md.qmd){target="_blank"}
 
 ## Slides for class
-* [L02-Working with data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L02-Working-with-data.pptx){target="_blank"}
-* [L03-Gitting started](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L03-Gitting-started.pptx){target="_blank"}
 * [L04-Reading data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L04-readingdata.pptx){target="_blank"}
-* [L05-Vectors and rasters](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L05_vector-raster.pptx){target="_blank"}
+* [L05-Spatial data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L05-spatialdata.pptx){target="_blank"}
 
 # Additional Resources {.module-section}
 

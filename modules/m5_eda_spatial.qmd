@@ -13,26 +13,39 @@ format: html
 
 :::
 
+::: {.required-actions}
+# Required on day 1 
+
+## Readings
+- [Chapter 2 and 3 of Spatial Visualization with tmap](https://tmap.geocompx.org/geodata){target="_blank"} by Martijn Tennekes and Kajub Nowosad
+
+## Videos
+- [Simple Features in R with the sf package](https://www.youtube.com/watch?v=_owZctxDfGk){target="_blank"} by MarFishEco
+- [Making maps in R using TMAP](https://www.youtube.com/watch?v=QcR9s3wF5lY){target="_blank"} by Earth Analytics
+::: 
+
 ## Course materials { .module-section }
 
 # Scripts
-* [S11: Point pattern analysis in R](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S11%20Point%20pattern%20analysis%20in%20R.qmd){target="_blank"}
-* [S12: Spatial functions and geocoding](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S12%20spatial%20functions%20and%20geocoding.qmd){target="_blank"}
-* [S14: Raster data in R](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S14%20raster%20data%20in%20R.qmd){target="_blank"}
+- [S10: Loading and using spatial data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S10%20spatialdata_md.qmd){target="_blank"} (module week 1)
+- [S11: Point pattern analysis in R](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S11%20Point%20pattern%20analysis%20in%20R.qmd){target="_blank"} (module week 2)
+- [S12: Spatial functions and geocoding](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S12%20spatial%20functions%20and%20geocoding.qmd){target="_blank"} (module week 2)
+- [S14: Raster data in R](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S14%20raster%20data%20in%20R.qmd){target="_blank"} (module week 3)
 
 # Slides for class
-* [L07: Point pattern analysis](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L07%20Point%20pattern%20analysis%20and%20MAUP.pptx){target="_blank"}
+- [L09: Visualizing and describing spatial data](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L09-Visualizing%20and%20describing%20spatial%20data.pptx){target="_blank"}
+- [L10: Point pattern analysis](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L10-Point%20pattern%20analysis%20and%20MAUP.pptx){target="_blank"}
 
 ## Additional Resources {.module-section}
 
 # Readings
-* [Chapters 4, 5, 6, and 8 of *Geocomputation with R*](https://r.geocompx.org/spatial-operations){target="_blank"} 
-* [Chapters 3-5 of *R-GIS for Ecology*](https://aterui.github.io/rgis-for-ecology/raster-data-terra-basics.html){target="_blank"}. These chapters give an overview of `sf`, `terra`, and methods of going between vector and raster data.
-* [Chapter 2 of *Spatial Statistics with R*](https://edzer.github.io/sswr/day2.html){target="_blank"}, which gives a good overview of the universe of spatial packages for R and sf's formatting. It uses `spatstat` for point-pattern analysis, which has its own data formatting.
+- [Chapters 4, 5, 6, and 8 of *Geocomputation with R*](https://r.geocompx.org/spatial-operations){target="_blank"} 
+- [Chapters 3-5 of *R-GIS for Ecology*](https://aterui.github.io/rgis-for-ecology/raster-data-terra-basics.html){target="_blank"}. These chapters give an overview of `sf`, `terra`, and methods of going between vector and raster data.
+- [Chapter 2 of *Spatial Statistics with R*](https://edzer.github.io/sswr/day2.html){target="_blank"}, which gives a good overview of the universe of spatial packages for R and sf's formatting. It uses `spatstat` for point-pattern analysis, which has its own data formatting.
 
 
 # Videos
-* [ArcGIS Pro: Calculating Zonal Statistics](https://www.youtube.com/watch?v=PU0z5q23_Ss){target="_blank"} by Tessellations Incorporated. Uses ESRI tools but provides an introduction to this method of analysis
-* [Introduction to Spatial Statistics](https://www.youtube.com/watch?v=VmWS_gSrCbk&t){target="_blank"} by GIScience. Includes a good walkthrough of how to use/interpret mean center
-* [Quadrats](https://www.youtube.com/watch?v=AYb2IUHwvyg){target="_blank"} by BBA Science
-* [Terra package tutorial](https://www.youtube.com/watch?v=LK4HeAX3VFg){target="_blank"} training by Jason Flower for a group in Brisbane, Australia
+- [ArcGIS Pro: Calculating Zonal Statistics](https://www.youtube.com/watch?v=PU0z5q23_Ss){target="_blank"} by Tessellations Incorporated. Uses ESRI tools but provides an introduction to this method of analysis
+- [Introduction to Spatial Statistics](https://www.youtube.com/watch?v=VmWS_gSrCbk&t){target="_blank"} by GIScience. Includes a good walkthrough of how to use/interpret mean center
+- [Quadrats](https://www.youtube.com/watch?v=AYb2IUHwvyg){target="_blank"} by BBA Science
+- [Terra package tutorial](https://www.youtube.com/watch?v=LK4HeAX3VFg){target="_blank"} training by Jason Flower for a group in Brisbane, Australia
