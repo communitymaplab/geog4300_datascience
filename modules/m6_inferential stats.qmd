@@ -6,11 +6,23 @@ format: html
 ::: {.callout-note}
 ## Relevant Learning Standards
 
-18. Explaining how evidence from a sample supports conclusions about a population while acknowledging sampling variability and uncertainty.
-19. Assess the normality of a variable using multiple diagnostic approaches and use those results to select between parametric and non-parametric statistical tests. 
-20. Construct and interpret confidence intervals, explaining how factors such as sample size and spatial scale affect the precision of an estimate.
+20. Explaining how evidence from a sample supports conclusions about a population while acknowledging sampling variability and uncertainty.
+21. Assess the normality of a variable using multiple diagnostic approaches and use those results to select between parametric and non-parametric statistical tests. 
+22. Construct and interpret confidence intervals, explaining how factors such as sample size and spatial scale affect the precision of an estimate.
 
 :::
+
+::: {.required-actions}
+# Required on day 1 
+
+## Readings
+- [Chap. 10, Estimating unknown quantities from a sample from *Learning Statistics with R*](https://learningstatisticswithr.com/10-estimation.html){target="_blank"} 
+
+## Videos
+- [The Central Limit Theorem](https://www.youtube.com/watch?v=ivd8wEHnMCg){target="_blank"}  by Simple Learning Pro
+- [What Confidence Intervals Actually Mean](https://www.youtube.com/watch?v=KW-i7CDmBAw){target="blank"} by Foundations of Math
+::: 
+
 
 ## Course materials { .module-section }
 
@@ -19,19 +31,17 @@ format: html
 * [S16: Normality](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S16%20Normality.qmd){target="_blank"}
 
 # Slides for class
-* [L09: Central limit theorem and confidence intervals](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L09%20Central%20limit%20theorem,%20CIs,%20Sampling.pptx){target="_blank"}
-* [L10: Hypotheses, one sample tests, and normality](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L10%20Hypotheses%20and%20one%20sample%20tests%20and%20normality.pptx){target="_blank"}
+* [L12: Central limit theorem and confidence intervals](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L12%20Central%20limit%20theorem,%20CIs.pptx){target="_blank"}
+* [L13: Hypotheses, one sample tests, and normality](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L13%20Hypotheses%20and%20one%20sample%20tests%20and%20normality.pptx){target="_blank"}
 
 ## Additional Resources {.module-section}
 
 # Readings
-* [Chap. 10, Estimating unknown quantities from a sample from *Learning Statistics with R*](https://learningstatisticswithr.com/10-estimation.html){target="_blank"} 
 * [Chapter 7, Hypotheses and p-values from *Introductory Biostatistics with R](https://tuos-bio-data-skills.github.io/intro-stats-book/hypotheses-and-p-values.html){target="_blank"} 
 * [Chap 29, 31, and 43 from *The Statistics Handbook*](https://r-statistics.co/How-Statistical-Inference-Works.html){target="_blank"} 
 
 # Videos
 * [The Central Limit Theorem, Clearly Explained!!!](https://www.youtube.com/watch?v=YAlJCEDH2uY){target="_blank"}  by StatQuest
-* [The Central Limit Theorem](https://www.youtube.com/watch?v=ivd8wEHnMCg){target="_blank"}  by Simple Learning Pro
 * [P-Values, Null Hypothesis, and Alternative Hypothesis in 3 Minutes](https://www.youtube.com/watch?v=tdj-hoivzHQ){target="_blank"}  by 3-Minute Data Science
-* [Confidence Interval [Simply explained]](https://www.youtube.com/watch?v=ENnlSlvQHO0){target="_blank"}  by numiqo
+* [Confidence Interval (Simply explained)](https://www.youtube.com/watch?v=ENnlSlvQHO0){target="_blank"}  by numiqo
 * [Confidence Intervals in R](https://www.youtube.com/watch?v=Djxj0NXNmzg){target="_blank"}  by Equitable Equations
