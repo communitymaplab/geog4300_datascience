@@ -54,8 +54,8 @@ t.test(sample1, sample2, alternative="less")
 
 Proportions can be tested using prop.test. Let's check to see if we can detect a weighted coin in a con flip. First, we'll create a long table showing 100 flips of each coin.
 ```{r}
-prop1<-data.frame(coin1=rbinom(100, 1 , .5)) #Regular coin
-prop2<-data.frame(coin2=rbinom(100, 1 ,.75)) #Altered coin
+prop1<-data.frame(coin1=rbinom(100, 1 , 0.5)) #Regular coin
+prop2<-data.frame(coin2=rbinom(100, 1 , 0.75)) #Altered coin
 
 prop_sample<-bind_cols(prop1,prop2) #Combine the two variables
 prop_samplelong<-prop_sample %>% pivot_longer(c(coin1,coin2),names_to="coin",values_to="result") #Reshape the dataset so all values are in one column
@@ -147,4 +147,8 @@ pollen_data<-read_csv("data/Midwest_Pollen_Data.csv")
 
 ```
 
-Pick two species and determine the normality of their pollen counts. Compare their pollen levels using the appropriate test of difference (t-test/Wilcoxon text). How would you interpret the results?
+Pick a species and compare the pollen counts between two regions using the appropriate test of difference (t-test/Wilcoxon text). You'll have to create two objects--one with observations for each region you choose.
+
+Also calculate the mean pollen levels for each region.
+
+How would you interpret the results?
