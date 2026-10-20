@@ -32,7 +32,7 @@ format: html
 
 ## Inferential Statistics
 20. Explaining how evidence from a sample supports conclusions about a population while acknowledging sampling variability and uncertainty. (Labs 3, 4, 5)
-21. Assess the normality of a variable using multiple diagnostic approaches and use those results to select between parametric and non-parametric statistical tests. (Labs 4, 5)
+21. Assess the normality of a variable and use those results to select between parametric and non-parametric statistical tests. (Labs 4, 5)
 22. Construct and interpret confidence intervals, explaining how factors such as sample size and spatial scale affect the precision of an estimate. (Lab 3)
 23. Apply two-sample tests of difference and accurately interpret results in terms of hypothesis testing, statistical significance, and the direction and magnitude of any differences. (Lab 4)
 24. Construct contingency tables and apply chi-square tests to assess association between categorical variables, interpreting results in terms of significance and practical meaning. (Lab 4)
