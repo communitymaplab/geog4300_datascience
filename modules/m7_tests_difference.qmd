@@ -1,5 +1,5 @@
 ---
-title: "Module 8: Tests of association"
+title: "Module 7: Tests of difference"
 format: html
 ---
 
