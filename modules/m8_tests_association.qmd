@@ -6,11 +6,19 @@ format: html
 ::: {.callout-note}
 ## Relevant Learning Standards
 
-23. Conduct correlation analysis across multiple variable pairs and evaluate results with respect to direction, magnitude, and significance, including changes in correlation structure across time periods or subgroups. 
-24. Build and interpret univariate and multivariate OLS regression models, explaining the role of each coefficient and evaluating overall model fit. 
-25. Diagnose regression model assumptions by assessing residuals for normality, spatial autocorrelation, heteroskedasticity, and multicollinearity, and explain the implications of any violations for model interpretation. 
+25. Conduct correlation analysis across multiple variable pairs and evaluate results with respect to direction, magnitude, and significance, including changes in correlation structure across time periods or subgroups. 
+26. Build and interpret univariate and multivariate OLS regression models, explaining the role of each coefficient and evaluating overall model fit. 
+27. Diagnose regression model assumptions by assessing residuals for normality, spatial autocorrelation, heteroskedasticity, and multicollinearity, and explain the implications of any violations for model interpretation. 
 
 :::
+
+::: {.required-actions}
+# Required on day 1 
+
+## Readings
+* [Chapter 12, Correlations](https://lmu.pressbooks.pub/critresearchmethodspsych/chapter/t-tests/){target="_blank"} by Makenzie O'Neil in *Critical Research Methods in Psychology*
+* [Chapter 15 Linear Regression](https://learningstatisticswithr.com/15-regression.html){target="_blank"} in *Learning Statistics with R*.
+::: 
 
 ## Course materials { .module-section }
 
@@ -20,15 +28,13 @@ format: html
 * [S22: Multivariate regression](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S22%20Multivariate%20regression.qmd){target="_blank"}
 
 ### Slides for class
-* [L13: Correlation and writing about numbers](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L13%20Writing%20about%20numbers%20Correlation.pptx){target="_blank"}
-* [L14: Univariate regression](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L14%20Univariate%20regression.pptx){target="_blank"}
-* [L15: Multivariate regression and test review](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L15%20Test%20review;%20Multivariate%20regression.pptx){target="_blank"}
+* [L15: Correlation and writing about numbers](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L15%20Correlation.pptx){target="_blank"}
+* [L16: Univariate regression](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L16%20Univariate%20regression.pptx){target="_blank"}
+* [L17: Multivariate regression and test review](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L17%20Test%20review;%20Multivariate%20regression.pptx){target="_blank"}
 
 ## Additional Resources {.module-section}
 
 ### Readings
-* [Chapter 12, Correlations](https://lmu.pressbooks.pub/critresearchmethodspsych/chapter/t-tests/){target="_blank"} by Makenzie O'Neil in *Critical Research Methods in Psychology*
-* [Chapter 15 Linear Regression](https://learningstatisticswithr.com/15-regression.html){target="_blank"} in *Learning Statistics with R*.
 * [Chapters 6.2 and 6.3 on correlation and linear modeling](https://intro2r.com/correlation.html){target="_blank"} in *An Introduction to R*
 * [Random Forests in R — Build, Tune, and Interpret](https://rguides.dev/tutorials/r-machine-learning/r-random-forest/) in *rguides*
 
