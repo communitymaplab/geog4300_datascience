@@ -7,19 +7,21 @@ editor_options:
 ```{r}
 #| label: setup
 library(tidyverse)
-library(broom)
+library(broom) # New package! Helps us visualize/see test results
 ```
 
 ##Post-hoc ANOVA analysis
 
-Let's start by loading the "data" used in the video lecture.
+Let's start by loading a synthetic dataset on the effectiveness of three different treatments for anxiety.
+
 ```{r}
-anova_data_navarro<-data.frame(part_id=c(4,5,6,13,14,15,8,9,16,17,18,7,1,2,3,10,11,12),
-                               drug=c("anxifree","anxifree","anxifree","anxifree","anxifree","anxifree","joyzepam","joyzepam","joyzepam",
-                                      "joyzepam","joyzepam","joyzepam","placebo","placebo","placebo","placebo","placebo","placebo"),
-                               therapy=c("no.therapy","no.therapy","no.therapy","CBT","CBT","CBT","no.therapy","no.therapy",
-                                         "CBT","CBT","CBT","no.therapy","no.therapy","no.therapy","no.therapy","CBT","CBT","CBT"),
-                               result=c(0.6,0.4,0.2,1.1,0.8,1.2,1.7,1.3,1.8,1.3,1.4,1.4,0.5,0.3,0.1,0.6,0.9,0.3))
+anova_data_navarro<-data.frame(part_id=c(4,5,6,13,14,15,8,9,16,
+                                         17,18,7,1,2,3,10,11,12),
+        drug=c("anxifree","anxifree","anxifree","anxifree",
+               "anxifree","anxifree","joyzepam","joyzepam",
+               "joyzepam","joyzepam","joyzepam","joyzepam","placebo",
+               "placebo","placebo","placebo","placebo","placebo"),  
+        result=c(0.6,0.4,0.2,1.1,0.8,1.2,1.7,1.3,                                         1.8,1.3,1.4,1.4,0.5,0.3,0.1,0.6,0.9,0.3))
 ```
 
 Next we create an ANOVA object and use summary to look at our results. What's our null hypothesis mean? How do we interpret a p<0.05? What other information is provided in the output?
@@ -55,6 +57,7 @@ TukeyHSD(drugtest)
 ```
 
 Testing residuals for normality--just use the "residuals" function on the ANOVA object. We can then create a qqplot and use shapiro.test to look at normality.
+
 ```{r}
 drugtest.resid<-residuals(drugtest)
 qqnorm(drugtest.resid);qqline(drugtest.resid) #Using a base R version of a QQ plot

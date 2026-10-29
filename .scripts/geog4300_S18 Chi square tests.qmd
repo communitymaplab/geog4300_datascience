@@ -49,15 +49,18 @@ For interpretation, it can be better to transform the counts in this table to pe
 ```{r}
 tornado_table_pct<-tornado_table %>%
   #Transform the dataset into long format
-    pivot_longer(`0`:`5`,names_to="mag",values_to="count") %>%
+    pivot_longer(`0`:`5`,
+                 names_to="mag",
+                 values_to="count") %>%
   #Calculate total tornado count
     group_by(ST) %>% mutate(total=sum(count)) %>%
   #Calculate the percentage, rounded to 1 digit
-    mutate(pct=round(count/total*100,1)) %>%
+    mutate(pct=round(count/sum(count)*100,1)) %>%
   #Remove tornado raw count variable
     select(-count) %>% 
-  #Make the dataset wide again, but this time with %
-    pivot_wider(names_from=mag,values_from=pct) 
+  #Make the dataset wide again, but this time with percentage
+    pivot_wider(names_from=mag,
+                values_from=pct) 
 ```
 
 Which states have the highest percentage of category 4 and 5 tornadoes? 
