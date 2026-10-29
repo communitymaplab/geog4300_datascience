@@ -40,3 +40,82 @@ h3 {
   margin-top: 1.1rem;
   margin-bottom: 0.3rem;
 }
+
+/* Required Actions Callout Box */
+.required-actions {
+  background-color: #fdf2e9;            /* Light orange background */
+  padding: 1.25rem;                     /* Internal spacing */
+  border-radius: 4px;                   /* Rounded corners */
+  border: 1px solid rgba(243, 156, 18, 0.25); /* Subtle outline matching the theme */
+  border-left: 5px solid #f39c12;       /* Thick left callout bar */
+  margin: 1rem 0;                       /* Spacing above/below the section */
+}
+
+/* Remove default top margins/backgrounds from headers inside the box */
+.required-actions h1,
+.required-actions h2,
+.required-actions h3 {
+  background: transparent !important;
+  margin-top: 0.5rem;
+}
+
+.required-actions h1:first-child {
+  margin-top: 0;
+}
+
+/* Add breathing room between sidebar items */
+.sidebar nav[role="doc-toc"] ul li,
+.sidebar .sidebar-item {
+  margin-bottom: 0.35rem;
+}
+
+/* Optional: Add a subtle left accent line on the active page */
+.sidebar .sidebar-item.active > a {
+  border-left: 3px solid #0056b3;
+  padding-left: 8px;
+  font-weight: 700;
+}
+
+/* Align the sidebar link container using flexbox */
+.sidebar .sidebar-item-container {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 0.75rem; /* Adjust this to move the entire list left or right */
+}
+
+/* Treat the link itself as a flex item */
+.sidebar .sidebar-item-text {
+  display: flex;
+  align-items: flex-start;
+  text-indent: 0; /* Reset any text-indent */
+  padding-left: 0; /* Reset any padding-left */
+}
+
+/* Bullet item styling as a fixed-width left column */
+.sidebar-item-container .sidebar-item-text::before {
+  content: "•";
+  color: #6c757d;
+  font-weight: bold !important; 
+  display: inline-block;
+  min-width: 1rem; /* Fixed width reserves space for the bullet */
+  flex-shrink: 0;   /* Prevents bullet from shrinking when text wraps */
+}
+
+/* Breathing room between sidebar items */
+.sidebar .sidebar-item {
+  margin-bottom: 0.35rem;
+}
+
+/* Highlighted Left Border + Bold Text for Active Page */
+.sidebar .sidebar-item.active,
+.sidebar .sidebar-item a.active {
+  border-left: 3px solid #0056b3 !important;
+  padding-left: 6px !important;
+  background-color: rgba(0, 86, 179, 0.05); /* Optional: subtle light blue background fill */
+}
+
+.sidebar .sidebar-item.active .sidebar-item-text,
+.sidebar .sidebar-item a.active .sidebar-item-text {
+  font-weight: 700 !important;
+  color: #0056b3 !important;
+}
