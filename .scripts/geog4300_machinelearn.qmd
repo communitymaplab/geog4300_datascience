@@ -1,0 +1,264 @@
+---
+title: "Predicting Census Tract Tree Canopy Cover in CA, OR, and WA"
+format: 
+  html:
+    toc: true
+    code-fold: false
+    theme: cosmo
+editor_options: 
+  chunk_output_type: console
+---
+
+## 1. Setup & Data Loading
+
+We use `tidymodels` to structure a reproducible machine learning pipeline and prevent data leakage between training and testing sets.
+
+```{r setup}
+library(tidyverse)
+library(tidymodels)
+library(sf)
+library(here)
+library(ranger)      # Fast Random Forest engine
+library(glmnet)      # Regularized linear regression (Ridge/Lasso)
+library(finetune)    # Speeds up model tuning
+#install.packages("vip", repos = c("https://bgreenwell.r-universe.dev", "https://cloud.r-project.org"))
+library(vip)
+
+# Load your dataset (update the file path/format as needed)
+tracts_raw <- st_read(here("data/gee_lstdata/lab6_gee_lstdata.gpkg")) %>%
+  st_set_geometry(NULL)
+
+# Parse State FIPS from GISJOIN (characters 2-3 in NHGIS format, e.g., "G060..." -> "06" = CA)
+tracts <- tracts_raw %>%
+  mutate(
+    state_fips = str_sub(GISJOIN, 2, 3),
+    county_fips = str_sub(GISJOIN, 2, 6),
+    state = case_when(
+      state_fips == "06" ~ "CA",
+      state_fips == "41" ~ "OR",
+      state_fips == "53" ~ "WA",
+      TRUE ~ "Other"
+    ),
+    # Treat land cover codes and binary flags as factors
+    nlcd_class = as.factor(nlcd_class)
+  ) %>%
+  # Remove rows with missing target values
+  drop_na(tree_cover_pct)
+
+glimpse(tracts)
+```
+
+## 2. Data Splitting (Spatial Holdout)
+
+Because census tracts exhibit strong spatial autocorrelation, a standard random split would place adjacent tracts in both the training and test sets, artificially inflating accuracy. 
+
+Here, we use a **group-aware split** (`group_initial_split`) so entire counties are kept intact in either training or testing. Below, we parse County FIPS from `GISJOIN` (`str_sub(GISJOIN, 2, 6)`).
+
+```{r split}
+set.seed(4300)
+
+tracts <- tracts %>%
+  mutate(county_fips = str_sub(GISJOIN, 2, 6))
+
+# Hold out 20% of counties completely from training
+tract_split <- group_initial_split(tracts, group = county_fips, prop = 0.80)
+
+train_data <- training(tract_split)
+test_data  <- testing(tract_split)
+
+cat("Training tracts:", nrow(train_data), "| Test tracts:", nrow(test_data), "\n")
+```
+
+## 3. Preprocessing & Feature Engineering (`recipes`)
+
+All preprocessing steps are defined in a `recipe` and estimated **strictly on `train_data`**. 
+
+* Note: We exclude `GISJOIN`, `nlcd_label` (redundant with `nlcd_class`), and spatial ID columns from being used as predictors (`update_role(..., new_role = "id")`).
+
+```{r recipe}
+canopy_recipe <- recipe(tree_cover_pct ~ ., data = train_data) %>%
+  # Mark identifiers so they are retained for mapping/diagnostics but not modeled
+  update_role("GISJOIN", "gisjn_tct", "GEOID", "STATEFP", "COUNTYFP", "TRACTCE","n_bg",
+      "county_fips", "nlcd_label","state","state_fips",
+      new_role = "id") %>%
+  # Handle any missing predictor values using training set medians/modes
+  step_impute_median(all_numeric_predictors()) %>%
+  step_impute_mode(all_nominal_predictors()) %>%
+  # Collapse rare NLCD classes (if any exist in <1% of tracts) to prevent dummy mismatch
+  step_other(nlcd_class, threshold = 0.01) %>%
+  # One-hot encode categorical variables
+  step_dummy(all_nominal_predictors()) %>%
+  # Remove zero-variance predictors
+  step_zv(all_predictors()) %>%
+  # Normalize numeric predictors (required for Ridge/Lasso; harmless for Random Forest)
+  step_normalize(all_numeric_predictors())
+
+canopy_recipe
+```
+
+## 4. Define Candidate Models & Resampling
+
+Before touching our held-out test set—which acts as a final, one-time exam—we need a way to tune model settings and compare algorithms using only the training data. We do this with **5-fold cross-validation (`group_vfold_cv`)**:
+
+* **How folds work:** Our training data is divided into 5 roughly equal chunks ("folds"). In Round 1, the model trains on Folds 2–5 (80% of the training set) and predicts on Fold 1 (the remaining 20%, acting as a temporary validation set). This repeats five times until every fold has served once as the validation set, and the resulting error scores (RMSE, MAE, $R^2$) are averaged together.
+* **Why we group by county:** Because adjacent census tracts share similar climate and land cover characteristics, standard random folds would leak spatial information across the training/validation boundary. Grouping by `county_fips` forces the model to predict tree canopy in entirely unseen counties during every round.
+
+We compare two candidate models across these folds:
+1. **Elastic Net Regression (`glmnet`):** A regularized linear baseline that shrinks coefficients to handle strongly correlated remote-sensing indices (`ndvi`, `ndbi`, `ndwi`, `lst_c`).
+2. **Random Forest (`ranger`):** A non-linear ensemble of decision trees capable of capturing complex interactions (such as how elevation and precipitation jointly shape forest cover across coastal vs. inland regions).
+
+```{r models}
+# 1. Baseline: Regularized Linear Regression (tuned penalty & mixture)
+enet_spec <- linear_reg(penalty = tune(), mixture = tune()) %>%
+  set_engine("glmnet") %>%
+  set_mode("regression")
+
+# 2. Candidate: Random Forest (tuned mtry and min_n)
+rf_spec <- rand_forest(mtry = tune(), min_n = tune(), trees = 200) %>%
+  set_engine("ranger") %>%
+  set_mode("regression")
+
+# Spatial/Group 5-fold cross-validation on the training set (grouped by county)
+set.seed(4300)
+cv_folds <- group_vfold_cv(train_data, group = county_fips, v = 5)
+```
+
+## 5. Hyperparameter Tuning via Cross-Validation
+
+We use `workflow_set()` to tune and evaluate both models across the exact same cross-validation folds.
+
+Unlike standard regression coefficients—which the algorithm learns directly from the data—**hyperparameters** are structural settings for the model we have to choose *before* training begins. Think of it like cooking: parameters are the exact internal temperatures and chemical changes happening inside the oven, while hyperparameters are the dials you set on the outside—oven temperature, rack position, and baking time.
+
+Because we cannot know the ideal settings ahead of time, `tune_grid()` uses **grid search**:
+
+* **Testing candidate combinations (`grid = 10`):** `tidymodels` automatically generates 10 distinct, space-filling combinations of hyperparameter values for each model. It trains and evaluates every combination across all 5 cross-validation folds ($10 \text{ combinations} \times 5 \text{ folds} = 50 \text{ model fits per algorithm}$) to see which settings produce the lowest prediction error.
+* **Balancing speed vs. precision:** A small grid of 10 keeps computation fast while still exploring a broad range of model behavior—ideal for exploratory analysis or classroom demonstrations. In a final production workflow, increasing this grid (e.g., `grid = 25` or `30`) searches the parameter space more finely to squeeze out incremental gains in accuracy.
+
+
+We also save the resulting tuned model to an rds file since it takes awhile to run.
+
+```{r tune}
+wf_set <- workflow_set(
+  preproc = list(base = canopy_recipe),
+  models  = list(elastic_net = enet_spec, random_forest = rf_spec)
+)
+
+# Tune across a small grid (increase grid size for production runs)
+# WARNING: this takes a few minutes
+tune_file <- here("data/gee_lstdata/lstdata_tune_results.rds")
+
+# Delete the old cached file once (or comment out unlink() after running)
+if (file.exists(tune_file)) file.remove(tune_file)
+
+if (!file.exists(tune_file)) {
+  tune_results <- wf_set %>%
+    workflow_map(
+      fn        = "tune_race_anova",
+      resamples = cv_folds,
+      grid      = 10,
+      metrics   = metric_set(rmse, mae, rsq),
+      seed      = 4300
+    )
+  write_rds(tune_results, tune_file)
+} else {
+  tune_results <- read_rds(tune_file)
+}
+
+# Compare cross-validated performance
+collect_metrics(tune_results) %>%
+  filter(.metric %in% c("rmse", "rsq")) %>%
+  group_by(wflow_id, .metric) %>%
+  slice_min(mean, n = 1) %>%
+  select(wflow_id, .metric, mean, std_err)
+```
+
+
+
+## 6. Finalize & Evaluate on the Held-Out Test Set
+
+We extract the best Random Forest configuration, fit it to the full training set, and evaluate it once on the untouched `test_data` using `last_fit()`.
+
+```{r evaluate}
+best_rf_params <- tune_results %>%
+  extract_workflow_set_result("base_random_forest") %>%
+  select_best(metric = "rmse")
+
+final_rf_wf <- tune_results %>%
+  extract_workflow("base_random_forest") %>%
+  finalize_workflow(best_rf_params)
+
+# Only compute variable importance on the final winning model
+final_rf_wf <- final_rf_wf %>%
+  update_model(
+    rand_forest(
+      mtry  = best_rf_params$mtry,
+      min_n = best_rf_params$min_n,
+      trees = 500
+    ) %>%
+      set_engine("ranger", importance = "permutation") %>%
+      set_mode("regression")
+  )
+
+# Fit on all training data and evaluate on held-out test counties
+final_fit <- last_fit(final_rf_wf, split = tract_split, metrics = metric_set(rmse, mae, rsq))
+
+# Out-of-sample test metrics
+collect_metrics(final_fit)
+```
+
+## 7. Diagnostics & Variable Importance
+
+Finally, we inspect which physical variables drive predictions and plot predicted vs. observed canopy cover across states to check for systematic regional bias.
+
+```{r}
+#| label: diagnostics
+#| fig-height: 6
+#| fig-width: 8
+
+# 1. Permutation Variable Importance
+final_fit %>%
+  extract_fit_parsnip() %>%
+  vip(num_features = 12, aesthetics = list(fill = "#2c7fb8")) +
+  labs(
+    title = "Top Predictors of Census Tract Tree Canopy Cover",
+    subtitle = "Permutation importance from tuned Random Forest"
+  ) +
+  theme_minimal()
+
+# 2. Predicted vs. Observed Scatterplot by State
+test_predictions <- collect_predictions(final_fit) %>%
+  bind_cols(test_data %>% select(GISJOIN, state, county_fips))
+
+# Calculate state-level R2 (and RMSE if helpful) for facet annotations
+state_metrics <- test_predictions %>%
+  group_by(state) %>%
+  summarize(
+    rsq  = rsq_vec(truth = tree_cover_pct, estimate = .pred),
+    rmse = rmse_vec(truth = tree_cover_pct, estimate = .pred),
+    label = sprintf("R² = %.2f\nRMSE = %.1f%%", rsq, rmse),
+    .groups = "drop"
+  )
+
+# Plot with R2 annotated in the top-left corner of each facet
+ggplot(test_predictions, aes(x = tree_cover_pct, y = .pred, color = state)) +
+  geom_point(alpha = 0.4, size = 1.5) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", color = "black") +
+  geom_text(
+    data = state_metrics,
+    aes(x = 5, y = 95, label = label),
+    hjust = 0,
+    vjust = 1,
+    size = 3.5,
+    color = "black",
+    inherit.aes = FALSE
+  ) +
+  facet_wrap(~ state) +
+  coord_equal(xlim = c(0, 100), ylim = c(0, 100)) +
+  labs(
+    title = "Out-of-Sample Predictions vs. Observed MODIS Tree Cover (%)",
+    x = "Observed Tree Cover (%)",
+    y = "Predicted Tree Cover (%)"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
