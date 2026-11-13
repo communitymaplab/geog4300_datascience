@@ -26,6 +26,7 @@ format: html
 * [S20: Correlation](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S20%20Correlation.qmd){target="_blank"}
 * [S21: Univariate regression](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S21%20Univariate%20regression.qmd){target="_blank"}
 * [S22: Multivariate regression](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S22%20Multivariate%20regression.qmd){target="_blank"}
+* [S23: Machine learning 101](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/.scripts/geog4300_S23%20machinelearn.qmd){target="_blank"}
 
 ### Slides for class
 * [L15: Correlation and writing about numbers](https://github.com/communitymaplab/geog4300_datascience/raw/refs/heads/main/in_class_slides/geog4300_L15%20Correlation.pptx){target="_blank"}
